@@ -31,6 +31,7 @@ p{
 
 #center {
     text-align: center;
+    font-style: italic;
     font-size: 2rem;
 }
 
@@ -40,13 +41,23 @@ p{
     align-items: center;
 }
 
-
-
 li {
     color: rgb(78, 44, 0);
     list-style-type:decimal;
 }
 
+#Bild {
+    width: 18%;
+    height: 20rem;
+}
+#Bildp {
+    width: 18%;
+    height: 20rem;
+}
+#Bildm{
+    width: 18%;
+    height: 20rem;
+}
 
 /* 2. Seite */
 
