@@ -1,21 +1,67 @@
 
 /* alle Seiten*/
 
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: silver;
+}
+ul li{
+    float:right;
+    
+}
+
+
+
 a{
     color:rgb(2, 109, 109);
     font-size: 1.1rem;
     font-family: sans-serif;
     position: normal;
-    /*background-color: rgb(184, 178, 178);
-    border-bottom-color: rgb(184, 178, 178);*/
 }
 
-a:hover{
-    /*background-color: rgb(184, 178, 178);*/
-    color:rgb(136, 139, 139);}
+ul li a{
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    color:white;
+    text-align: center;
 
- div a:focus {
-    color:hotpink;
+}
+ul#list li a:link,
+ul#list li a:visited {
+
+color: white
+}
+
+ul#list li a:hover,
+ul#list li a:active,
+ul#list li#current
+ul#list li#current a:focus{
+    background-color: darkgray;
+    color:black;
+}
+
+ul li a:hover {
+    background-color: grey;
+}
+
+ul li a:visited {
+    background-color: grey;
+}
+
+ul li a:focus {
+    background-color: hotpink;
+}
+  a:focus {
+    color:black;
+}
+
+#current{
+    background-color: cadetblue;
 }
 
 
@@ -59,7 +105,7 @@ p{
     font-family: sans-serif;
 }
 
-li {
+ol {
     color:cadetblue;
     list-style-type:decimal;
     list-style-position: inside;
