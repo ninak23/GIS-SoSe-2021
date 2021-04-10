@@ -1,31 +1,143 @@
 
 /* alle Seiten*/
 
+a{
+    color:rgb(2, 109, 109);
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    position: normal;
+    /*background-color: rgb(184, 178, 178);
+    border-bottom-color: rgb(184, 178, 178);*/
+}
+
+a:hover{
+    /*background-color: rgb(184, 178, 178);*/
+    color:rgb(136, 139, 139);}
+
+ div a:focus {
+    color:hotpink;
+}
+
+
+
+h2{
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+h3{
+    font-size: 1.5rem;
+    font-family: sans-serif;
+}
+
+h4{
+font-size: 1.2rem;
+font-family: sans-serif;
+}
+
+
 body{
     background: url(Medien/bg.png);
+    text-align: center;
+    font-family:sans-serif;
+    max-width: 800px;
+    margin: auto;
+    
 }
 .Menü{
     color: black;
     text-align: right;
     word-spacing: 2em;
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url(border.png) 30 round;
 }
 
 p{
     text-align: center;
+    font-size: 1.2rem;
+    font-family: sans-serif;
 }
+
+li {
+    color:cadetblue;
+    list-style-type:decimal;
+    list-style-position: inside;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+table th, td {
+    border: 5px solid #a0a0a0;
+}
+
+table {
+    margin-right: auto;
+    margin-left: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-width: thin 0 0 thin;
+    table-layout:auto;
+    max-width: 100%;
+    width: 100%;
+    color:cadetblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+    height: 3rem;
+    background-color:lightgray ;
+}
+
+
+ th, td {
+     font-weight: normal;
+     text-align:center;
+     padding: 0.8rem;
+ }
+
+ tr:hover {background-color:lightblue ;}
+
+ .buttons{
+    font-weight: bold;
+    font-size: 1.2rem;
+     /*background-color: cadetblue;
+     border: none;
+     color:white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+     /*float: right;*/
+    }
+
+
+    .button {
+     background-color: cadetblue;
+     border: none;
+     color:white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+ 
 
 
 
 /* 1. Seite */
 
 #Start {
-    color:skyblue;
+    color:cadetblue;
     font-size: 5rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: sans-serif;
     font-style: italic;
     font-weight: bold;
-    text-decoration: steelblue;
-    text-shadow:whitesmoke 10px 10px 10px ;
+    text-shadow:cadetblue 10px 10px 10px ;
     text-align: center;
 }
 
@@ -41,45 +153,64 @@ p{
     align-items: center;
 }
 
-li {
-    color: rgb(78, 44, 0);
-    list-style-type:decimal;
-}
-
 #Bild {
-    width: 18%;
-    height: 20rem;
+    width: 266px;
+    height: 22rem;
+    object-fit: fill;
 }
 #Bildp {
-    width: 18%;
-    height: 20rem;
+    width: 266px;
+    height: 22rem;
+    object-fit: fill;
+
 }
 #Bildm{
-    width: 18%;
-    height: 20rem;
+    width: 266px;
+    height: 22rem;
+    object-fit: fill;
+}
+
+#vi {
+    width: 800px;
+    height: 35rem;
+    object-fit: cover;
+}
+
+#vie {
+    width: 800px;
+    height:35rem;
+    object-fit: cover;
 }
 
 /* 2. Seite */
 
 #Übermich{
-    color: skyblue;
-    font-size: 5rem;
+    color: cadetblue;
+    font-size: 4rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
-    text-shadow:whitesmoke 10px 10px 10px ;
+    text-shadow: whitesmoke 10px 10px 10px ;
     text-align: center;
-    
 }
+
+#ich {
+    /*border-radius: 50%;*/
+    /*width:60rem;
+    height: 40rem;*/
+    object-fit: fill;
+}
+
+
 
 
 
 /* 3. Seite */
 
 #Kontakt {
-    color:skyblue;
-    font-size: 5rem;
+    color:cadetblue;
+    font-size: 4rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     text-shadow:whitesmoke 10px 10px 10px;
-    text-align: center;
+    text-align: none;
 }
