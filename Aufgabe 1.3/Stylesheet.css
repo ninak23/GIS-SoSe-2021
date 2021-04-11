@@ -1,64 +1,45 @@
+/* Alle Seite*/
 
-/* alle Seiten*/
-.fab:-webkit-file-upload-button{
-    font-size: 24px;
-    color:red;
-}
-
-ul{
+ #list  {
     list-style-type: none;
-    margin: 0;
+    margin: 10px;
     padding: 0;
     overflow: hidden;
     background-color: silver;
-}
-ul li{
-    float:right;
+    position: fixed;
+    text-align: center;
+    top:0;
     
 }
 
+#list a{
+    float:left;
+    
+}
+header {
+    float:right;
+    width: 340px;
+}
 
 
 a{
     color:rgb(2, 109, 109);
     font-size: 1.1rem;
     font-family: sans-serif;
-    position: normal;
 }
 
-ul li a{
-    display: block;
-    padding: 14px 16px;
+a{
+    display:inline;
+    padding: 12px 14px;
     text-decoration: none;
-    color:white;
-    text-align: center;
-
-}
-ul#list li a:link,
-ul#list li a:visited {
-
-color: white
+    color:rgb(2, 109, 109);
 }
 
-ul#list li a:hover,
-ul#list li a:active,
-ul#list li#current
-ul#list li#current a:focus{
-    background-color: darkgray;
+ a:hover {
+    background-color: grey;
     color:black;
 }
 
-ul li a:hover {
-    background-color: grey;
-}
-
-ul li a:visited {
-    background-color: grey;
-}
-
-ul li a:focus {
-    background-color: hotpink;
-}
   a:focus {
     color:black;
 }
@@ -68,6 +49,8 @@ ul li a:focus {
 }
 
 
+
+/* Überschriften*/
 
 h2{
     font-size: 2rem;
@@ -85,15 +68,17 @@ font-family: sans-serif;
 }
 
 
+
 body{
     background: url(Medien/bg.png);
     text-align: center;
     font-family:sans-serif;
     max-width: 800px;
-    margin: auto;
+    width: 800px;
+    margin:auto;
     
 }
-.Menü{
+nav {
     color: black;
     text-align: right;
     word-spacing: 2em;
@@ -101,6 +86,7 @@ body{
     padding: 15px;
     border-image: url(border.png) 30 round;
 }
+
 
 p{
     text-align: center;
@@ -175,6 +161,26 @@ th {
      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
  
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -187,7 +193,7 @@ th {
     font-style: italic;
     font-weight: bold;
     text-shadow:cadetblue 10px 10px 10px ;
-    text-align: center;
+    text-align: left;
 }
 
 #center {
@@ -263,3 +269,23 @@ th {
     text-shadow:whitesmoke 10px 10px 10px;
     text-align: none;
 }
+
+
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical; 
+  }
+  
+  
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  

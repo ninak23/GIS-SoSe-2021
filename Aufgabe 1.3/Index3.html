@@ -6,24 +6,24 @@
     <meta charset= "utf-8">
     <link rel="Stylesheet" href="Stylesheet.css">
     <title>Portfolio-Website</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
 
 <body>
 
     <header>
-        <nav>
-            <ul id="list">
-              <li id="current"><a href="Index3.html">CONTACT</a></li>
-              <li><a href="Index2.html">ABOUT</a></li>
-              <li><a href="Index.html">PORTFOLIO</a></li>
-            </ul>
-          </nav>
-
-        <h1 id="Start">Portfolio</h1> 
-        <h1 id="Kontakt">Contact</h1>
+        <div id="list">
+            <a href="Index.html">PORTFOLIO</a>
+            <a href="Index2.html">ABOUT</a>
+            <a id="current" href="Index3.html">CONTACT</a>  
+            <li><a href="https://de-de.facebook.com/"><i class='fab fa-facebook' style='font-size:24px'></i></a></li>
+        </div>
     </header>
 
     <main>
+        <h1 id="Start">Portfolio</h1> 
+        <h1 id="Kontakt">Contact</h1>
         <img src="Medien/IMG_7177.jpg" alt="">
         <h2>Kontaktdaten:</h2>
         <p>E-mail: <a href="#mailto:ninaellenkoenig@aol.com">ninaellenkoenig@aol.com</a></p>
@@ -34,16 +34,37 @@
             <li>Ich antworte dementsprechend auch sehr schnell</li>
             <li>Ich bin immer freundlich:D</li>
         </ol>
-        
+
+        <h3 id="kontakt">Kontaktformular</h3>
+        <div class="container">
+            <form action="action_page.php">
+          
+              <label for="Vname">Vorname</label>
+              <input type="text" id="Vname" name="firstname" placeholder="Dein Name...">
+          
+              <label for="Nname">Nachname</label>
+              <input type="text" id="Nname" name="lastname" placeholder="Dein Nachname...">
+          
+              <label for="E-mail">E-mail</label>
+              <input type="text" id="E-mail" name="Email" placeholder="Deine E-mail...">
+
+              <label for="Nachricht">Nachricht</label>
+              <textarea id="Nachricht" name="Nachricht" placeholder="Schreib etwas..." style="height:200px"></textarea>
+              <p>Mit absenden der Nachricht bestätige ich den Datenschutz</p>
+    
+              <p><a class ="button" href="#kontakt"> Absenden</a></p>
+          
+            </form>
+          </div>
 
     </main>
 
     <footer> 
-    
-        <a href="#Impressum&Datenschutz">Impressum & Datenschutz</a> <br>
-        Webdesign: Nina König <br>
+        <br>
+        <a href="#Impressum&Datenschutz">Impressum & Datenschutz</a> 
+        <p>Webdesign: Nina König<p> <br>
         <abbr title= "Nina König">NK</abbr> <br>
-        <p><a class ="button" href="#Kontakt"> Nach oben</a></p>
+        <p><a class ="button" href="#Start"> Nach oben</a></p>
     </footer>
 
 </body>
