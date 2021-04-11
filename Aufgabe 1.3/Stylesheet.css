@@ -1,6 +1,9 @@
 
 /* alle Seiten*/
-
+.fab:-webkit-file-upload-button{
+    font-size: 24px;
+    color:red;
+}
 
 ul{
     list-style-type: none;
