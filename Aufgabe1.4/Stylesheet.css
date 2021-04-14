@@ -42,12 +42,12 @@ a{
     color:rgb(2, 109, 109);
 }
 
- a:hover {
+a:hover {
     background-color: grey;
     color:black;
 }
 
-  a:focus {
+a:focus {
     color:black;
 }
 
@@ -76,7 +76,12 @@ font-size: 1.2rem;
 font-family: sans-serif;
 }
 
+@media only screen and (max-width: 600px){
+    body {
+        width: 100%;
+    }
 
+}
 
 body{
     background: url(Medien/bg.png);
