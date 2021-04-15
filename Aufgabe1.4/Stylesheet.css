@@ -63,7 +63,7 @@ a{
 
     #Start  {
         margin-top: 7rem;
-        width: 600px; 
+        width: 100%; 
         font-size: 4rem;    
     }
 
@@ -107,19 +107,19 @@ font-family: sans-serif;
     }
 
     #vi {
-        width: 600px;
+        width: 100%;
         height:100%;
         object-fit:none;
     }
 
     video  #vi {
-        width:600px;
+        width:100%;
         object-fit:none;
 
     }
 
     #vie {
-        width: 600px;
+        width: 100%;
         height: 100%;
         object-fit: cover;
     }
@@ -159,10 +159,7 @@ font-family: sans-serif;
         width: 100px;
         height: 100px;
         object-fit: none;
-
-
     }
-
 }
 
 body{
