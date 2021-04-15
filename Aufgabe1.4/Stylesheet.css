@@ -103,11 +103,13 @@ font-family: sans-serif;
     #vi {
         width:599px;
         height:20rem;
+        object-fit: none;
     }
 
     #vie {
         width: 599px;
         height: 20rem;
+        object-fit: none;
     }
 
 }
