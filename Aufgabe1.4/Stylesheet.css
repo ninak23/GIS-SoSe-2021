@@ -62,7 +62,7 @@ a{
     }
 
     #Start  {
-        margin-top: 5rem;
+        margin-top: 6rem;
     }
 
     #list {
@@ -72,6 +72,8 @@ a{
     header {
         width: 100%;
     }
+
+
 }
 
 
@@ -99,11 +101,13 @@ font-family: sans-serif;
     }
 
     #vi {
-        width:5%;
+        width:599px;
+        height:20rem;
     }
 
     #vie {
-        width: 25%;
+        width: 599px;
+        height: 20rem;
     }
 
 }
