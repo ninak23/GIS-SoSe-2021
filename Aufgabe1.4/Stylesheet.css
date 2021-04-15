@@ -64,7 +64,7 @@ a{
     #Start  {
         margin-top: 7rem;
         width: 100%; 
-        font-size: 4rem;    
+        font-size: 2rem;    
     }
 
     #list {
@@ -75,7 +75,7 @@ a{
         width: 100%;
     }
 
-    main {
+    main #Sart{
         width: 100%;
     }
 
