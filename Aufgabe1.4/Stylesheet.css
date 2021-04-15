@@ -107,8 +107,8 @@ font-family: sans-serif;
         object-fit:cover;
     }
 
-    video > #vi {
-        width:50%
+    video  #vi {
+        width:600px;
     }
 
     #vie {
@@ -284,13 +284,13 @@ th {
 }
 
 #vi {
-    width: 800px;
+    min-width: 800px;
     height: 35rem;
     object-fit: cover;
 }
 
 #vie {
-    width: 800px;
+    min-width: 800px;
     height:35rem;
     object-fit: cover;
 }
