@@ -63,7 +63,8 @@ a{
 
     #Start  {
         margin-top: 7rem;
-        width: 600px;     
+        width: 600px; 
+        font-size: 4rem;    
     }
 
     #list {
@@ -75,7 +76,7 @@ a{
     }
 
     main {
-        width: 600px;
+        width: 100%;
     }
 
 
