@@ -114,9 +114,8 @@ font-family: sans-serif;
     }
 
     .Anordnung {
-        align-items: center;
-        float: center;
-        display: block;
+       width: 100%;
+
     }
 
 }
