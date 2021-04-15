@@ -118,6 +118,32 @@ font-family: sans-serif;
 
     }
 
+
+    #Bild { 
+        width: 100px;
+        height: 10rem;
+        object-fit: fill;
+
+    }
+
+    #Bildp {
+
+        width: 100px;
+        height: 10rem;
+        object-fit: fill;
+
+
+    }
+
+    #Bildm{
+
+        width: 100px;
+        height: 10rem;
+        object-fit: fill;
+
+
+    }
+
 }
 
 body{
