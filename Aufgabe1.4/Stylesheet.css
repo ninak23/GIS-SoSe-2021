@@ -130,11 +130,11 @@ table th, td {
     }
 
     #vi {
-        width:auto;
+        width:100%;
     }
 
     #vie {
-        width: fit-content;
+        width: 100%;
     }
     
 
