@@ -1,5 +1,4 @@
 /* Alle Seite*/
-
 /* 6 verschiedene kombinierte Selektoren, 
 -Desktop (> 1024px), Tablet (600 - 1024px) und Mobil (< 600px)
 -in der kleinsten Ansicht komplete Bildschirmbreite einehmen 
@@ -44,12 +43,12 @@ a{
     color:rgb(2, 109, 109);
 }
 
-a:hover {
+ a:hover {
     background-color: grey;
     color:black;
 }
 
-a:focus {
+  a:focus {
     color:black;
 }
 
@@ -57,8 +56,19 @@ a:focus {
     background-color: cadetblue;
 }
 
+@media only screen and (max-width: 600px){
+    body {
+        width: 100%;
+    }
 
+    #list {
+        width: 100%;
+    }
 
+    header {
+        width: 100%;
+    }
+}
 
 
 /* Überschriften*/
@@ -79,16 +89,17 @@ font-family: sans-serif;
 }
 
 @media only screen and (max-width: 600px){
-    body {
-        width: 100%;
+
+    table {
+      width:100%;
     }
 
-    #list {
-        width: 100%;
+    #vi {
+        width:5%;
     }
 
-    header {
-        width: 100%;
+    #vie {
+        width: 25%;
     }
 
 }
@@ -128,24 +139,6 @@ ol {
 
 table th, td {
     border: 5px solid #a0a0a0;
-}
-
-
-@media only screen and (max-width: 600px){
-
-    table {
-      width:100%;
-    }
-
-    #vi {
-        width:5%;
-    }
-
-    #vie {
-        width: 25%;
-    }
-    
-
 }
 
 table {
@@ -242,6 +235,12 @@ th {
     object-fit: cover;
 }
 
+#vie {
+    width: 800px;
+    height:35rem;
+    object-fit: cover;
+}
+
 /* 2. Seite */
 
 #Übermich{
@@ -260,11 +259,7 @@ th {
     object-fit: fill;
 }
 
-#vie {
-    width: 800px;
-    height:35rem;
-    object-fit: cover;
-}
+
 
 
 
