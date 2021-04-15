@@ -104,11 +104,12 @@ font-family: sans-serif;
     #vi {
         width: 600px;
         height:100%;
-        object-fit:cover;
+        object-fit:none;
     }
 
     video  #vi {
         width:600px;
+
     }
 
     #vie {
