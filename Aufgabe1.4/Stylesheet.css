@@ -74,6 +74,10 @@ a{
         width: 100%;
     }
 
+    main {
+        width: 600px;
+    }
+
 
 }
 
@@ -109,6 +113,7 @@ font-family: sans-serif;
 
     video  #vi {
         width:600px;
+        object-fit:none;
 
     }
 
