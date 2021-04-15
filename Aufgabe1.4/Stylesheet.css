@@ -122,7 +122,7 @@ font-family: sans-serif;
 
     }
 
-    .Anordnung {
+    div > .Anordnung {
     justify-content: left;
     align-items: left;
     width: 600px;
@@ -132,7 +132,7 @@ font-family: sans-serif;
 
     #Bild { 
         width: 100px;
-        height: 5rem;
+        height: 100px;
         object-fit: none;
 
     }
@@ -140,7 +140,7 @@ font-family: sans-serif;
     #Bildp {
 
         width: 100px;
-        height: 5rem;
+        height: 100px;
         object-fit: none;
 
 
@@ -149,7 +149,7 @@ font-family: sans-serif;
     #Bildm{
 
         width: 100px;
-        height: 5rem;
+        height: 100px;
         object-fit: none;
 
 
