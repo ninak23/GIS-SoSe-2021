@@ -127,7 +127,7 @@ font-family: sans-serif;
 
 
     #Bild { 
-        width: 10%;
+        width: 200px;
         height: 10rem;
         object-fit: fill;
 
@@ -135,7 +135,7 @@ font-family: sans-serif;
 
     #Bildp {
 
-        width: 10%;
+        width: 200px;
         height: 10rem;
         object-fit: fill;
 
@@ -144,7 +144,7 @@ font-family: sans-serif;
 
     #Bildm{
 
-        width: 10%;
+        width: 200px;
         height: 10rem;
         object-fit: fill;
 
