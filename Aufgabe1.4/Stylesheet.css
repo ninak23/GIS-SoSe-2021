@@ -123,9 +123,9 @@ font-family: sans-serif;
     }
 
     .Anordnung {
-    justify-content: right;
-    align-items: right;
-    width: 599px;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
 
     }
 
