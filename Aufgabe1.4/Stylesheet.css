@@ -113,10 +113,17 @@ font-family: sans-serif;
         object-fit: cover;
     }
 
-    /*.Anordnung > #Bild #Bildp #Bildm  {
+    .Anordnung > #Bild #Bildp #Bildm  {
        width: 10%;
 
-    }*/
+    }
+
+    .Anordnung {
+    justify-content: right;
+    align-items: right;
+    width: 390px;
+
+    }
 
 
     #Bild { 
