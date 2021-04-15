@@ -63,7 +63,7 @@ a{
 
     #Start  {
         margin-top: 7rem;
-        width: 100%;
+        width: 80%;     
     }
 
     #list {
@@ -131,7 +131,7 @@ font-family: sans-serif;
 
 
     #Bild { 
-        width: 200px;
+        width: 100px;
         height: 10rem;
         object-fit: fill;
 
@@ -139,7 +139,7 @@ font-family: sans-serif;
 
     #Bildp {
 
-        width: 200px;
+        width: 100px;
         height: 10rem;
         object-fit: fill;
 
@@ -148,7 +148,7 @@ font-family: sans-serif;
 
     #Bildm{
 
-        width: 200px;
+        width: 100px;
         height: 10rem;
         object-fit: fill;
 
