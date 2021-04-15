@@ -64,7 +64,8 @@ a{
     #Start  {
         margin-top: 7rem;
         width: 100%; 
-        font-size: 2rem;    
+        font-size: 2rem;
+       
     }
 
     #list {
@@ -75,7 +76,7 @@ a{
         width: 100%;
     }
 
-    main #Sart{
+    main {
         width: 100%;
     }
 
@@ -107,21 +108,15 @@ font-family: sans-serif;
     }
 
     #vi {
-        width: 100%;
-        height:100%;
-        object-fit:none;
-    }
 
-    video  #vi {
-        width:100%;
+        min-width: 8%;
         object-fit:none;
-
     }
 
     #vie {
-        width: 100%;
+        min-width: 8%;
         height: 100%;
-        object-fit: cover;
+        object-fit: auto;
     }
 
     .Anordnung > #Bild #Bildp #Bildm  {
@@ -136,6 +131,8 @@ font-family: sans-serif;
     height: 11rem;
 
     }
+
+
 
 
     #Bild { 
@@ -159,6 +156,10 @@ font-family: sans-serif;
         width: 100px;
         height: 100px;
         object-fit: none;
+    }
+
+    .content {
+        width: 100%;
     }
 }
 
