@@ -12,7 +12,7 @@ ggf. Burger-Menu
 #list {
     position: sticky;
     top: 0;
-    width: 94%;
+    width: 95%;
     height: 2em;
     background-color: silver;
     z-index: 1000; 
@@ -88,73 +88,6 @@ a:focus {
     background-color: cadetblue;
 }
 
-
-/*@media only screen and (min-width: 1024px){
-
-    #Start  {
-        width: 100%; 
-        font-size: 7rem;
-       
-    }
-
-    header {
-        width: 24.5rem;
-    }
-
-    main {
-        width: 100%;
-    }
-    
-    table {
-      width:100%;
-    }
-
-    #vi {
-        width: 100%;
-        object-fit:cover;
-    }
-
-    #vie {
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .Anordnung > #Bild #Bildp #Bildm  {
-       width: 15%;
-    }
-
-    div > .Anordnung {
-    justify-content: left;
-    align-items: left;
-    width: 1028px;
-    height: auto;
-    }
-
-    #Bild { 
-        width: 1028px;
-        height: 100%;
-        object-fit: fill;
-    }
-
-    #Bildp {
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-    }
-
-    #Bildm{
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-    }
-
-    .content {
-        width: 100%;
-    }
-}
-*/
-
-
 /* Überschriften*/
 
 h2{
@@ -176,7 +109,7 @@ body{
     background: url(Medien/bg.png);
     text-align: center;
     font-family:sans-serif;
-    max-width: 800px;
+    max-width: 1024px;
     /*width: 800px;*/
     margin:auto;
     
@@ -281,19 +214,19 @@ tr:hover {background-color:lightblue ;}
 }
 
 #Bild {
-    max-width: 266px;
-    height: 22rem;
+    max-width: 300px;
+    height: 30rem;
     object-fit: fill;
 }
 #Bildp {
-    max-width: 266px;
-    height: 22rem;
+    max-width: 300px;
+    height: 30rem;
     object-fit: fill;
 
 }
 #Bildm{
-    max-width: 266px;
-    height: 22rem;
+    max-width: 300px;
+    height: 30rem;
     object-fit: fill;
 }
 
@@ -305,7 +238,7 @@ tr:hover {background-color:lightblue ;}
 
 #v{
     height:30rem;
-    width: 800px;
+    width: 1024px;
     object-fit: cover;
 
 }
@@ -318,7 +251,7 @@ tr:hover {background-color:lightblue ;}
 
 #vid{
     height:30rem;
-    width: 800px;
+    width: 1024px;
     object-fit: cover;
 }
 
@@ -372,6 +305,139 @@ input[type=text], select, textarea {
 }
 
 /*verschiedene Bildschirmgrößen*/
+@media only screen and (min-width: 1024px){
+
+    body {
+        width:100%;
+    }
+
+    #Start  {
+        width: 100%; 
+        font-size: 6rem;
+       
+    }
+    
+    table {
+      width:100%;
+    }
+
+    #vi {
+        width: 100%;
+        object-fit:cover;
+    }
+
+    #vie {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .Anordnung > #Bild #Bildp #Bildm  {
+       width: 15%;
+    }
+
+    div > .Anordnung {
+    justify-content: left;
+    align-items: left;
+    width: 1028px;
+    height: auto;
+    }
+
+    #Bild { 
+        width:310px;
+        height: 300px;
+        object-fit: fill;
+    }
+
+    #Bildp {
+        width: 310px;
+        height: 300px;
+        object-fit: fill;
+    }
+
+    #Bildm{
+        width: 310px;
+        height: 300px;
+        object-fit: fill;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    body {
+        width: 100%;
+    }
+
+    #Start  {
+        margin-top: 1rem;
+        width: 100%; 
+        font-size: 6rem;
+    }
+
+    #list {
+        width: 93.5%;
+        height: 5em;
+        background-color: silver;
+    }
+
+    
+
+    main {
+        width: 100%;
+    }
+    #list div {
+        display:list-item;
+        width: auto;
+        height: 2em;
+        align-items: center;
+        float:left;
+    }
+
+    table {
+      width:100%;
+    }
+
+    #v{
+        width: 100%;
+        object-fit:cover;
+        height: 20rem;
+    }
+
+    #vid {
+        width: 100%;
+        object-fit: cover;
+        height: 20rem;
+    }
+
+    .Anordnung > #Bild #Bildp #Bildm  {
+       width: 15%;
+
+    }
+
+    div > .Anordnung {
+    justify-content: left;
+    align-items: left;
+    width: 600px;
+    height: 11rem;
+
+    }
+    #Bild { 
+        width: 200px;
+        height: 200px;
+        object-fit: fill;
+    }
+
+    #Bildp {
+        width: 200px;
+        height: 200px;
+        object-fit: fill;
+    }
+
+    #Bildm{
+        width: 200px;
+        height: 200px;
+        object-fit: fill;
+    }
+ 
+}
 
 @media only screen and (max-width: 600px){
 
@@ -380,7 +446,7 @@ input[type=text], select, textarea {
     }
 
     #Start  {
-        margin-top: 7rem;
+        margin-top: 3rem;
         width: 100%; 
         font-size: 5rem;
     }
@@ -455,3 +521,27 @@ input[type=text], select, textarea {
         object-fit: fill;
     }
 }
+@media only screen and (max-width: 365px){
+
+    #list {
+        width: 90%;
+        height: 14em;
+        background-color: silver;
+    }
+    #Start  {
+        font-size: 4rem;
+        margin-top: 2rem;
+    }
+}
+
+
+
+ 
+   
+
+
+
+
+
+
+
