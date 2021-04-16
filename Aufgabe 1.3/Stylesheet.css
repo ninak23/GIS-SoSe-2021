@@ -1,6 +1,36 @@
 /* Alle Seite*/
 
- #list  {
+#list {
+    position: sticky;
+    top: 0;
+    width: 94%;
+    height: 2em;
+    background-color: silver;
+    z-index: 1000;
+    
+}
+
+
+
+nav {
+    display: block;
+}
+
+#list div {
+    /*position:absolute;*/
+    right:0px;
+    background-color:gray;
+    padding: 5px;
+    margin: 10px;
+    text-align:center;
+    z-index: 1000;
+    height: 100px;
+}
+
+
+
+
+ /*#list  {
     list-style-type: none;
     margin: 10px;
     padding: 0;
@@ -9,17 +39,40 @@
     position: fixed;
     text-align: center;
     top:0;   
-}
+}*/
 
-#list a{
-    float:left;
-    
-}
+
 header {
     float:right;
     width: 390px;
 }
 
+
+#list div {
+    color:rgb(2, 109, 109);
+    font-size: 1.1rem;
+    font-family: sans-serif;
+}
+
+#list div {
+    display:inline;
+    padding: 10px 14px;
+    text-decoration: none;
+    color:rgb(2, 109, 109);
+}
+
+ div:hover {
+    background-color: grey;
+    color:black;
+}
+
+  div:focus {
+    color:black;
+}
+
+ #list #current {
+    background-color: cadetblue;
+}
 
 a{
     color:rgb(2, 109, 109);
@@ -27,7 +80,7 @@ a{
     font-family: sans-serif;
 }
 
-a{
+ a{
     display:inline;
     padding: 10px 14px;
     text-decoration: none;
@@ -46,8 +99,6 @@ a{
 #current{
     background-color: cadetblue;
 }
-
-
 
 
 
@@ -77,6 +128,7 @@ body{
     max-width: 800px;
     width: 800px;
     margin:auto;
+    padding-top: 100px;
     
 }
 nav {
@@ -209,6 +261,7 @@ th {
     width: 800px;
     height: 35rem;
     object-fit: cover;
+    z-index: -1000;
 }
 
 #vie {
