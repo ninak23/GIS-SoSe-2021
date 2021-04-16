@@ -6,18 +6,16 @@
     width: 94%;
     height: 2em;
     background-color: silver;
-    z-index: 1000;
+    z-index: 1000; 
+    text-align: center;
     
 }
-
-
 
 nav {
     display: block;
 }
 
 #list div {
-    /*position:absolute;*/
     right:0px;
     background-color:gray;
     padding: 5px;
@@ -25,28 +23,9 @@ nav {
     text-align:center;
     z-index: 1000;
     height: 100px;
-}
-
-
-
-
- /*#list  {
-    list-style-type: none;
-    margin: 10px;
-    padding: 0;
     overflow: hidden;
-    background-color: silver;
-    position: fixed;
-    text-align: center;
-    top:0;   
-}*/
-
-
-header {
-    float:right;
-    width: 390px;
+   
 }
-
 
 #list div {
     color:rgb(2, 109, 109);
@@ -61,16 +40,16 @@ header {
     color:rgb(2, 109, 109);
 }
 
- div:hover {
+div:hover {
     background-color: grey;
     color:black;
 }
 
-  div:focus {
+div:focus {
     color:black;
 }
 
- #list #current {
+#list #current {
     background-color: cadetblue;
 }
 
@@ -80,19 +59,19 @@ a{
     font-family: sans-serif;
 }
 
- a{
+a{
     display:inline;
     padding: 10px 14px;
     text-decoration: none;
     color:rgb(2, 109, 109);
 }
 
- a:hover {
+a:hover {
     background-color: grey;
     color:black;
 }
 
-  a:focus {
+a:focus {
     color:black;
 }
 
@@ -128,7 +107,7 @@ body{
     max-width: 800px;
     width: 800px;
     margin:auto;
-    padding-top: 100px;
+    padding-top: 0px;
     
 }
 nav {
@@ -264,9 +243,22 @@ th {
     z-index: -1000;
 }
 
+#v{
+    height:30rem;
+    width: 800px;
+    object-fit: cover;
+
+}
+
 #vie {
     width: 800px;
     height:35rem;
+    object-fit: cover;
+}
+
+#vid{
+    height:30rem;
+    width: 800px;
     object-fit: cover;
 }
 
@@ -321,4 +313,90 @@ input[type=text], select, textarea {
     background-color: #f2f2f2;
     padding: 20px;
   }
-  
+
+
+@media only screen and (max-width: 600px){
+
+    
+    body {
+        width: 100%;
+    }
+
+    #Start  {
+        margin-top: 7rem;
+        width: 100%; 
+        font-size: 5rem;
+    }
+
+    #list {
+        width: 90%;
+        height: 9em;
+        background-color:silver; 
+    }
+
+    header {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 600px){
+
+    #list div {
+        display:list-item;
+        width: auto;
+        height: 2em;
+        align-items: center;
+        float:left;
+
+    }
+
+    table {
+      width:100%;
+    }
+
+    #v{
+        width: 100%;
+        object-fit:cover;
+        height: 20rem;
+
+    }
+
+    #vid {
+        width: 100%;
+        object-fit: cover;
+        height: 20rem;
+    }
+
+    .Anordnung > #Bild #Bildp #Bildm  {
+       width: 15%;
+
+    }
+
+    div > .Anordnung {
+    justify-content: left;
+    align-items: left;
+    width: 600px;
+    height: 11rem;
+
+    }
+    #Bild { 
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+
+    #Bildp {
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+
+    #Bildm{
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+}

@@ -9,26 +9,58 @@ ggf. Burger-Menu
 - 2 animationen/Transitions */
 
 
- #list  {
-    list-style-type: none;
-    margin: 10px;
-    padding: 0;
-    overflow: hidden;
+#list {
+    position: sticky;
+    top: 0;
+    width: 94%;
+    height: 2em;
     background-color: silver;
-    position: fixed;
+    z-index: 1000; 
     text-align: center;
-    top:0;   
-}
-
-#list a{
-    float:left;
     
 }
-header {
-    float:right;
-    width: 390px;
+
+nav {
+    display: block;
 }
 
+#list div {
+    right:0px;
+    background-color:gray;
+    padding: 5px;
+    margin: 10px;
+    text-align:center;
+    z-index: 1000;
+    height: 100px;
+    overflow: hidden;
+   
+}
+
+#list div {
+    color:rgb(2, 109, 109);
+    font-size: 1.1rem;
+    font-family: sans-serif;
+}
+
+#list div {
+    display:inline;
+    padding: 10px 14px;
+    text-decoration: none;
+    color:rgb(2, 109, 109);
+}
+
+div:hover {
+    background-color: grey;
+    color:black;
+}
+
+div:focus {
+    color:black;
+}
+
+#list #current {
+    background-color: cadetblue;
+}
 
 a{
     color:rgb(2, 109, 109);
@@ -43,12 +75,12 @@ a{
     color:rgb(2, 109, 109);
 }
 
- a:hover {
+a:hover {
     background-color: grey;
     color:black;
 }
 
-  a:focus {
+a:focus {
     color:black;
 }
 
@@ -56,7 +88,8 @@ a{
     background-color: cadetblue;
 }
 
-@media only screen and (min-width: 1024px){
+
+/*@media only screen and (min-width: 1024px){
 
     #Start  {
         width: 100%; 
@@ -88,7 +121,6 @@ a{
 
     .Anordnung > #Bild #Bildp #Bildm  {
        width: 15%;
-
     }
 
     div > .Anordnung {
@@ -102,18 +134,15 @@ a{
         width: 1028px;
         height: 100%;
         object-fit: fill;
-
     }
 
     #Bildp {
-
         width: 100%;
         height: 100%;
         object-fit: fill;
     }
 
     #Bildm{
-
         width: 100%;
         height: 100%;
         object-fit: fill;
@@ -121,37 +150,9 @@ a{
 
     .content {
         width: 100%;
-
     }
 }
-
-
-@media only screen and (max-width: 600px){
-    body {
-        width: 100%;
-    }
-
-    #Start  {
-        margin-top: 7rem;
-        width: 100%; 
-        font-size: 2rem;
-       
-    }
-
-    #list {
-        width: 100%;
-    }
-
-    header {
-        width: 100%;
-    }
-
-    main {
-        width: 100%;
-    }
-
-
-}
+*/
 
 
 /* Überschriften*/
@@ -169,69 +170,6 @@ h3{
 h4{
 font-size: 1.2rem;
 font-family: sans-serif;
-}
-
-@media only screen and (max-width: 600px){
-
-    table {
-      width:100%;
-    }
-
-    #v{
-
-        width: 100%;
-        object-fit:cover;
-
-    }
-
-    #vie {
-        min-width: 8%;
-        height: 100%;
-        object-fit: auto;
-    }
-
-    .Anordnung > #Bild #Bildp #Bildm  {
-       width: 15%;
-
-    }
-
-    div > .Anordnung {
-    justify-content: left;
-    align-items: left;
-    width: 600px;
-    height: 11rem;
-
-    }
-
-
-
-
-    #Bild { 
-        width: 100px;
-        height: 100px;
-        object-fit: none;
-
-    }
-
-    #Bildp {
-
-        width: 100px;
-        height: 100px;
-        object-fit: none;
-
-
-    }
-
-    #Bildm{
-
-        width: 100px;
-        height: 100px;
-        object-fit: none;
-    }
-
-    .content {
-        width: 100%;
-    }
 }
 
 body{
@@ -290,31 +228,31 @@ th {
 }
 
 
- th, td {
+th, td {
      font-weight: normal;
      text-align:center;
      padding: 0.8rem;
- }
+}
 
- tr:hover {background-color:lightblue ;}
+tr:hover {background-color:lightblue ;}
 
- .buttons{
+.buttons{
     font-weight: bold;
     font-size: 1.2rem;
-    }
+}
 
 
-    .button {
-     background-color: cadetblue;
-     border: none;
-     color:white;
-     padding: 15px 32px;
-     text-align: center;
-     text-decoration: none;
-     display: inline-block;
-     font-size: 16px;
-     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    }
+.button {
+    background-color: cadetblue;
+    border: none;
+    color:white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
  
 
 
@@ -365,11 +303,25 @@ th {
     object-fit: cover;
 }
 
+#v{
+    height:30rem;
+    width: 800px;
+    object-fit: cover;
+
+}
+
 #vie {
     min-width: 800px;
     height:35rem;
     object-fit: cover;
 }
+
+#vid{
+    height:30rem;
+    width: 800px;
+    object-fit: cover;
+}
+
 
 /* 2. Seite */
 
@@ -390,9 +342,6 @@ th {
 }
 
 
-
-
-
 /* 3. Seite */
 
 #Kontakt {
@@ -404,7 +353,6 @@ th {
     text-align: none;
 }
 
-
 input[type=text], select, textarea {
     width: 100%; 
     padding: 12px; 
@@ -414,12 +362,96 @@ input[type=text], select, textarea {
     margin-top: 6px; 
     margin-bottom: 16px; 
     resize: vertical; 
-  }
+}
   
   
 .container {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-  }
-  
+}
+
+/*verschiedene Bildschirmgrößen*/
+
+@media only screen and (max-width: 600px){
+
+    body {
+        width: 100%;
+    }
+
+    #Start  {
+        margin-top: 7rem;
+        width: 100%; 
+        font-size: 5rem;
+    }
+
+    #list {
+        width: 90%;
+        height: 9em;
+        background-color: silver;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 600px){
+
+    #list div {
+        display:list-item;
+        width: auto;
+        height: 2em;
+        align-items: center;
+        float:left;
+    }
+
+    table {
+      width:100%;
+    }
+
+    #v{
+        width: 100%;
+        object-fit:cover;
+        height: 20rem;
+    }
+
+    #vid {
+        width: 100%;
+        object-fit: cover;
+        height: 20rem;
+    }
+
+    .Anordnung > #Bild #Bildp #Bildm  {
+       width: 15%;
+
+    }
+
+    div > .Anordnung {
+    justify-content: left;
+    align-items: left;
+    width: 600px;
+    height: 11rem;
+
+    }
+    #Bild { 
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+
+    #Bildp {
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+
+    #Bildm{
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+}
