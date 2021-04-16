@@ -215,18 +215,18 @@ tr:hover {background-color:lightblue ;}
 
 #Bild {
     max-width: 300px;
-    height: 30rem;
+    height: 20rem;
     object-fit: fill;
 }
 #Bildp {
     max-width: 300px;
-    height: 30rem;
+    height: 20rem;
     object-fit: fill;
 
 }
 #Bildm{
     max-width: 300px;
-    height: 30rem;
+    height: 20rem;
     object-fit: fill;
 }
 
@@ -360,6 +360,24 @@ input[type=text], select, textarea {
         object-fit: fill;
     }
 }
+@media only screen and (max-width: 1024px){
+    body {
+        width: 100%;
+    }
+    #v{
+        width: 100%;
+        object-fit:cover;
+        height: 30rem;
+    }
+
+    #vid {
+        width: 100%;
+        object-fit: cover;
+        height: 30rem;
+    }
+
+
+}
 
 @media only screen and (max-width: 800px){
     body {
@@ -374,7 +392,7 @@ input[type=text], select, textarea {
 
     #list {
         width: 93.5%;
-        height: 5em;
+        height: 4em;
         background-color: silver;
     }
 
@@ -386,7 +404,7 @@ input[type=text], select, textarea {
     #list div {
         display:list-item;
         width: auto;
-        height: 2em;
+        height: 1em;
         align-items: center;
         float:left;
     }
@@ -453,7 +471,7 @@ input[type=text], select, textarea {
 
     #list {
         width: 90%;
-        height: 9em;
+        height: 6em;
         background-color: silver;
     }
 
@@ -470,7 +488,7 @@ input[type=text], select, textarea {
     #list div {
         display:list-item;
         width: auto;
-        height: 2em;
+        height: 1em;
         align-items: center;
         float:left;
     }
@@ -525,13 +543,38 @@ input[type=text], select, textarea {
 
     #list {
         width: 90%;
-        height: 14em;
+        height: 5em;
         background-color: silver;
     }
     #Start  {
         font-size: 4rem;
         margin-top: 2rem;
     }
+    #list div {
+        right:0px;
+        background-color:gray;
+        padding: 5px;
+        margin: 10px;
+        text-align:center;
+        z-index: 1000;
+        height: 20px;
+        overflow: hidden;
+       
+    }
+    
+    #list div {
+        color:rgb(2, 109, 109);
+        font-size: 1.1rem;
+        font-family: sans-serif;
+    }
+    
+    #list div {
+        display:inline;
+        padding: 0px 0px;
+        text-decoration: none;
+        color:rgb(2, 109, 109);
+    }
+    
 }
 
 
