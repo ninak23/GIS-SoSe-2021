@@ -93,6 +93,17 @@ a:focus {
 h2{
     font-size: 2rem;
     font-family: sans-serif;
+    animation-name: changecolor;
+    animation-duration: 8s;
+}
+
+@keyframes changecolor {
+    0% {color:black;}
+    25% {color:rgb(2, 109, 109);}
+    50% {color:skyblue;}
+    100% {color:darkslategray;}
+    /*from {color:rgb(2, 109, 109);}
+    to {color: skyblue;}*/
 }
 
 h3{
@@ -199,6 +210,10 @@ tr:hover {background-color:lightblue ;}
     font-weight: bold;
     text-shadow:cadetblue 10px 10px 10px ;
     text-align: left;
+}
+
+#Start {
+    transition: all 2s ease-in-out 0s;
 }
 
 #center {
@@ -575,6 +590,32 @@ input[type=text], select, textarea {
         color:rgb(2, 109, 109);
     }
     
+}
+
+.Anordnung {
+
+display: flex;
+flex-wrap: wrap;
+font-size: 30px;
+text-align: center;
+}
+
+
+@media only screen and (max-width: 243px){
+
+#list{
+    height: 9em;
+}
+#Start{
+    font-size: 3em;
+}
+table{
+    width: 50%;
+   
+   
+
+}
+ 
 }
 
 
