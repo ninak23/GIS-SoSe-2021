@@ -307,17 +307,6 @@ input[type=text], select, textarea {
         object-fit: cover;
     }
 
-    .Anordnung > #Bild #Bildp #Bildm  {
-        width: 15%;
-    }
-
-    div > .Anordnung {
-        justify-content: left;
-        align-items: left;
-        width: 1028px;
-        height: auto;
-    }
-
     #Bild { 
         width:310px;
         height: 300px;
@@ -336,6 +325,7 @@ input[type=text], select, textarea {
         object-fit: fill;
     }
 }
+
 @media only screen and (max-width: 1024px){
     body {
         width: 100%;
@@ -355,8 +345,6 @@ input[type=text], select, textarea {
     table {
         width: 100%;
     }
-
-
 }
 
 @media only screen and (max-width: 800px){
@@ -404,17 +392,6 @@ input[type=text], select, textarea {
         height: 20rem;
     }
 
-    .Anordnung > #Bild #Bildp #Bildm  {
-        width: 15%;
-
-    }
-
-    div > .Anordnung {
-        justify-content: left;
-        align-items: left;
-        width: 600px;
-        height: 11rem;
-    }
     #Bild { 
         width: 200px;
         height: 200px;
@@ -459,8 +436,6 @@ input[type=text], select, textarea {
     main {
         width: 100%;
     }
-}
-@media only screen and (max-width: 600px){
 
     #list div {
         display:list-item;
@@ -486,17 +461,6 @@ input[type=text], select, textarea {
         height: 20rem;
     }
 
-    .Anordnung > #Bild #Bildp #Bildm  {
-       width: 15%;
-    }
-
-    div > .Anordnung {
-    justify-content: left;
-    align-items: left;
-    width: 600px;
-    height: 11rem;
-
-    }
     #Bild { 
         width: 100px;
         height: 100px;
