@@ -1,13 +1,4 @@
 /* Alle Seite*/
-/* 6 verschiedene kombinierte Selektoren, 
--Desktop (> 1024px), Tablet (600 - 1024px) und Mobil (< 600px)
--in der kleinsten Ansicht komplete Bildschirmbreite einehmen 
--2 Media-Queries 
--Flussverhalten - Flexible Box (flexbox) oder Grid Layout
--Hauptmenü und Header allgemein auf allen Bildschirmen verwendbar sind
-ggf. Burger-Menu
-- 2 animationen/Transitions */
-
 
 #list {
     position: sticky;
@@ -16,8 +7,7 @@ ggf. Burger-Menu
     height: 2em;
     background-color: silver;
     z-index: 1000; 
-    text-align: center;
-    
+    text-align: center;  
 }
 
 nav {
@@ -32,8 +22,7 @@ nav {
     text-align:center;
     z-index: 1000;
     height: 100px;
-    overflow: hidden;
-   
+    overflow: hidden; 
 }
 
 #list div {
@@ -102,8 +91,6 @@ h2{
     25% {color:rgb(2, 109, 109);}
     50% {color:skyblue;}
     100% {color:darkslategray;}
-    /*from {color:rgb(2, 109, 109);}
-    to {color: skyblue;}*/
 }
 
 h3{
@@ -112,8 +99,8 @@ h3{
 }
 
 h4{
-font-size: 1.2rem;
-font-family: sans-serif;
+    font-size: 1.2rem;
+    font-family: sans-serif;
 }
 
 body{
@@ -121,7 +108,6 @@ body{
     text-align: center;
     font-family:sans-serif;
     max-width: 1024px;
-    /*width: 800px;*/
     margin:auto;
     
 }
@@ -133,7 +119,6 @@ nav {
     padding: 15px;
     border-image: url(border.png) 30 round;
 }
-
 
 p{
     text-align: center;
@@ -161,7 +146,6 @@ table {
     border-width: thin 0 0 thin;
     table-layout:auto;
     max-width: 100%;
-    width: 100%;
     color:cadetblue;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -171,11 +155,10 @@ th {
     background-color:lightgray ;
 }
 
-
 th, td {
-     font-weight: normal;
-     text-align:center;
-     padding: 0.8rem;
+    font-weight: normal;
+    text-align:center;
+    padding: 0.8rem;
 }
 
 tr:hover {background-color:lightblue ;}
@@ -184,7 +167,6 @@ tr:hover {background-color:lightblue ;}
     font-weight: bold;
     font-size: 1.2rem;
 }
-
 
 .button {
     background-color: cadetblue;
@@ -198,8 +180,6 @@ tr:hover {background-color:lightblue ;}
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
  
-
-
 /* 1. Seite */
 
 #Start {
@@ -245,22 +225,9 @@ tr:hover {background-color:lightblue ;}
     object-fit: fill;
 }
 
-#vi {
-    min-width: 800px;
-    height: 35rem;
-    object-fit: cover;
-}
-
 #v{
     height:30rem;
     width: 1024px;
-    object-fit: cover;
-
-}
-
-#vie {
-    min-width: 800px;
-    height:35rem;
     object-fit: cover;
 }
 
@@ -269,7 +236,6 @@ tr:hover {background-color:lightblue ;}
     width: 1024px;
     object-fit: cover;
 }
-
 
 /* 2. Seite */
 
@@ -283,12 +249,8 @@ tr:hover {background-color:lightblue ;}
 }
 
 #ich {
-    /*border-radius: 50%;*/
-    /*width:60rem;
-    height: 40rem;*/
     object-fit: fill;
 }
-
 
 /* 3. Seite */
 
@@ -312,7 +274,6 @@ input[type=text], select, textarea {
     resize: vertical; 
 }
   
-  
 .container {
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -333,7 +294,7 @@ input[type=text], select, textarea {
     }
     
     table {
-      width:100%;
+        width:100%;
     }
 
     #vi {
@@ -347,14 +308,14 @@ input[type=text], select, textarea {
     }
 
     .Anordnung > #Bild #Bildp #Bildm  {
-       width: 15%;
+        width: 15%;
     }
 
     div > .Anordnung {
-    justify-content: left;
-    align-items: left;
-    width: 1028px;
-    height: auto;
+        justify-content: left;
+        align-items: left;
+        width: 1028px;
+        height: auto;
     }
 
     #Bild { 
@@ -391,6 +352,10 @@ input[type=text], select, textarea {
         height: 30rem;
     }
 
+    table {
+        width: 100%;
+    }
+
 
 }
 
@@ -411,11 +376,10 @@ input[type=text], select, textarea {
         background-color: silver;
     }
 
-    
-
     main {
         width: 100%;
     }
+
     #list div {
         display:list-item;
         width: auto;
@@ -425,10 +389,10 @@ input[type=text], select, textarea {
     }
 
     table {
-      width:100%;
+        width:100%;
     }
 
-    #v{
+    #v {
         width: 100%;
         object-fit:cover;
         height: 20rem;
@@ -441,16 +405,15 @@ input[type=text], select, textarea {
     }
 
     .Anordnung > #Bild #Bildp #Bildm  {
-       width: 15%;
+        width: 15%;
 
     }
 
     div > .Anordnung {
-    justify-content: left;
-    align-items: left;
-    width: 600px;
-    height: 11rem;
-
+        justify-content: left;
+        align-items: left;
+        width: 600px;
+        height: 11rem;
     }
     #Bild { 
         width: 200px;
@@ -469,7 +432,6 @@ input[type=text], select, textarea {
         height: 200px;
         object-fit: fill;
     }
- 
 }
 
 @media only screen and (max-width: 600px){
@@ -526,7 +488,6 @@ input[type=text], select, textarea {
 
     .Anordnung > #Bild #Bildp #Bildm  {
        width: 15%;
-
     }
 
     div > .Anordnung {
@@ -556,6 +517,10 @@ input[type=text], select, textarea {
 }
 @media only screen and (max-width: 365px){
 
+    body {
+        width: 100%;
+    }
+
     #list {
         width: 90%;
         height: 5em;
@@ -573,49 +538,62 @@ input[type=text], select, textarea {
         text-align:center;
         z-index: 1000;
         height: 20px;
-        overflow: hidden;
-       
+        overflow: hidden;  
     }
-    
     #list div {
         color:rgb(2, 109, 109);
         font-size: 1.1rem;
         font-family: sans-serif;
     }
-    
     #list div {
         display:inline;
         padding: 0px 0px;
         text-decoration: none;
         color:rgb(2, 109, 109);
+    }  
+    #ich{
+        width: 200px;
+        height: 150px;
+        object-fit: fill;
     }
-    
+    #Bildk{
+        width: 180px;
+        height: 300px;
+        object-fit: fill;
+    }
+    table {
+        width: 100%;
+    }
+
+    table th, td {
+        width: 100%; 
+        font-size: xx-small;
+    }
 }
 
 .Anordnung {
-
-display: flex;
-flex-wrap: wrap;
-font-size: 30px;
-text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
 }
-
 
 @media only screen and (max-width: 243px){
-
-#list{
-    height: 9em;
-}
-#Start{
-    font-size: 3em;
-}
-table{
-    width: 50%;
-   
-   
-
-}
- 
+    #list{
+        height: 9em;
+    }
+    #Start{
+        font-size: 3em;
+    }
+    #Übermich {
+        font-size: 2em;
+    }
+    #Kontakt { 
+        font-size: 2em;
+    }
+    table{
+        width: 50%;
+    }
 }
 
 
