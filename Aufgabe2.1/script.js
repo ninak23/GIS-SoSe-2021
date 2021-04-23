@@ -1,6 +1,6 @@
 "use strict";
-function a1() {
-    let x = "Alles";
+/**function a1(): void {
+    let x: string = "Alles";
     debugger;
     console.log(x);
     func4();
@@ -11,20 +11,26 @@ function a1() {
     func2();
     func3();
 }
+
 a1();
-function func1() {
+
+function func1(): void {
     console.log("Klar?");
 }
+
 /** Weitere Funktionen Aufgabe 1 c) */
-function func2() {
+/**function func2(): void {
     console.log("Freut mich!");
 }
-function func3() {
+
+function func3(): void {
     console.log("Mich auch!");
 }
-function func4() {
+
+function func4(): void {
     console.log("Gute!");
 }
+
 /** Aufgabe 1 a
  * Kommentar:
  * In der Konsole wird ausgegeben:
@@ -58,14 +64,17 @@ function func4() {
  * Mich auch!
 */
 /**Aufgabe 2 */
-function a2() {
-    let i = 9;
+/**function a2(): void {
+    let i: number = 9;
+
     do {
         console.log(i);
         i = i - 1;
-    } while (i > 0);
+    } while ( i > 0);
 }
+
 a2();
+
 /**Was wird auf der Konsole ausgegeben? Wann verändert sich was?
  *
  * Ausgabe der Konsole:
@@ -95,16 +104,19 @@ a2();
 */
 /** Aufgabe 3 - Fehler einbauen in A1 und A2*/
 /** a1 zu b1 umgeändert und func1 zu fun1 */
-function b1() {
-    let y = "peace";
+/**function b1(): void {
+    let y: string = "peace";
     console.log(y);
     fun1();
     console.log("Logo!");
 }
+
 b1();
-function fun1() {
+
+function fun1(): void {
     console.log("Klar?");
 }
+
 /** Ja in Probleme wird genau angezeigt, was falsch ist zum beispiel, dass die aufgerufene variable
  * nicht vorhanden ist, oder das x zwar deklariert ist, aber nie gelesen wird. Außerdem
  * werden die Fehler unterkringelt und bei den Problemmeldungen wird auch angegeben in welcher
@@ -210,15 +222,13 @@ while (i <= 100) {
     result += i;
     ++i;
 }
-console.log(i);
+console.log(result);
 /** d) Nutzen Sie eine for Schleife um 10 zufällige Zahlen zwischen 0 und 100
  * auf der Konsole auszugeben. Nutzen Sie dafür Math.random*/
 let o = 0;
-let count = 10;
-while (count <= 10) {
-    for (o = 0; o <= 100; o++) {
-        console.log(Math.random());
-    }
+let count = 1;
+for (o = 0; o <= 100; o + 10) {
+    console.log(Math.random());
 }
 /**e) Schreiben Sie eine Funktion factorial welche eine Zahl n entgegen nimmt und
  * als Rückgabewert die Fakultät (1*2*3*...*n) dieser Zahl zurück gibt.

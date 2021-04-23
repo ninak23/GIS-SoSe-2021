@@ -1,5 +1,5 @@
 
-function a1(): void {
+/**function a1(): void {
     let x: string = "Alles";
     debugger;
     console.log(x); 
@@ -21,7 +21,7 @@ function func1(): void {
 /** Weitere Funktionen Aufgabe 1 c) */
 
 
-function func2(): void {
+/**function func2(): void {
     console.log("Freut mich!");
 }
 
@@ -71,7 +71,7 @@ function func4(): void {
  
 /**Aufgabe 2 */
 
-function a2(): void {
+/**function a2(): void {
     let i: number = 9;
 
     do {
@@ -112,7 +112,7 @@ a2();
 /** Aufgabe 3 - Fehler einbauen in A1 und A2*/
 /** a1 zu b1 umgeändert und func1 zu fun1 */
 
-function b1(): void {
+/**function b1(): void {
     let y: string = "peace";
     console.log(y);
     fun1();
@@ -252,17 +252,18 @@ while ( i <= 100) {
    ++i;
 }
 
-console.log(i);
+console.log(result);
 
 
  /** d) Nutzen Sie eine for Schleife um 10 zufällige Zahlen zwischen 0 und 100 
   * auf der Konsole auszugeben. Nutzen Sie dafür Math.random*/
 
 let o: number = 0;
-let count: number = 10;
+let count: number = 1;
 
 
-for (o = 0; o <= 100; o++) {
+
+for (o = 0; o <= 100; o + 10 ) {
     console.log(Math.random( ));
 
 }
