@@ -167,3 +167,120 @@ function funct2(): void {
 function funct3(): void {
       x = "Test";
     }
+
+/** In der Konsole erfolgt folgende Ausgabe:
+ * Hallo
+ * Bla
+ * Hallo
+ * Blubb
+ * Test
+ * 
+ * Warum ist das so? 
+ * zuerst wird eine variable x vom typ string mit Hallo initialisiert 
+ * dann wird die variable x ausgegeben, weswegen hallo in der Konsole erscheint
+ * anschließend wird die funct(x) aufgerufen, das bedeutet dass zuerst in der
+ * funktion die variable y mit dem Wert der variable x überschrieben wird, also
+ * also ist y = "Hallo". Anschließend wird y aber mit dem string "bla" überschrieben 
+ * und somit ist y="bla", als nächstes wird y ausgegeben und es erscheint 
+ * "bla" in der Konsole . 
+ * Nachdem die funtion eins aufgerufen wurde und vollständig durchlaufen ist, wird
+ * wieder einfach nur x in der Konsole ausgegeben. x ist immer noch mit dem Wort "Hallo"
+ * initialisiert, also erscheint "Hallo" bei der Ausgabe in der Konsole. 
+ * Dann wird die nächste Funktion aufgerufen aber diesmal die funct2, hier wird x
+ * aber nicht als übergabe Parameter mitvermittelt, sondern es wird einfach nur
+ * die Funktion aufgerufen. In der Funktion wird eine variable x vom typ String mit
+ * x="Blubb" initialisiert und anschließend in der Konsole ausgegeben, weswegen als nächstes 
+ * "Blubb" in der Ausgabe der Konsole erscheint. Die funtkion 2 wird somit komplett durchlaufen
+ * und es wird die dritte funktion funct3() aufgerufen, auch hier wieder ohne x als Übergabe-
+ * parameter. In dieser von funktion wird x einfach nur überschrieben mit x = "Test", mehr macht die
+ * die Funktion nicht. Zum schluss wird dann nochmal x in der Konsole ausgegeben, und es erscheint 
+ * "Test", denn x wird ja zum Schluss durch den aufruf der funct3 nochmals überschrieben und es erfolgt
+ * keine weitere Ausgabe mehr.
+ */
+
+/**Aufgabe 5 Schleifen, Funktionen, Kontrollstrukturen
+ * 
+ * a) Schreiben Sie eine Funktion multiply welche zwei Zahlen als Parameter entgegen nimmt und 
+ * als Rückgabewert das Ergebnis der Multiplikation der beiden Parameter liefert. 
+ * Testen Sie Ihre Funktion auf eine geeignete Weise.
+ */
+
+
+let r: number = 7;
+let y: number = 8;
+multiply();
+
+
+function multiply(): void {
+
+    let z: number = r * y;
+    console.log(z);
+}
+
+/** Als Ergebnis erscheint, beziehungsweise als Ausgabe in der Konsole wird 56 angezeigt*/
+
+/** b) Schreiben Sie eine Funktion max welche zwei Zahlen als Parameter entgegen nimmt 
+ * und die größere der beiden zurück gibt. Nutzen Sie dafür nicht Math.max sondern 
+ * schreiben Sie ihre eigene Implementation. Testen Sie Ihre Funktion auf eine geeignete Weise.*/
+
+let n: number = 40;
+let m: number = 3;
+max();
+
+function max(): void {
+    if ( n > m ) {
+        console.log(n);
+    }
+    else {
+        console.log(m);
+    }
+    if (n == m) {
+        console.log( "n und m sind gleich groß");
+    }
+
+  
+}
+
+ /**c) Zählen Sie mithilfe einer while Schleife alle Zahlen 
+  * von 1 bis 100 zusammen und geben Sie das Ergebnis auf der Konsole aus*/
+
+let i: number = 1;
+let result: number = 0;
+
+while ( i <= 100) {
+   result += i;
+   ++i;
+}
+
+console.log(i);
+
+
+ /** d) Nutzen Sie eine for Schleife um 10 zufällige Zahlen zwischen 0 und 100 
+  * auf der Konsole auszugeben. Nutzen Sie dafür Math.random*/
+
+let o: number = 0;
+let count: number = 10;
+
+
+for (o = 0; o <= 100; o++) {
+    console.log(Math.random( ));
+
+}
+
+
+
+ /**e) Schreiben Sie eine Funktion factorial welche eine Zahl n entgegen nimmt und 
+  * als Rückgabewert die Fakultät (1*2*3*...*n) dieser Zahl zurück gibt. 
+  * Nutzen Sie dafür eine Schleife ihrer Wahl (while, do while, for). Geben Sie außerdem 1 zurück, 
+  * wenn n kleiner ist als 1. */
+
+ /** f) Schreiben Sie eine Funktion leapyears welche alle Schaltjahre von 1900 bis heute auf der 
+  * Konsole ausgibt. Ein Jahr ist ein Schaltjahr, wenn die Jahreszahl durch 4, 
+  * aber nicht durch 100 teilbar ist. Sollte die Jahreszahl durch 400 teilbar sein, 
+  * handelt es sich dennoch um ein Schaltjahr.*/
+
+
+
+
+
+
