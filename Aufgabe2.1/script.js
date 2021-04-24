@@ -1,6 +1,6 @@
 "use strict";
-/**function a1(): void {
-    let x: string = "Alles";
+function a1() {
+    let x = "Alles";
     debugger;
     console.log(x);
     func4();
@@ -11,26 +11,20 @@
     func2();
     func3();
 }
-
 a1();
-
-function func1(): void {
+function func1() {
     console.log("Klar?");
 }
-
 /** Weitere Funktionen Aufgabe 1 c) */
-/**function func2(): void {
+function func2() {
     console.log("Freut mich!");
 }
-
-function func3(): void {
+function func3() {
     console.log("Mich auch!");
 }
-
-function func4(): void {
+function func4() {
     console.log("Gute!");
 }
-
 /** Aufgabe 1 a
  * Kommentar:
  * In der Konsole wird ausgegeben:
@@ -64,17 +58,14 @@ function func4(): void {
  * Mich auch!
 */
 /**Aufgabe 2 */
-/**function a2(): void {
-    let i: number = 9;
-
+function a2() {
+    let i = 9;
     do {
         console.log(i);
         i = i - 1;
-    } while ( i > 0);
+    } while (i > 0);
 }
-
 a2();
-
 /**Was wird auf der Konsole ausgegeben? Wann verändert sich was?
  *
  * Ausgabe der Konsole:
@@ -104,19 +95,16 @@ a2();
 */
 /** Aufgabe 3 - Fehler einbauen in A1 und A2*/
 /** a1 zu b1 umgeändert und func1 zu fun1 */
-/**function b1(): void {
-    let y: string = "peace";
+function b1() {
+    let y = "peace";
     console.log(y);
     fun1();
     console.log("Logo!");
 }
-
 b1();
-
-function fun1(): void {
+function fun1() {
     console.log("Klar?");
 }
-
 /** Ja in Probleme wird genau angezeigt, was falsch ist zum beispiel, dass die aufgerufene variable
  * nicht vorhanden ist, oder das x zwar deklariert ist, aber nie gelesen wird. Außerdem
  * werden die Fehler unterkringelt und bei den Problemmeldungen wird auch angegeben in welcher
@@ -225,17 +213,70 @@ while (i <= 100) {
 console.log(result);
 /** d) Nutzen Sie eine for Schleife um 10 zufällige Zahlen zwischen 0 und 100
  * auf der Konsole auszugeben. Nutzen Sie dafür Math.random*/
-let o = 0;
-let count = 1;
-for (o = 0; o <= 100; o + 10) {
+let o = 1;
+for (o = 1; o <= 100; o = o + 10) {
     console.log(Math.random());
 }
 /**e) Schreiben Sie eine Funktion factorial welche eine Zahl n entgegen nimmt und
  * als Rückgabewert die Fakultät (1*2*3*...*n) dieser Zahl zurück gibt.
  * Nutzen Sie dafür eine Schleife ihrer Wahl (while, do while, for). Geben Sie außerdem 1 zurück,
  * wenn n kleiner ist als 1. */
+let p = 1;
+let k = 0;
+function factorial() {
+    for (p = 1; p <= k; ++p) {
+        k = k * i;
+    }
+}
 /** f) Schreiben Sie eine Funktion leapyears welche alle Schaltjahre von 1900 bis heute auf der
  * Konsole ausgibt. Ein Jahr ist ein Schaltjahr, wenn die Jahreszahl durch 4,
  * aber nicht durch 100 teilbar ist. Sollte die Jahreszahl durch 400 teilbar sein,
  * handelt es sich dennoch um ein Schaltjahr.*/
+/** a) Schreiben Sie eine Schleife welche auf der Konsole folgende sieben Zeilen ausgibt:
+
+#
+##
+###
+####
+#####
+######
+#######
+Hinweis: die Länge eines strings kann über stringname.length abgefragt werden.
+
+b) Schreiben Sie ein Programm welches auf der Konsole alle Zahlen von 1 bis 100 ausgibt.
+ Dabei gibt es zwei Ausnahmen: Ist die Zahl durch 3 teilbar, geben Sie statt der Zahl Fizz aus.
+ Ist sie durch 5 (und nicht durch 3) teilbar, geben sie Buzz aus.
+Hinweis: Nutzen sie den Modulo Operator % um zu prüfen, ob eine Variable durch eine andere teilbar
+ist (Rest 0).
+
+c) Nehmen Sie das Programm aus b) und modifizieren Sie es so, dass das Programm FizzBuzz ausgibt,
+wenn die Zahl durch sowohl 3 als auch durch 5 teilbar ist.
+Hinweis: Dieser Teil der Aufgabe hat eine offensichtlichere und eine cleverere Lösung. Finden Sie beide?
+
+Diese Frage ist eine beliebte Frage in Vorstellungsgesprächen.
+Wenn Sie diese also gelöst bekommen, ist Ihr Marktwert gerade gestiegen.
+
+d) Schreiben Sie eine Funktion, welche einen String zurückgibt,
+der ein 8x8 Schachbrett repräsentiert, mit neuen Zeilen ("\n") um die Zeilen zu trennen.
+An jeder Position im Brett ist entweder ein # oder ein Leerzeichen.
+
+Wenn der String über console.log ausgegeben wird, sollte er etwa so aussehen:
+
+ # # # #
+# # # #
+ # # # #
+# # # #
+ # # # #
+# # # #
+ # # # #
+# # # #
+Hinweis: Beginnen Sie mit einem leeren string ("") und fügen Sie dann immer mehr Zeichen hinzu.
+Für zwei Dimensionen brauchen Sie zwei Schleifen ineinander, eine für die Zeilen und eine für die
+Character innerhalb der Zeile.
+
+e) Nehmen Sie die Funktion aus d) und fügen Sie ihr einen Übergabeparameter hinzu,
+welcher die Höhe und Breite des Brettes bestimmt. Schreiben Sie ihre Funktion so um,
+dass es mit jeder Größe Funktioniert.
+Hinweis: Machen Sie sich Gedanken wie sie sich merken/berechnen können,
+welcher Character als erstes/nächstes in einer Zeile ausgegeben werden muss.*/
 //# sourceMappingURL=script.js.map

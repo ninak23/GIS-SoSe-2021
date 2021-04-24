@@ -1,5 +1,5 @@
 
-/**function a1(): void {
+function a1(): void {
     let x: string = "Alles";
     debugger;
     console.log(x); 
@@ -21,7 +21,7 @@ function func1(): void {
 /** Weitere Funktionen Aufgabe 1 c) */
 
 
-/**function func2(): void {
+function func2(): void {
     console.log("Freut mich!");
 }
 
@@ -71,7 +71,7 @@ function func4(): void {
  
 /**Aufgabe 2 */
 
-/**function a2(): void {
+function a2(): void {
     let i: number = 9;
 
     do {
@@ -109,10 +109,12 @@ a2();
  * dementsprechend wird die while schleife nicht mehr ausgeführt da i = 0 ist und nicht 
  * größer und das Programm ist zu Ende. 
  */
+
+
 /** Aufgabe 3 - Fehler einbauen in A1 und A2*/
 /** a1 zu b1 umgeändert und func1 zu fun1 */
 
-/**function b1(): void {
+function b1(): void {
     let y: string = "peace";
     console.log(y);
     fun1();
@@ -258,14 +260,10 @@ console.log(result);
  /** d) Nutzen Sie eine for Schleife um 10 zufällige Zahlen zwischen 0 und 100 
   * auf der Konsole auszugeben. Nutzen Sie dafür Math.random*/
 
-let o: number = 0;
-let count: number = 1;
+let o: number = 1;
 
-
-
-for (o = 0; o <= 100; o + 10 ) {
+for (o = 1; o <= 100; o = o + 10 ) {
     console.log(Math.random( ));
-
 }
 
 
@@ -275,13 +273,87 @@ for (o = 0; o <= 100; o + 10 ) {
   * Nutzen Sie dafür eine Schleife ihrer Wahl (while, do while, for). Geben Sie außerdem 1 zurück, 
   * wenn n kleiner ist als 1. */
 
+let p: number = 1;
+let k: number = 0;
+
+
+
+function factorial(): void {
+    for (p = 1; p <= k; ++p) {
+
+        k = k * i;
+
+    }
+    
+}
+
+
+
+
  /** f) Schreiben Sie eine Funktion leapyears welche alle Schaltjahre von 1900 bis heute auf der 
   * Konsole ausgibt. Ein Jahr ist ein Schaltjahr, wenn die Jahreszahl durch 4, 
   * aber nicht durch 100 teilbar ist. Sollte die Jahreszahl durch 400 teilbar sein, 
   * handelt es sich dennoch um ein Schaltjahr.*/
 
 
+/** a) Schreiben Sie eine Schleife welche auf der Konsole folgende sieben Zeilen ausgibt:
 
+#
+##
+###
+####
+#####
+######
+#######
+Hinweis: die Länge eines strings kann über stringname.length abgefragt werden.*/
+
+let a: number = 0;
+let c: string = "#";
+
+while (a < 7) {
+    console.log("#" + c );
+    c = c + "#";
+}
+
+
+
+
+/**b) Schreiben Sie ein Programm welches auf der Konsole alle Zahlen von 1 bis 100 ausgibt.
+ Dabei gibt es zwei Ausnahmen: Ist die Zahl durch 3 teilbar, geben Sie statt der Zahl Fizz aus. 
+ Ist sie durch 5 (und nicht durch 3) teilbar, geben sie Buzz aus.
+Hinweis: Nutzen sie den Modulo Operator % um zu prüfen, ob eine Variable durch eine andere teilbar 
+ist (Rest 0).
+
+c) Nehmen Sie das Programm aus b) und modifizieren Sie es so, dass das Programm FizzBuzz ausgibt, 
+wenn die Zahl durch sowohl 3 als auch durch 5 teilbar ist.
+Hinweis: Dieser Teil der Aufgabe hat eine offensichtlichere und eine cleverere Lösung. Finden Sie beide?
+
+Diese Frage ist eine beliebte Frage in Vorstellungsgesprächen. 
+Wenn Sie diese also gelöst bekommen, ist Ihr Marktwert gerade gestiegen.
+
+d) Schreiben Sie eine Funktion, welche einen String zurückgibt, 
+der ein 8x8 Schachbrett repräsentiert, mit neuen Zeilen ("\n") um die Zeilen zu trennen. 
+An jeder Position im Brett ist entweder ein # oder ein Leerzeichen.
+
+Wenn der String über console.log ausgegeben wird, sollte er etwa so aussehen:
+
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+Hinweis: Beginnen Sie mit einem leeren string ("") und fügen Sie dann immer mehr Zeichen hinzu. 
+Für zwei Dimensionen brauchen Sie zwei Schleifen ineinander, eine für die Zeilen und eine für die 
+Character innerhalb der Zeile.
+
+e) Nehmen Sie die Funktion aus d) und fügen Sie ihr einen Übergabeparameter hinzu, 
+welcher die Höhe und Breite des Brettes bestimmt. Schreiben Sie ihre Funktion so um, 
+dass es mit jeder Größe Funktioniert.
+Hinweis: Machen Sie sich Gedanken wie sie sich merken/berechnen können, 
+welcher Character als erstes/nächstes in einer Zeile ausgegeben werden muss.*/
 
 
 
