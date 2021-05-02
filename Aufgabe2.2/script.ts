@@ -157,55 +157,47 @@ Wenn Sie können, ändern Sie das interface in eine Klasse mit Konstruktor.
 Verschieben Sie außerdem die showInfo Funktion innerhalb die Klasse und machen Sie damit eine Methode daraus.
  */
 
-/**namespace Aufgabe2_2 { 
-    let arr2: number[] = [];
-    console.log(arr2);
-
-}*/
-
-interface Person {
+interface Studierender {
     name: string;
     vorname: string;
     alter: number;
 }
 
 
-let p1: Person = {
+let s1: Studierender = {
     name: "Müller",
     vorname: "Marie",
     alter: 18
 };
-let p3: Person = {
+let s3: Studierender = {
     name: "Mössner",
     vorname: "Simone",
     alter: 25
 };
 
-let p2: Person = erschaffePerson("Schiller", "Lucia", 24);
+let s2: Studierender = erschaffeStudierender("Schiller", "Lucia", 24);
 
 
-function erschaffePerson(_name: string, _vorname: string, _alter: number): Person {
-    let p: Person = { name: _name, vorname: _vorname, alter: _alter };
+function erschaffeStudierender(_name: string, _vorname: string, _alter: number): Studierender {
+    let p: Studierender = { name: _name, vorname: _vorname, alter: _alter };
     return p;
 }
-let personenArray: Person[] = [];
-personenArray.push(p1);
-personenArray.push(p2);
-personenArray.push(p3);
+let personenArray: Studierender[] = [];
+personenArray.push(s1);
+personenArray.push(s2);
+personenArray.push(s3);
 personenArray.push({ name: "Karl", vorname: "Gustaf", alter: 20 });
 
-console.log("name:", p1.name, "vorname:", p1.vorname, "alter:", p1.alter);
-console.log("name:", p2.name, "vorname:", p2.vorname, "alter:", p2.alter);
-console.log("name:", p3.name, "vorname:", p3.vorname, "alter:", p3.alter);
+console.log("name:", s1.name, "vorname:", s1.vorname, "alter:", s1.alter);
+console.log("name:", s2.name, "vorname:", s2.vorname, "alter:", s2.alter);
+console.log("name:", s3.name, "vorname:", s3.vorname, "alter:", s3.alter);
 console.log("name:", personenArray[3].name, "vorname:", personenArray[3].vorname, "alter:", personenArray[3].alter);
 
 
-/**class Person {
+class Studi {
     name: string;
     vorname: string;
     alter: number;
-
-
 
 constructor(_name: string, _vorname: string, _alter: number ) {
 
@@ -215,44 +207,31 @@ this.alter = _alter;
 
 }
 
-
 zeigInfos(): void {
     console.log("name:", this.name, "vorname:", this.vorname, "alter:", this.alter);
 }
 }
-let p4: Person = new Person ("März", "Karl", 22);
-p4.zeigInfos();
-
-*/
+let s4: Studi = new Studi ("März", "Karl", 22);
+s4.zeigInfos();
 
 
 
 /**Aufgabe 2*/
 
 
-
 let arr: number[] = [5, 42, 17, 2018, -10, 60, -10010];
-
 let arrBack: number[] = backwards(arr);
-
 console.log(arr);
-
 console.log(arrBack);
-
 console.log(join(arr, [15, 9001, -440]));
 
 //console.log(join([123, 666, -911], arr, [15, 9001, -440, 1024])); // Bonus b)
 
 arr = split(arr, 0, 4);
-
 console.log(arr);
-
 console.log(split(arr, 1, 2));
-
 console.log(split(arr, 2, 0));     // Bonus c)
-
 console.log(split(arr, -1, 2));    // Bonus c)
-
 console.log(split(arr, 0, 7));     // Bonus c)
 
 
@@ -261,7 +240,7 @@ function backwards(_arr: number[]): number[] {
 
     let arrInt: number[] = [];
 
-    for (let idx = _arr.length - 1; idx >= 0; idx--) {
+    for (let idx: number = _arr.length - 1; idx >= 0; idx--) {
 
         arrInt.push(_arr[idx]);
     }
@@ -272,7 +251,7 @@ function join(_arr1: number[], _arr2: number[]): number[] {
 
     let arrInt: number[] = _arr1;
 
-    for (let idx = 0; idx < _arr2.length; idx++) {
+    for (let idx: number = 0; idx < _arr2.length; idx++) {
 
         arrInt.push(_arr2[idx]);
     }
@@ -301,7 +280,7 @@ function split(_arr: number[], _idx1: number, _idx2: number): number[] {
 
     if ((_idx1 >= 0) && (_idx2 < _arr.length) && (_idx1 <= _idx2)) {                 // Prüfung der Indizes ob diese innerhalb der Arraygröße liegen
 
-        for (let idx = _idx1; idx <= _idx2; idx++) {
+        for (let idx: number = _idx1; idx <= _idx2; idx++) {
 
             arrInt.push(_arr[idx]);
         }

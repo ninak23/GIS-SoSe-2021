@@ -38,54 +38,42 @@ function isEven(n) {
         }
     }
 }
-let p1 = {
+let s1 = {
     name: "Müller",
     vorname: "Marie",
     alter: 18
 };
-let p3 = {
+let s3 = {
     name: "Mössner",
     vorname: "Simone",
     alter: 25
 };
-let p2 = erschaffePerson("Schiller", "Lucia", 24);
-function erschaffePerson(_name, _vorname, _alter) {
+let s2 = erschaffeStudierender("Schiller", "Lucia", 24);
+function erschaffeStudierender(_name, _vorname, _alter) {
     let p = { name: _name, vorname: _vorname, alter: _alter };
     return p;
 }
 let personenArray = [];
-personenArray.push(p1);
-personenArray.push(p2);
-personenArray.push(p3);
+personenArray.push(s1);
+personenArray.push(s2);
+personenArray.push(s3);
 personenArray.push({ name: "Karl", vorname: "Gustaf", alter: 20 });
-console.log("name:", p1.name, "vorname:", p1.vorname, "alter:", p1.alter);
-console.log("name:", p2.name, "vorname:", p2.vorname, "alter:", p2.alter);
-console.log("name:", p3.name, "vorname:", p3.vorname, "alter:", p3.alter);
+console.log("name:", s1.name, "vorname:", s1.vorname, "alter:", s1.alter);
+console.log("name:", s2.name, "vorname:", s2.vorname, "alter:", s2.alter);
+console.log("name:", s3.name, "vorname:", s3.vorname, "alter:", s3.alter);
 console.log("name:", personenArray[3].name, "vorname:", personenArray[3].vorname, "alter:", personenArray[3].alter);
-/**class Person {
-    name: string;
-    vorname: string;
-    alter: number;
-
-
-
-constructor(_name: string, _vorname: string, _alter: number ) {
-
-this.name = _name;
-this.vorname = _vorname;
-this.alter = _alter;
-
+class Studi {
+    constructor(_name, _vorname, _alter) {
+        this.name = _name;
+        this.vorname = _vorname;
+        this.alter = _alter;
+    }
+    zeigInfos() {
+        console.log("name:", this.name, "vorname:", this.vorname, "alter:", this.alter);
+    }
 }
-
-
-zeigInfos(): void {
-    console.log("name:", this.name, "vorname:", this.vorname, "alter:", this.alter);
-}
-}
-let p4: Person = new Person ("März", "Karl", 22);
-p4.zeigInfos();
-
-*/
+let s4 = new Studi("März", "Karl", 22);
+s4.zeigInfos();
 /**Aufgabe 2*/
 let arr = [5, 42, 17, 2018, -10, 60, -10010];
 let arrBack = backwards(arr);
