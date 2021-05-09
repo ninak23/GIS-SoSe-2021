@@ -15,8 +15,8 @@ var Aufgabe3;
         { Preis: 19.95, HosenTyp: "Shorts", Image: "" },
         { Preis: 14.95, HosenTyp: "Jogginghose", Image: "" }];
     Aufgabe3.S = [{ Preis: 94.95, Marke: "Nike", Image: "Schuh1", DateiName: "Medien/IMG_0363.jpg" },
-        { Preis: 64.95, Marke: "Vans", Image: "Schuh2", DateiName: "Medien/IMG_0364.jpg" },
-        { Preis: 119.95, Marke: "adidas", Image: "Schuh3", DateiName: "Medien/IMG_0366.jpg" },
-        { Preis: 74.95, Marke: "Converse", Image: "Schuh4", DateiName: "Medien/IMG_0367.jpg" }];
+        { Preis: 64.95, Marke: "Vans", Image: "Schuh2", DateiName: "Medien/IMG_0366.jpg" },
+        { Preis: 119.95, Marke: "adidas", Image: "Schuh3", DateiName: "Medien/IMG_0364.jpg" },
+        { Preis: 74.95, Marke: "NikeSB", Image: "Schuh4", DateiName: "Medien/IMG_0367.jpg" }];
 })(Aufgabe3 || (Aufgabe3 = {}));
 //# sourceMappingURL=data.js.map

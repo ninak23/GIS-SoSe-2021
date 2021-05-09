@@ -65,9 +65,9 @@ namespace Aufgabe3 {
 
     function Datenübernehmen(): void {
 
-        let g: number[];
-        let nodeList: NodeList = document.getElementsByTagName("Button");
-        console.log(nodeList);
+        //let g: number[];
+        //let nodeList: NodeList = document.getElementsByTagName("Button");
+        //console.log(nodeList);
         S1 = S[1];
         console.log(S1);
 
@@ -82,21 +82,27 @@ namespace Aufgabe3 {
             let posTop: string = "";
             posLeft = (i * 200) + "px";
             posTop = 100 + "px";
-            
+
             let but1: HTMLElement = document.createElement("Button");
             let idName: string = "Button";
+           
+            
             idName = idName + (i + 1);
             but1.textContent = "Auswählen";
             but1.id = idName;
             but1.style.margin = "8px";
             document.body.appendChild(but1);
-            but1.addEventListener("click", Datenübernehmen);
+            but1.addEventListener("click", handleClick);
+            function handleClick(_event: MouseEvent): void {
+                //console.log(_event);
+                console.log(S[i]);
+            }
             but1.style.position = "center";
             but1.style.left = posLeft;
             but1.style.top = "";
             but1.style.margin = "10px";
             but1.style.textAlign = "center";
-            
+
 
             let div: HTMLDivElement = document.createElement("img");
             div.style.position = "static";
@@ -123,7 +129,7 @@ namespace Aufgabe3 {
             previousElement.appendChild(p2);
             p2.style.position = "static";
             p2.style.top = posTop;
-            p2.style.left = posLeft;       
+            p2.style.left = posLeft;
 
         }
     }

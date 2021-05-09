@@ -14,9 +14,9 @@ var Aufgabe3;
     }
     let g;
     function Datenübernehmen() {
-        let g;
-        let nodeList = document.getElementsByTagName("Button");
-        console.log(nodeList);
+        //let g: number[];
+        //let nodeList: NodeList = document.getElementsByTagName("Button");
+        //console.log(nodeList);
         Aufgabe3.S1 = Aufgabe3.S[1];
         console.log(Aufgabe3.S1);
     }
@@ -33,7 +33,11 @@ var Aufgabe3;
             but1.id = idName;
             but1.style.margin = "8px";
             document.body.appendChild(but1);
-            but1.addEventListener("click", Datenübernehmen);
+            but1.addEventListener("click", handleClick);
+            function handleClick(_event) {
+                //console.log(_event);
+                console.log(Aufgabe3.S[i]);
+            }
             but1.style.position = "center";
             but1.style.left = posLeft;
             but1.style.top = "";
