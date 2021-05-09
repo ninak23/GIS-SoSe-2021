@@ -1,10 +1,9 @@
 "use strict";
 var Aufgabe3;
 (function (Aufgabe3) {
-    function printEverything(..._rest) {
+    /*function printEverything(..._rest: string[]): void {
         console.log(_rest);
-    }
-    printEverything(Aufgabe3.greeting);
+    }*/
     let previousElement = document.body;
     let aktuelleSeite = window.location.href;
     let pos = aktuelleSeite.lastIndexOf("/");
