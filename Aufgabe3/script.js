@@ -14,8 +14,10 @@ var Aufgabe3;
     }
     let g;
     function Datenübernehmen() {
-        let info = document.getElementsByTagName("but1");
-        Aufgabe3.S1 = Aufgabe3.S[g];
+        let g;
+        let nodeList = document.getElementsByTagName("Button");
+        console.log(nodeList);
+        Aufgabe3.S1 = Aufgabe3.S[1];
         console.log(Aufgabe3.S1);
     }
     function SeiteSchuhe() {
@@ -24,6 +26,19 @@ var Aufgabe3;
             let posTop = "";
             posLeft = (i * 200) + "px";
             posTop = 100 + "px";
+            let but1 = document.createElement("Button");
+            let idName = "Button";
+            idName = idName + (i + 1);
+            but1.textContent = "Auswählen";
+            but1.id = idName;
+            but1.style.margin = "8px";
+            document.body.appendChild(but1);
+            but1.addEventListener("click", Datenübernehmen);
+            but1.style.position = "center";
+            but1.style.left = posLeft;
+            but1.style.top = "";
+            but1.style.margin = "10px";
+            but1.style.textAlign = "center";
             let div = document.createElement("img");
             div.style.position = "static";
             div.style.left = posLeft;
@@ -47,19 +62,6 @@ var Aufgabe3;
             p2.style.position = "static";
             p2.style.top = posTop;
             p2.style.left = posLeft;
-            let but1 = document.createElement("Button");
-            let idName = "Button";
-            idName = idName + (i + 1);
-            but1.textContent = "Auswählen";
-            but1.id = idName;
-            but1.style.margin = "8px";
-            document.body.appendChild(but1);
-            but1.addEventListener("click", Datenübernehmen);
-            but1.style.position = "center";
-            but1.style.left = posLeft;
-            but1.style.top = "";
-            but1.style.margin = "10px";
-            but1.style.textAlign = "center";
         }
     }
 })(Aufgabe3 || (Aufgabe3 = {}));
