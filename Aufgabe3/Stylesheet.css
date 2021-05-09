@@ -1,0 +1,587 @@
+/* Alle Seite*/
+
+#list {
+    position: sticky;
+    top: 0;
+    width: 95%;
+    height: 2em;
+    background-color: silver;
+    z-index: 1000; 
+    text-align: center;  
+}
+
+nav {
+    display: block;
+}
+
+#list div {
+    right:0px;
+    background-color:gray;
+    padding: 5px;
+    margin: 10px;
+    text-align:center;
+    z-index: 1000;
+    height: 100px;
+    overflow: hidden; 
+}
+
+#list div {
+    color:rgb(2, 109, 109);
+    font-size: 1.1rem;
+    font-family: sans-serif;
+}
+
+#list div {
+    display:inline;
+    padding: 10px 14px;
+    text-decoration: none;
+    color:rgb(2, 109, 109);
+}
+
+div:hover {
+    background-color: grey;
+    color:black;
+}
+
+div:focus {
+    color:black;
+}
+
+#list #current {
+    background-color: cadetblue;
+}
+
+a{
+    color:rgb(2, 109, 109);
+    font-size: 1.1rem;
+    font-family: sans-serif;
+}
+
+a{
+    display:inline;
+    padding: 10px 14px;
+    text-decoration: none;
+    color:rgb(2, 109, 109);
+}
+
+a:hover {
+    background-color: grey;
+    color:black;
+}
+
+a:focus {
+    color:black;
+}
+
+#current{
+    background-color: cadetblue;
+}
+
+/* Überschriften*/
+
+h2{
+    font-size: 2rem;
+    font-family: sans-serif;
+    animation-name: changecolor;
+    animation-duration: 8s;
+}
+
+@keyframes changecolor {
+    0% {color:black;}
+    25% {color:rgb(2, 109, 109);}
+    50% {color:skyblue;}
+    100% {color:darkslategray;}
+}
+
+h3{
+    font-size: 1.5rem;
+    font-family: sans-serif;
+}
+
+h4{
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+body{
+    background: url(Medien/bg.png);
+    text-align: center;
+    font-family:sans-serif;
+    max-width: 1024px;
+    margin:auto;
+    
+}
+nav {
+    color: black;
+    text-align: right;
+    word-spacing: 2em;
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url(border.png) 30 round;
+}
+
+p{
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+ol {
+    color:cadetblue;
+    list-style-type:decimal;
+    list-style-position: inside;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+table th, td {
+    border: 5px solid #a0a0a0;
+}
+
+table {
+    margin-right: auto;
+    margin-left: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-width: thin 0 0 thin;
+    table-layout:auto;
+    max-width: 100%;
+    color:cadetblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+    height: 3rem;
+    background-color:lightgray ;
+}
+
+th, td {
+    font-weight: normal;
+    text-align:center;
+    padding: 0.8rem;
+}
+
+tr:hover {background-color:lightblue ;}
+
+.buttons{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.button {
+    background-color: cadetblue;
+    border: none;
+    color:white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+ 
+/* 1. Seite */
+
+#Start {
+    color:Black;
+    font-size: 5rem;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow:cadetblue 10px 10px 10px ;
+    text-align: left;
+}
+
+#Start {
+    transition: all 2s ease-in-out 0s;
+}
+
+#center {
+    text-align: center;
+    font-style: italic;
+    font-size: 2rem;
+}
+
+.Anordnung {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*#Schuh1 {
+    max-width: 300px;
+    height: 20rem;
+    object-fit: fill;
+}
+#Schuh2 {
+    max-width: 300px;
+    height: 20rem;
+    object-fit: fill;
+
+}
+#Schuh3 {
+    max-width: 300px;
+    height: 20rem;
+    object-fit: fill;
+}
+
+#Schuh4 {
+    max-width: 300px;
+    height: 20rem;
+    object-fit: fill;
+}*/
+
+#v{
+    height:30rem;
+    width: 1024px;
+    object-fit: cover;
+}
+
+#vid{
+    height:30rem;
+    width: 1024px;
+    object-fit: cover;
+}
+
+/* 2. Seite */
+
+#Übermich{
+    color: cadetblue;
+    font-size: 4rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-shadow: whitesmoke 10px 10px 10px ;
+    text-align: center;
+}
+
+#ich {
+    object-fit: fill;
+}
+
+/* 3. Seite */
+
+#Kontakt {
+    color:cadetblue;
+    font-size: 4rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-shadow:whitesmoke 10px 10px 10px;
+    text-align: none;
+}
+
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical; 
+}
+  
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/*verschiedene Bildschirmgrößen*/
+@media only screen and (min-width: 1024px){
+
+    body {
+        width:100%;
+    }
+
+    #Start  {
+        width: 100%; 
+        font-size: 6rem;
+       
+    }
+    
+    table {
+        width:100%;
+    }
+
+    #vi {
+        width: 100%;
+        object-fit:cover;
+    }
+
+    #vie {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    #Schuh1 { 
+        width:310px;
+        height: 300px;
+        object-fit: fill;
+    }
+
+    #Schuh2{
+        width: 310px;
+        height: 300px;
+        object-fit: fill;
+    }
+
+    #Schuh3{
+        width: 310px;
+        height: 300px;
+        object-fit: fill;
+    }
+
+    #Schuh4{
+        width: 310px;
+        height: 300px;
+        object-fit: fill;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    body {
+        width: 100%;
+    }
+    #v{
+        width: 100%;
+        object-fit:cover;
+        height: 30rem;
+    }
+
+    #vid {
+        width: 100%;
+        object-fit: cover;
+        height: 30rem;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    body {
+        width: 100%;
+    }
+
+    #Start  {
+        margin-top: 1rem;
+        width: 100%; 
+        font-size: 6rem;
+    }
+
+    #list {
+        width: 93.5%;
+        height: 4em;
+        background-color: silver;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    #list div {
+        display:list-item;
+        width: auto;
+        height: 1em;
+        align-items: center;
+        float:left;
+    }
+
+    table {
+        width:100%;
+    }
+
+    #v {
+        width: 100%;
+        object-fit:cover;
+        height: 20rem;
+    }
+
+    #vid {
+        width: 100%;
+        object-fit: cover;
+        height: 20rem;
+    }
+
+    #Schuh1 { 
+        width: 200px;
+        height: 200px;
+        object-fit: fill;
+    }
+
+    #Schuh2 {
+        width: 200px;
+        height: 200px;
+        object-fit: fill;
+    }
+
+    #Schuh3 {
+        width: 200px;
+        height: 200px;
+        object-fit: fill;
+    }
+
+    #Schuh4 {
+        width: 200px;
+        height: 200px;
+        object-fit: fill;
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+    body {
+        width: 100%;
+    }
+
+    #Start  {
+        margin-top: 3rem;
+        width: 100%; 
+        font-size: 5rem;
+    }
+
+    #list {
+        width: 90%;
+        height: 6em;
+        background-color: silver;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    #list div {
+        display:list-item;
+        width: auto;
+        height: 1em;
+        align-items: center;
+        float:left;
+    }
+
+    table {
+      width:100%;
+    }
+
+    #v{
+        width: 100%;
+        object-fit:cover;
+        height: 20rem;
+    }
+
+    #vid {
+        width: 100%;
+        object-fit: cover;
+        height: 20rem;
+    }
+
+    #Schuh1 { 
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+
+    #Schuh2 {
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+
+    #Schuh3 {
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+
+    #Schuh4 {
+        width: 100px;
+        height: 100px;
+        object-fit: fill;
+    }
+
+
+}
+@media only screen and (max-width: 365px){
+
+    body {
+        width: 100%;
+    }
+
+    #list {
+        width: 90%;
+        height: 5em;
+        background-color: silver;
+    }
+    #Start  {
+        font-size: 4rem;
+        margin-top: 2rem;
+    }
+    #list div {
+        right:0px;
+        background-color:gray;
+        padding: 5px;
+        margin: 10px;
+        text-align:center;
+        z-index: 1000;
+        height: 20px;
+        overflow: hidden;  
+    }
+    #list div {
+        color:rgb(2, 109, 109);
+        font-size: 1.1rem;
+        font-family: sans-serif;
+    }
+    #list div {
+        display:inline;
+        padding: 0px 0px;
+        text-decoration: none;
+        color:rgb(2, 109, 109);
+    }  
+    #ich{
+        width: 200px;
+        height: 150px;
+        object-fit: fill;
+    }
+    #Bildk{
+        width: 180px;
+        height: 300px;
+        object-fit: fill;
+    }
+    table {
+        width: 100%;
+    }
+
+    table th, td {
+        width: 100%; 
+        font-size: xx-small;
+    }
+}
+
+.Anordnung {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 243px){
+    #list{
+        height: 9em;
+    }
+    #Start{
+        font-size: 3em;
+    }
+    #Übermich {
+        font-size: 2em;
+    }
+    #Kontakt { 
+        font-size: 2em;
+    }
+    table{
+        width: 50%;
+    }
+}

@@ -1,5 +1,5 @@
 
-/** Funktion die min bestimmt */
+/** Funktion die min bestimmt 
 
 let array1: number[] = [1, 9, 10, 400, 4, 88];
 
@@ -26,7 +26,7 @@ Für jede andere Zahl N gilt, dass das Ergebnis gleich ist wie N - 2
 Testen Sie Ihre Funktion mit 50 und 75. Was passiert bei -1? Warum? Können Sie eine Lösung dafür finden? (K)
  */
 
-let str: string;
+/**let str: string;
 
 isEven(50);
 console.log(str);
@@ -56,7 +56,7 @@ function isEven(n: number): string {
     }
 }
 
-/**Call Stack Overflow, da er bei negativen Zahlen immer noch -2 abzieht 
+/**Call Stack Overflow, da er bei negativen Zahlen immer noch -2 abzieht
  * 
  * Hier zwei Varianten wie man das Problem lösen könnte:
  * 

@@ -1,9 +1,13 @@
 "use strict";
-/** Funktion die min bestimmt */
-let array1 = [1, 9, 10, 400, 4, 88];
-let s = array1[0];
+/** Funktion die min bestimmt
+
+let array1: number[] = [1, 9, 10, 400, 4, 88];
+
+let s: number = array1[0];
 min(array1[0]);
-function min(i) {
+
+function min(i: number): void {
+
     for (i = 0; i <= array1.length; i++) {
         if (s > array1[i]) {
             s = array1[i];
@@ -11,6 +15,7 @@ function min(i) {
     }
 }
 console.log(s);
+
 /**  Schreiben Sie eine Funktion isEven(...), welche durch Rekursion nach folgender Beschreibung Berechnet,
  * ob eine Zahl gerade ist und entweder true oder false zurück gibt.
 
@@ -20,24 +25,6 @@ Für jede andere Zahl N gilt, dass das Ergebnis gleich ist wie N - 2
 
 Testen Sie Ihre Funktion mit 50 und 75. Was passiert bei -1? Warum? Können Sie eine Lösung dafür finden? (K)
  */
-let str;
-isEven(50);
-console.log(str);
-function isEven(n) {
-    if (n == 0) {
-        str = "true";
-        return str;
-    }
-    else {
-        if (n == 1) {
-            str = "false";
-            return str;
-        }
-        else {
-            isEven(n - 2);
-        }
-    }
-}
 let s1 = {
     name: "Müller",
     vorname: "Marie",
