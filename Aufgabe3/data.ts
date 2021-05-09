@@ -1,5 +1,5 @@
 namespace Aufgabe3 {
-    //export let greeting: string = "Hallo liebe Studis";
+
 
     export let K: Kopfbedeckung[] = [{ Preis: 15.50, KopfbedeckungArt: "Mütze", Image: "" },
     { Preis: 10, KopfbedeckungArt: "Stirnband", Image: "" },

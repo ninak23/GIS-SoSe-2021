@@ -1,11 +1,6 @@
 
 namespace Aufgabe3 {
-    /*function printEverything(..._rest: string[]): void {
-        console.log(_rest);
-    }*/
-
-
-    //printEverything(greeting);
+ 
 
     interface Outfit {
 
