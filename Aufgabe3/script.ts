@@ -47,7 +47,10 @@ namespace Aufgabe3 {
 
     }
 
+
     let previousElement: HTMLElement = document.body;
+
+    //HauptSeite();
 
     let aktuelleSeite: string = window.location.href;
     let pos: number = aktuelleSeite.lastIndexOf("/");
@@ -56,76 +59,64 @@ namespace Aufgabe3 {
         SeiteSchuhe();
     }
 
-    let g: number;
-
-    function Datenübernehmen(): void {
-
-        //let g: number[];
-        //let nodeList: NodeList = document.getElementsByTagName("Button");
-        //console.log(nodeList);
-        S1 = S[1];
-        console.log(S1);
-
-    }
-
-
-    function SeiteSchuhe(): void {
-
-        for (let i: number = 0; i < S.length; i++) {
-
-            let posLeft: string = "";
-            let posTop: string = "";
-            posLeft = (i * 200) + "px";
-            posTop = 100 + "px";
-
-            let but1: HTMLElement = document.createElement("Button");
-            let idName: string = "Button";
-           
-            
-            idName = idName + (i + 1);
-            but1.textContent = "Auswählen";
-            but1.id = idName;
-            but1.style.margin = "8px";
-            document.body.appendChild(but1);
-            but1.addEventListener("click", handleClick);
-            function handleClick(_event: MouseEvent): void {
-                //console.log(_event);
-                console.log(S[i]);
-            }
-            but1.style.position = "center";
-            but1.style.left = posLeft;
-            but1.style.top = "";
-            but1.style.margin = "10px";
-            but1.style.textAlign = "center";
-
+    function HauptSeite(): void {
+        // Bilder
 
             let div: HTMLDivElement = document.createElement("img");
-            div.style.position = "static";
-            div.style.left = posLeft;
-            div.style.top = posTop;
-            div.style.margin = "10px";
-            div.style.height = 200 + "px";
-            div.style.width = 200 + "px";
+            div.setAttribute("src", S1.DateiName);
+            div.id = S1.Image;
+            previousElement.appendChild(div);
+
+        
+    }
+
+    function SeiteSchuhe(): void {
+        // Bilder
+        for (let i: number = 0; i < S.length; i++) {
+
+            let div: HTMLDivElement = document.createElement("img");
             div.setAttribute("src", S[i].DateiName);
-            //div.style.background = "green";
             div.id = S[i].Image;
             previousElement.appendChild(div);
 
+        }
+        
+        // Text1
+        for (let i: number = 0; i < S.length; i++) {
 
             let p1: HTMLParagraphElement = document.createElement("p");
             p1.appendChild(document.createTextNode(S[i].Marke));
             previousElement.appendChild(p1);
-            p1.style.position = "static";
-            p1.style.left = posLeft;
+            p1.id = "text";
+
+        }
+
+        // Text2
+        for (let i: number = 0; i < S.length; i++) {
 
             let p2: HTMLParagraphElement = document.createElement("p");
             let text: string = S[i].Preis + " €";
             p2.appendChild(document.createTextNode(text));
             previousElement.appendChild(p2);
-            p2.style.position = "static";
-            p2.style.top = posTop;
-            p2.style.left = posLeft;
+            p2.id = "text2";
 
         }
+
+        // Button
+        for (let i: number = 0; i < S.length; i++) {
+
+            let but1: HTMLElement = document.createElement("Button");
+            
+            but1.textContent = "Auswählen";
+            but1.id = "Button1";
+            document.body.appendChild(but1);
+            but1.addEventListener("click", handleClick);
+            function handleClick(_event: MouseEvent): void {
+                console.log(S[i]);
+                S1 = S[i];
+            }
+
+        }
+        
     }
 }

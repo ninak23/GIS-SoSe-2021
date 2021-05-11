@@ -16,12 +16,6 @@ namespace Aufgabe2_3 {
 
     }
 
-    function printEverything(..._rest: string[]): void {
-        console.log(_rest);
-    }
-
-    printEverything(greeting);
-
     let previousElement: HTMLElement = document.body;
 
     let but1: HTMLElement = document.createElement("Button");

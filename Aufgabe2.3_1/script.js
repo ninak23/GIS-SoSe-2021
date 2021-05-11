@@ -6,10 +6,6 @@ var Aufgabe2_3;
         let r = { start_x: Math.random() * 200, start_y: Math.random() * 100, size_x: Math.random() * 150, size_y: Math.random() * 80 };
         return r;
     }
-    function printEverything(..._rest) {
-        console.log(_rest);
-    }
-    printEverything(Aufgabe2_3.greeting);
     let previousElement = document.body;
     let but1 = document.createElement("Button");
     but1.textContent = "Rechteck hinzufügen";

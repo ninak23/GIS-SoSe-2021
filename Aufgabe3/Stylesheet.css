@@ -1,4 +1,41 @@
-/* Alle Seite*/
+/* Alle Seiten*/
+
+
+#Button1 {
+    background-color: cadetblue;
+    border: none;
+    color:white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-inline: 52px ;
+    font-size: 16px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    margin-bottom: 50px;
+
+}
+
+#text {
+
+    text-align: left;
+    display: inline-block;
+    margin-inline: 100px;
+
+}
+
+
+#text2 {
+
+    text-align: left;
+    display: inline-block;
+    margin-inline: 90px;
+    margin-top: 0px;
+}
+
+
+
+
 
 #list {
     position: sticky;
@@ -104,7 +141,6 @@ h4{
 }
 
 body{
-    background: url(Medien/bg.png);
     text-align: center;
     font-family:sans-serif;
     max-width: 1024px;
@@ -117,7 +153,6 @@ nav {
     word-spacing: 2em;
     border: 10px solid transparent;
     padding: 15px;
-    border-image: url(border.png) 30 round;
 }
 
 p{
@@ -208,33 +243,40 @@ tr:hover {background-color:lightblue ;}
     align-items: center;
 }
 
-/*#Schuh1 {
-    max-width: 300px;
-    height: 20rem;
+#Schuh1 {
+    max-width: 255px;
+  
     object-fit: fill;
+    float: left;
 }
 #Schuh2 {
-    max-width: 300px;
-    height: 20rem;
+    max-width: 255px;
+   
     object-fit: fill;
+    float: left;
 
 }
 #Schuh3 {
-    max-width: 300px;
-    height: 20rem;
+    max-width: 255px;
+  
     object-fit: fill;
+    display: inline;
+    float: left;
 }
 
 #Schuh4 {
-    max-width: 300px;
-    height: 20rem;
+    max-width: 255px;
+    
     object-fit: fill;
-}*/
+    display: inline;
+    float: left;
+}
 
 #v{
     height:30rem;
     width: 1024px;
     object-fit: cover;
+    
 }
 
 #vid{
