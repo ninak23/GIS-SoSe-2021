@@ -6,8 +6,17 @@ var Aufgabe3;
     let aktuelleSeite = window.location.href;
     let pos = aktuelleSeite.lastIndexOf("/");
     aktuelleSeite = aktuelleSeite.substring(pos + 1);
+    if (aktuelleSeite == "Index2.html") {
+        SeiteSchuhe(Aufgabe3.K);
+    }
+    if (aktuelleSeite == "Index3.html") {
+        SeiteSchuhe(Aufgabe3.O);
+    }
+    if (aktuelleSeite == "Index4.html") {
+        SeiteSchuhe(Aufgabe3.H);
+    }
     if (aktuelleSeite == "Index5.html") {
-        SeiteSchuhe();
+        SeiteSchuhe(Aufgabe3.S);
     }
     function HauptSeite() {
         // Bilder
@@ -16,39 +25,39 @@ var Aufgabe3;
         div.id = Aufgabe3.S1.Image;
         previousElement.appendChild(div);
     }
-    function SeiteSchuhe() {
+    function SeiteSchuhe(_kleidungsteil) {
         // Bilder
-        for (let i = 0; i < Aufgabe3.S.length; i++) {
+        for (let i = 0; i < _kleidungsteil.length; i++) {
             let div = document.createElement("img");
-            div.setAttribute("src", Aufgabe3.S[i].DateiName);
-            div.id = Aufgabe3.S[i].Image;
+            div.setAttribute("src", _kleidungsteil[i].DateiName);
+            div.id = _kleidungsteil[i].Image;
             previousElement.appendChild(div);
         }
         // Text1
-        for (let i = 0; i < Aufgabe3.S.length; i++) {
+        for (let i = 0; i < _kleidungsteil.length; i++) {
             let p1 = document.createElement("p");
-            p1.appendChild(document.createTextNode(Aufgabe3.S[i].Marke));
+            p1.appendChild(document.createTextNode(_kleidungsteil[i].Typ));
             previousElement.appendChild(p1);
             p1.id = "text";
         }
         // Text2
-        for (let i = 0; i < Aufgabe3.S.length; i++) {
+        for (let i = 0; i < _kleidungsteil.length; i++) {
             let p2 = document.createElement("p");
-            let text = Aufgabe3.S[i].Preis + " €";
+            let text = _kleidungsteil[i].Preis + " €";
             p2.appendChild(document.createTextNode(text));
             previousElement.appendChild(p2);
             p2.id = "text2";
         }
         // Button
-        for (let i = 0; i < Aufgabe3.S.length; i++) {
+        for (let i = 0; i < _kleidungsteil.length; i++) {
             let but1 = document.createElement("Button");
             but1.textContent = "Auswählen";
             but1.id = "Button1";
             document.body.appendChild(but1);
             but1.addEventListener("click", handleClick);
             function handleClick(_event) {
-                console.log(Aufgabe3.S[i]);
-                Aufgabe3.S1 = Aufgabe3.S[i];
+                console.log(_kleidungsteil[i]);
+                Aufgabe3.S1 = _kleidungsteil[i];
             }
         }
     }

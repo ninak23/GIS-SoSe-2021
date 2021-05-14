@@ -2,12 +2,12 @@
 namespace Aufgabe3 {
  
 
-    interface Outfit {
+    export interface Outfit {
 
-        Kopfbedeckungen: Kopfbedeckung;
-        Oberteile: Oberteil;
-        Hosen: Hose;
-        Schuhe: Schuh;
+        Kopfbedeckungen: Kleidungsstueck[];
+        Oberteile: Kleidungsstueck[];
+        Hosen: Kleidungsstueck[];
+        Schuhe: Kleidungsstueck[];
     }
 
     /**createOutfit();
@@ -18,34 +18,21 @@ namespace Aufgabe3 {
     
     }*/
 
-    export interface Kopfbedeckung {
+    export interface Kleidungsstueck {
         Preis: number;
-        KopfbedeckungArt: string;
-        Image: string;
-    }
-
-    export interface Oberteil {
-        Preis: number;
-        OberteilTyp: string;
-        Image: string;
-    }
-
-
-    export interface Hose {
-        Preis: number;
-        HosenTyp: string;
-        Image: string;
-    }
-
-
-    export interface Schuh {
-
-        Preis: number;
-        Marke: string;
+        Typ: string;
         Image: string;
         DateiName: string;
-
     }
+
+    export interface Selection {
+        Kopfbedeckung: Kleidungsstueck;
+        Oberteil: Kleidungsstueck;
+        Hose: Kleidungsstueck;
+        Schuh: Kleidungsstueck;
+    }
+
+    
 
 
     let previousElement: HTMLElement = document.body;
@@ -55,8 +42,18 @@ namespace Aufgabe3 {
     let aktuelleSeite: string = window.location.href;
     let pos: number = aktuelleSeite.lastIndexOf("/");
     aktuelleSeite = aktuelleSeite.substring(pos + 1);
+    if (aktuelleSeite == "Index2.html") {
+        SeiteSchuhe(K);
+    }
+    if (aktuelleSeite == "Index3.html") {
+        SeiteSchuhe(O);
+    }
+    if (aktuelleSeite == "Index4.html") {
+        SeiteSchuhe(H);
+    }
+
     if (aktuelleSeite == "Index5.html") {
-        SeiteSchuhe();
+        SeiteSchuhe(S);
     }
 
     function HauptSeite(): void {
@@ -70,32 +67,32 @@ namespace Aufgabe3 {
         
     }
 
-    function SeiteSchuhe(): void {
+    function SeiteSchuhe(_kleidungsteil: Kleidungsstueck[]): void {
         // Bilder
-        for (let i: number = 0; i < S.length; i++) {
+        for (let i: number = 0; i < _kleidungsteil.length; i++) {
 
             let div: HTMLDivElement = document.createElement("img");
-            div.setAttribute("src", S[i].DateiName);
-            div.id = S[i].Image;
+            div.setAttribute("src", _kleidungsteil[i].DateiName);
+            div.id = _kleidungsteil[i].Image;
             previousElement.appendChild(div);
 
         }
         
         // Text1
-        for (let i: number = 0; i < S.length; i++) {
+        for (let i: number = 0; i < _kleidungsteil.length; i++) {
 
             let p1: HTMLParagraphElement = document.createElement("p");
-            p1.appendChild(document.createTextNode(S[i].Marke));
+            p1.appendChild(document.createTextNode(_kleidungsteil[i].Typ));
             previousElement.appendChild(p1);
             p1.id = "text";
 
         }
 
         // Text2
-        for (let i: number = 0; i < S.length; i++) {
+        for (let i: number = 0; i < _kleidungsteil.length; i++) {
 
             let p2: HTMLParagraphElement = document.createElement("p");
-            let text: string = S[i].Preis + " €";
+            let text: string = _kleidungsteil[i].Preis + " €";
             p2.appendChild(document.createTextNode(text));
             previousElement.appendChild(p2);
             p2.id = "text2";
@@ -103,7 +100,7 @@ namespace Aufgabe3 {
         }
 
         // Button
-        for (let i: number = 0; i < S.length; i++) {
+        for (let i: number = 0; i < _kleidungsteil.length; i++) {
 
             let but1: HTMLElement = document.createElement("Button");
             
@@ -112,8 +109,8 @@ namespace Aufgabe3 {
             document.body.appendChild(but1);
             but1.addEventListener("click", handleClick);
             function handleClick(_event: MouseEvent): void {
-                console.log(S[i]);
-                S1 = S[i];
+                console.log(_kleidungsteil[i]);
+                S1 = _kleidungsteil[i];
             }
 
         }
