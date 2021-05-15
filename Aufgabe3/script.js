@@ -18,13 +18,6 @@ var Aufgabe3;
     if (aktuelleSeite == "Index5.html") {
         SeiteSchuhe(Aufgabe3.S);
     }
-    function HauptSeite() {
-        // Bilder
-        let div = document.createElement("img");
-        div.setAttribute("src", Aufgabe3.S1.DateiName);
-        div.id = Aufgabe3.S1.Image;
-        previousElement.appendChild(div);
-    }
     function SeiteSchuhe(_kleidungsteil) {
         // Bilder
         for (let i = 0; i < _kleidungsteil.length; i++) {

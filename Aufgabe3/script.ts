@@ -56,16 +56,8 @@ namespace Aufgabe3 {
         SeiteSchuhe(S);
     }
 
-    function HauptSeite(): void {
-        // Bilder
-
-            let div: HTMLDivElement = document.createElement("img");
-            div.setAttribute("src", S1.DateiName);
-            div.id = S1.Image;
-            previousElement.appendChild(div);
-
-        
-    }
+   
+ 
 
     function SeiteSchuhe(_kleidungsteil: Kleidungsstueck[]): void {
         // Bilder
