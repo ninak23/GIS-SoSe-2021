@@ -159,7 +159,7 @@ namespace Aufgabe2_5 {
   switch (aktuelleSeite) {
     case "Index.html":
       let _selection: boolean = false;
-      for (let i: number = 0; i < imgIds.length; i++){
+      for (let i: number = 0; i < imgIds.length; i++) {
         console.log(sessionStorage.getItem(imgIds[i]));
         if (sessionStorage.getItem(imgIds[i]) != null) {
           _selection = true;
