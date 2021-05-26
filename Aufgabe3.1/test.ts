@@ -10,7 +10,7 @@ function test(): void {
 test();
 
 
-let formData: FormData = new FormData(document.forms[0]);
+//let formData: FormData = new FormData(document.forms[0]);
 
 /**let url: string = "https://whatever.server/path/file";
 let query: URLSearchParams = new URLSearchParams(<any>formData);
