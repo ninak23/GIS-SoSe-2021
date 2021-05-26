@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "start": "node C: Users/ninae/Documents/GitHub/GIS-SoSe-2021/Aufgabe3.1/data.js"
+    "start": "node Aufgabe3.1/test.js"
   },
   "repository": {
     "type": "git",
