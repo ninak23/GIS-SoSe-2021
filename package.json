@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node C: Users/ninae/Documents/GitHub/GIS-SoSe-2021/Aufgabe3.1/data.js"
   },
   "repository": {
     "type": "git",

@@ -12,20 +12,20 @@ var Aufgabe2_5;
         url = url + "?" + query.toString();
         let response = await fetch(url);
         console.log("ServerResponse", response);
-        let s = await response.json();
-        console.log(s);
-        let _aktuelleSeite = window.location.href;
-        let _pos = _aktuelleSeite.lastIndexOf("/");
-        _aktuelleSeite = _aktuelleSeite.substring(_pos + 1);
-        if (_aktuelleSeite == "Index.html") {
+        let answer = await response.json();
+        console.log(answer);
+        let aktuelleSeite = window.location.href;
+        let pos = aktuelleSeite.lastIndexOf("/");
+        aktuelleSeite = aktuelleSeite.substring(pos + 1);
+        if (aktuelleSeite == "Index.html") {
             let text = document.createElement("P");
-            if (s.error != null) {
-                text.innerText = s.error;
+            if (answer.error != null) {
+                text.innerText = answer.error;
                 text.id = "error";
             }
             else {
-                if (s.message != null) {
-                    text.innerText = s.message;
+                if (answer.message != null) {
+                    text.innerText = answer.message;
                     text.id = "message";
                 }
                 else {
@@ -88,10 +88,10 @@ var Aufgabe2_5;
                 div.setAttribute("src", sessionStorage.getItem(_part.Image));
                 div.id = "test";
                 prevElement.appendChild(div);
-                let _aktuelleSeite = window.location.href;
-                let _pos = _aktuelleSeite.lastIndexOf("/");
-                _aktuelleSeite = _aktuelleSeite.substring(_pos + 1);
-                switch (_aktuelleSeite) {
+                let aktuelleSeite = window.location.href;
+                let pos = aktuelleSeite.lastIndexOf("/");
+                aktuelleSeite = aktuelleSeite.substring(pos + 1);
+                switch (aktuelleSeite) {
                     case "Index.html":
                         showSelection();
                         break;
@@ -132,14 +132,14 @@ var Aufgabe2_5;
         aktuelleSeite = aktuelleSeite.substring(pos + 1);
         switch (aktuelleSeite) {
             case "Index.html":
-                let _selection = false;
+                let selection = false;
                 for (let i = 0; i < imgIds.length; i++) {
                     console.log(sessionStorage.getItem(imgIds[i]));
                     if (sessionStorage.getItem(imgIds[i]) != null) {
-                        _selection = true;
+                        selection = true;
                     }
                 }
-                if (_selection == true) {
+                if (selection == true) {
                     showSelection();
                 }
                 else {

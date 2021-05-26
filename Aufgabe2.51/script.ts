@@ -33,21 +33,21 @@ namespace Aufgabe2_5 {
     url = url + "?" + query.toString();
     let response: Response = await fetch(url);
     console.log("ServerResponse", response);
-    let s: ServerResponse = await response.json();
-    console.log(s);
+    let answer: ServerResponse = await response.json();
+    console.log(answer);
 
-    let _aktuelleSeite: string = window.location.href;
-    let _pos: number = _aktuelleSeite.lastIndexOf("/");
-    _aktuelleSeite = _aktuelleSeite.substring(_pos + 1);
-    if (_aktuelleSeite == "Index.html") {
+    let aktuelleSeite: string = window.location.href;
+    let pos: number = aktuelleSeite.lastIndexOf("/");
+    aktuelleSeite = aktuelleSeite.substring(pos + 1);
+    if (aktuelleSeite == "Index.html") {
       let text: HTMLElement = document.createElement("P");
-      if (s.error != null) {
-        text.innerText = s.error;
+      if (answer.error != null) {
+        text.innerText = answer.error;
         text.id = "error";
       }
       else {
-        if (s.message != null) {
-          text.innerText = s.message;
+        if (answer.message != null) {
+          text.innerText = answer.message;
           text.id = "message";
         }
         else {
@@ -126,10 +126,10 @@ namespace Aufgabe2_5 {
         div.setAttribute("src", sessionStorage.getItem(_part.Image));
         div.id = "test";
         prevElement.appendChild(div);
-        let _aktuelleSeite: string = window.location.href;
-        let _pos: number = _aktuelleSeite.lastIndexOf("/");
-        _aktuelleSeite = _aktuelleSeite.substring(_pos + 1);
-        switch (_aktuelleSeite) {
+        let aktuelleSeite: string = window.location.href;
+        let pos: number = aktuelleSeite.lastIndexOf("/");
+        aktuelleSeite = aktuelleSeite.substring(pos + 1);
+        switch (aktuelleSeite) {
           case "Index.html":
             showSelection();
             break;
@@ -180,15 +180,15 @@ namespace Aufgabe2_5 {
 
     switch (aktuelleSeite) {
       case "Index.html":
-        let _selection: boolean = false;
+        let selection: boolean = false;
         for (let i: number = 0; i < imgIds.length; i++) {
           console.log(sessionStorage.getItem(imgIds[i]));
           if (sessionStorage.getItem(imgIds[i]) != null) {
-            _selection = true;
+            selection = true;
           }
         }
 
-        if (_selection == true) {
+        if (selection == true) {
           showSelection();
         }
         else {
