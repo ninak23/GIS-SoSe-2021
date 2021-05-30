@@ -1,6 +1,6 @@
-/**export namespace P_3_1Server {*/
-    
-    
+
+
+
     document.getElementsByTagName("button")[0].addEventListener("click", Server);
 
     async function Server(): Promise<void> {
@@ -12,11 +12,13 @@
         let response: Response = await fetch(url);
         let answer: string = await response.text();
         console.log(answer);
-      
+
 
     }
 
-//}
-  
 
- 
+
+
+
+
+

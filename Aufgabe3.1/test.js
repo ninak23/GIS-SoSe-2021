@@ -1,5 +1,4 @@
 "use strict";
-/**export namespace P_3_1Server {*/
 document.getElementsByTagName("button")[0].addEventListener("click", Server);
 async function Server() {
     let formData = new FormData(document.forms[0]);
@@ -10,5 +9,4 @@ async function Server() {
     let answer = await response.text();
     console.log(answer);
 }
-//}
 //# sourceMappingURL=test.js.map

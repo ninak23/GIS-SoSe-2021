@@ -25,16 +25,6 @@ var P_3_1Server;
         //Über localhost:8100/ alles was dahinter steht wird als antwort/Text zurückgegeben -> Server und jedes mal wenn etwas 
         //dazugeschrieben wird entsteht ein neues I hear voices -> Server der lokal auf dem rechner läuft, mit dem lokal getest werden soll 
         //sehr simpler server der einfach nur die URL zurückgibt, welche von uns an ihn geschickt wird 
-        document.getElementsByTagName("button")[0].addEventListener("click", Server);
-        async function Server() {
-            let formData = new FormData(document.forms[0]);
-            let url = "https://ninakgissose2020.herokuapp.com/";
-            let query = new URLSearchParams(formData);
-            url = url + "?" + query.toString();
-            let response = await fetch(url);
-            let answer = await response.text();
-            console.log(answer);
-        }
     }
 })(P_3_1Server = exports.P_3_1Server || (exports.P_3_1Server = {}));
 //# sourceMappingURL=server.js.map
