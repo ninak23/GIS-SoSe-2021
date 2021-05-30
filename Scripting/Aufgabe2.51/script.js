@@ -6,8 +6,8 @@ var Aufgabe2_5;
         let imgIds = [parts2.Kopfbedeckungen[0].Image, parts2.Oberteile[0].Image, parts2.Hosen[0].Image, parts2.Schuhe[0].Image];
         //Je nachdem ob man ein error oder eine message zurückbekommen möchte, muss man entrprechend auskommentieren 
         let url = "https://gis-communication.herokuapp.com";
-        //let selection: string = imgIds[0] + "&" + imgIds[1];    // Für Test von error
-        let selection = imgIds[0] + "&" + imgIds[1] + "&" + imgIds[2] + "&" + imgIds[3]; // Für Test von message 
+        let selection = imgIds[0] + "&" + imgIds[1]; // Für Test von error
+        //let selection: string = imgIds[0] + "&" + imgIds[1] + "&" + imgIds[2] + "&" + imgIds[3];  // Für Test von message 
         let query = new URLSearchParams(selection);
         url = url + "?" + query.toString();
         let response = await fetch(url);

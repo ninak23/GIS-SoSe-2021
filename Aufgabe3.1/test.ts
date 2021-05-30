@@ -1,14 +1,22 @@
+/**export namespace P_3_1Server {*/
+    
+    
+    document.getElementsByTagName("button")[0].addEventListener("click", Server);
 
+    async function Server(): Promise<void> {
 
-console.log("hallo Node JS Server");
-test();
+        let formData: FormData = new FormData(document.forms[0]);
+        let url: string = "https://ninakgissose2020.herokuapp.com/";
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        url = url + "?" + query.toString();
+        let response: Response = await fetch(url);
+        let answer: string = await response.text();
+        console.log(answer);
+      
 
-function test(): void {
-    let x: number = 10;
-    let a: string[] = ["hallo", "gh", "sdf"];
+    }
 
-    console.log(a[1], x);
-}
+//}
+  
 
-
-
+ 

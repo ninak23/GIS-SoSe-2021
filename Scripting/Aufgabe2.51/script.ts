@@ -27,8 +27,8 @@ namespace Aufgabe2_5 {
 
 //Je nachdem ob man ein error oder eine message zurückbekommen möchte, muss man entrprechend auskommentieren 
     let url: string = "https://gis-communication.herokuapp.com";
-    //let selection: string = imgIds[0] + "&" + imgIds[1];    // Für Test von error
-    let selection: string = imgIds[0] + "&" + imgIds[1] + "&" + imgIds[2] + "&" + imgIds[3];  // Für Test von message 
+    let selection: string = imgIds[0] + "&" + imgIds[1];    // Für Test von error
+    //let selection: string = imgIds[0] + "&" + imgIds[1] + "&" + imgIds[2] + "&" + imgIds[3];  // Für Test von message 
     let query: URLSearchParams = new URLSearchParams(<any> selection);
     url = url + "?" + query.toString();
     let response: Response = await fetch(url);
