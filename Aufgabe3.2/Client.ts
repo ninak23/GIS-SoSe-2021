@@ -16,14 +16,14 @@ namespace Task3_2 {
     
     async function HTMLapplication(): Promise<void> {
       let response: Response = await sendRequest(baseUrl + "html");
-      let text: string = await response.text();
-      (<HTMLElement>document.getElementById("Response")).innerHTML = text;
+      let htmlResponse: string = await response.text();
+      (<HTMLElement>document.getElementById("Response")).innerHTML = htmlResponse;
     }
   
     async function JSONapplication(): Promise<void> {
       let response: Response = await sendRequest(baseUrl + "json");
-      let jsonObj: any = await response.json(); 
-      console.log(jsonObj);
+      let jsonResponse: any = await response.json(); 
+      console.log(jsonResponse);
     }
 
 }

@@ -13,13 +13,13 @@ var Task3_2;
     }
     async function HTMLapplication() {
         let response = await sendRequest(baseUrl + "html");
-        let text = await response.text();
-        document.getElementById("Response").innerHTML = text;
+        let htmlResponse = await response.text();
+        document.getElementById("Response").innerHTML = htmlResponse;
     }
     async function JSONapplication() {
         let response = await sendRequest(baseUrl + "json");
-        let jsonObj = await response.json();
-        console.log(jsonObj);
+        let jsonResponse = await response.json();
+        console.log(jsonResponse);
     }
 })(Task3_2 || (Task3_2 = {}));
 //# sourceMappingURL=Client.js.map

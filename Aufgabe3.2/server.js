@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Aufgabe09 = void 0;
+exports.Task3_2 = void 0;
 const Http = require("http");
 const Url = require("url");
-var Aufgabe09;
-(function (Aufgabe09) {
+var Task3_2;
+(function (Task3_2) {
     console.log("Starting server");
     let port = Number(process.env.PORT);
     if (!port)
@@ -38,7 +38,7 @@ var Aufgabe09;
         let jsonString = JSON.stringify(_query);
         _response.write(jsonString);
     }
-})(Aufgabe09 = exports.Aufgabe09 || (exports.Aufgabe09 = {}));
+})(Task3_2 = exports.Task3_2 || (exports.Task3_2 = {}));
 /*
   //Parse an address with the url.parse() method, and it will return a URL object with each part of the address as properties:
     //Diesen Code innerhalb von einem aktiven Server testen:

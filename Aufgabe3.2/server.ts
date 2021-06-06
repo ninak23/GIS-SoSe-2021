@@ -3,7 +3,7 @@ import * as Url from "url";
 import { ParsedUrlQuery } from "querystring";
 
 
-export namespace Aufgabe09 {
+export namespace Task3_2 {
   console.log("Starting server");
   let port: number = Number(process.env.PORT);
   if (!port)
@@ -31,8 +31,6 @@ export namespace Aufgabe09 {
     }
     _response.end();
   }
-
-  
 
   function HtmlAnswer(_response: Http.ServerResponse, _query: ParsedUrlQuery): void {
     _response.setHeader("content-type", "text/html; charset=utf-8");
