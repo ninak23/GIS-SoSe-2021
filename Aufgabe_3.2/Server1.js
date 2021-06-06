@@ -1,7 +1,7 @@
 "use strict";
 var Aufgabe09;
 (function (Aufgabe09) {
-    let baseUrl = "https://ninakgissose2020.herokuapp.com/";
+    let baseUrl = "hhttps://ninakgissose2020.herokuapp.com/";
     document.getElementsByTagName("button")[0].addEventListener("click", sendHTMLRequest);
     document.getElementsByTagName("button")[1].addEventListener("click", sendJSONRequest);
     async function sendRequest(_url) {

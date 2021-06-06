@@ -46,6 +46,8 @@ export namespace Task3_2 {
 }
 
 
+   
+
 /*
   //Parse an address with the url.parse() method, and it will return a URL object with each part of the address as properties:
     //Diesen Code innerhalb von einem aktiven Server testen:
