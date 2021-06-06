@@ -1,6 +1,6 @@
 namespace Aufgabe09 {
 
-    let baseUrl: string = "hhttps://ninakgissose2020.herokuapp.com/";
+    let baseUrl: string = "https://ninakgissose2020.herokuapp.com/";
    
   
     document.getElementsByTagName("button")[0].addEventListener("click", sendHTMLRequest);

@@ -3,6 +3,7 @@ import * as Http from "http";
 import * as Url from "url";
 import { ParsedUrlQuery } from "querystring";
 
+
 export namespace Aufgabe09 {
   console.log("Starting server");
   let port: number = Number(process.env.PORT);
@@ -22,7 +23,16 @@ export namespace Aufgabe09 {
     let urlWithQuery: Url.UrlWithParsedQuery = Url.parse(_request.url!, true);
     _response.setHeader("Access-Control-Allow-Origin", "*");
 
-    switch (urlWithQuery.pathname) {
+
+    if (urlWithQuery.pathname == "/html"){
+      createHtmlResponse(_response, urlWithQuery.query);
+    }
+    if (urlWithQuery.pathname == "/json"){
+      createJSONResponse(_response, urlWithQuery.query);
+    }
+  
+
+    /**switch (urlWithQuery.pathname) {
       case "/html":
         createHtmlResponse(_response, urlWithQuery.query);
         break;
@@ -32,9 +42,11 @@ export namespace Aufgabe09 {
       default:
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.write(_request.url);
-    }
+    }*/
     _response.end();
   }
+
+  
 
   function createHtmlResponse(_response: Http.ServerResponse, _query: ParsedUrlQuery): void {
     _response.setHeader("content-type", "text/html; charset=utf-8");

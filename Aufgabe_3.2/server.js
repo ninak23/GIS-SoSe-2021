@@ -19,17 +19,23 @@ var Aufgabe09;
     function handleRequest(_request, _response) {
         let urlWithQuery = Url.parse(_request.url, true);
         _response.setHeader("Access-Control-Allow-Origin", "*");
-        switch (urlWithQuery.pathname) {
-            case "/html":
-                createHtmlResponse(_response, urlWithQuery.query);
-                break;
-            case "/json":
-                createJSONResponse(_response, urlWithQuery.query);
-                break;
-            default:
-                _response.setHeader("content-type", "text/html; charset=utf-8");
-                _response.write(_request.url);
+        if (urlWithQuery.pathname == "/html") {
+            createHtmlResponse(_response, urlWithQuery.query);
         }
+        if (urlWithQuery.pathname == "/json") {
+            createJSONResponse(_response, urlWithQuery.query);
+        }
+        /**switch (urlWithQuery.pathname) {
+          case "/html":
+            createHtmlResponse(_response, urlWithQuery.query);
+            break;
+          case "/json":
+            createJSONResponse(_response, urlWithQuery.query);
+            break;
+          default:
+            _response.setHeader("content-type", "text/html; charset=utf-8");
+            _response.write(_request.url);
+        }*/
         _response.end();
     }
     function createHtmlResponse(_response, _query) {
