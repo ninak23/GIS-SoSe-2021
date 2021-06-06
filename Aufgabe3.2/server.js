@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Task3_2 = void 0;
+exports.Aufgabe09 = void 0;
 const Http = require("http");
 const Url = require("url");
-var Task3_2;
-(function (Task3_2) {
+var Aufgabe09;
+(function (Aufgabe09) {
     console.log("Starting server");
     let port = Number(process.env.PORT);
     if (!port)
@@ -17,23 +17,28 @@ var Task3_2;
         console.log("Listening");
     }
     function handleRequest(_request, _response) {
-        //console.log("What's up?");
-        _response.setHeader("content-type", "text/html; charset=utf-8");
+        let urlWithQuery = Url.parse(_request.url, true);
         _response.setHeader("Access-Control-Allow-Origin", "*");
-        if (_request.url) { //haben wir überhaupt eine url 
-            let url = Url.parse(_request.url, true);
-            for (let key in url.query) {
-                _response.write(key + ":" + url.query[key] + "<br/>"); //wird direkt auf der Webseite ausgegeben  _response.write 
-            }
-            let jsonString = JSON.stringify(url.query);
-            _response.setHeader("content-type", "application/json");
-            _response.write(jsonString); //Json string zurückschicken 
+        if (urlWithQuery.pathname == "/html") {
+            HtmlAnswer(_response, urlWithQuery.query);
         }
-        console.log(_request.url);
-        _response.write(_request.url);
+        if (urlWithQuery.pathname == "/json") {
+            JsonAnswer(_response, urlWithQuery.query);
+        }
         _response.end();
     }
-})(Task3_2 = exports.Task3_2 || (exports.Task3_2 = {}));
+    function HtmlAnswer(_response, _query) {
+        _response.setHeader("content-type", "text/html; charset=utf-8");
+        for (let key in _query) {
+            _response.write(key + ":" + _query[key] + "<br/>"); //wird direkt auf der Webseite ausgegeben  _response.write 
+        }
+    }
+    function JsonAnswer(_response, _query) {
+        _response.setHeader("content-type", "application/json");
+        let jsonString = JSON.stringify(_query);
+        _response.write(jsonString);
+    }
+})(Aufgabe09 = exports.Aufgabe09 || (exports.Aufgabe09 = {}));
 /*
   //Parse an address with the url.parse() method, and it will return a URL object with each part of the address as properties:
     //Diesen Code innerhalb von einem aktiven Server testen:

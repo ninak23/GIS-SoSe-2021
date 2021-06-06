@@ -24,4 +24,4 @@ var Aufgabe09;
         console.log(jsonObj);
     }
 })(Aufgabe09 || (Aufgabe09 = {}));
-//# sourceMappingURL=Server1.js.map
+//# sourceMappingURL=client.js.map
