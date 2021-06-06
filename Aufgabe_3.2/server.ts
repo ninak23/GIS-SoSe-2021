@@ -1,9 +1,9 @@
 
 import * as Http from "http";
 import * as Url from "url";
+import { ParsedUrlQuery } from "querystring";
 
-
-export namespace Task3_2 {
+export namespace Aufgabe09 {
   console.log("Starting server");
   let port: number = Number(process.env.PORT);
   if (!port)
@@ -19,28 +19,36 @@ export namespace Task3_2 {
   }
 
   function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-    //console.log("What's up?");
-
-    _response.setHeader("content-type", "text/html; charset=utf-8");
+    let urlWithQuery: Url.UrlWithParsedQuery = Url.parse(_request.url!, true);
     _response.setHeader("Access-Control-Allow-Origin", "*");
 
-    if (_request.url) { //haben wir überhaupt eine url 
-      let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-      for (let key in url.query) {
-        _response.write(key + ":" + url.query[key] + "<br/>"); //wird direkt auf der Webseite ausgegeben  _response.write 
-      }
-      let jsonString: string = JSON.stringify(url.query);
-      _response.write(jsonString); //Json string zurückschicken 
-
+    switch (urlWithQuery.pathname) {
+      case "/html":
+        createHtmlResponse(_response, urlWithQuery.query);
+        break;
+      case "/json":
+        createJSONResponse(_response, urlWithQuery.query);
+        break;
+      default:
+        _response.setHeader("content-type", "text/html; charset=utf-8");
+        _response.write(_request.url);
     }
-
-    console.log(_request.url);
-
-    _response.write(_request.url);
     _response.end();
   }
 
-
+  function createHtmlResponse(_response: Http.ServerResponse, _query: ParsedUrlQuery): void {
+    _response.setHeader("content-type", "text/html; charset=utf-8");
+    let resultHTML: string = "";
+    for (let q in _query) {
+      resultHTML += `<p>${q}: ${_query[q]}</p>`;
+    }
+    _response.write(resultHTML);
+  }
+  function createJSONResponse(_response: Http.ServerResponse, _query: ParsedUrlQuery): void {
+    _response.setHeader("content-type", "application/json");
+    let jsonString: string = JSON.stringify(_query);
+    _response.write(jsonString);
+  }
 }
 
 
