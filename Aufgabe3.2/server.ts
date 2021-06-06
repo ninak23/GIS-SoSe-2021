@@ -29,12 +29,17 @@ export namespace Task3_2 {
       for (let key in url.query) {
         _response.write(key + ":" + url.query[key] + "<br/>"); //wird direkt auf der Webseite ausgegeben  _response.write 
       }
-      let jsonString: string = JSON.stringify(url.query);
+
+      let urrl: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+      let jsonString: string = JSON.stringify(urrl.query);
+      _response.setHeader("content-type", "application/json");
       _response.write(jsonString); //Json string zurückschicken 
 
     }
 
-    console.log(_request.url);
+
+
+    //console.log(_request.url);
 
     _response.write(_request.url);
     _response.end();
