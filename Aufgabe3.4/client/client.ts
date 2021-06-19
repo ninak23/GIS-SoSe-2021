@@ -10,7 +10,7 @@ namespace Task3_4 {
 
   }
   //let serverURL: string = "htpp://Localhost:8100";
-  let serverURL: string = "https://mongodbnetbrowser.herokuapp.com/";
+  let serverURL: string = "https://ninakgissose2020.herokuapp.com/";
 
   let baseUrl: string = "https://mongodbnetbrowser.herokuapp.com/ ";
 

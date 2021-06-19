@@ -2,7 +2,7 @@
 var Task3_4;
 (function (Task3_4) {
     //let serverURL: string = "htpp://Localhost:8100";
-    let serverURL = "https://mongodbnetbrowser.herokuapp.com/";
+    let serverURL = "https://ninakgissose2020.herokuapp.com/";
     let baseUrl = "https://mongodbnetbrowser.herokuapp.com/ ";
     document.getElementById("resetButton")?.addEventListener("click", insert);
     document.getElementById("responseButton")?.addEventListener("click", findAll);
