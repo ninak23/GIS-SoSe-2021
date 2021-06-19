@@ -1,0 +1,29 @@
+namespace Task3_2 {
+
+    let baseUrl: string = "https://mongodbnetbrowser.herokuapp.com/ ";
+   
+  
+    document.getElementsByTagName("button")[0].addEventListener("click", HTMLapplication);
+    document.getElementsByTagName("button")[1].addEventListener("click", JSONapplication);
+  
+    async function sendRequest(_url: string): Promise<Response> {
+      let formData: FormData = new FormData(document.forms[0]);
+      let query: URLSearchParams = new URLSearchParams(<any>formData);
+      _url = _url + "?" + query.toString();
+      let response: Response = await fetch(_url);
+      return response;
+    }
+    
+    async function HTMLapplication(): Promise<void> {
+      let response: Response = await sendRequest(baseUrl + "html");
+      let htmlResponse: string = await response.text();
+      (<HTMLElement>document.getElementById("Response")).innerHTML = htmlResponse;
+    }
+  
+    async function JSONapplication(): Promise<void> {
+      let response: Response = await sendRequest(baseUrl + "json");
+      let jsonResponse: any = await response.json(); 
+      console.log(jsonResponse);
+    }
+
+}
