@@ -1,4 +1,4 @@
-import * as Mongo from "mongodb";
+/**import * as Mongo from "mongodb";
 
 
 async function connecttoDB (_url: string): Promise<void> {
@@ -8,8 +8,8 @@ let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
 await mongoClient.connect();
 
 let students: Mongo.Collection = mongoClient.db("Test").collection("Students");
-//let cursor = students.find();
+let cursor = students.find();
 }
 
 connecttoDB("mongodb://localhost:27017");
-//# sourceMappingURL=test.js.map
+//# sourceMappingURL=test.js.map*/

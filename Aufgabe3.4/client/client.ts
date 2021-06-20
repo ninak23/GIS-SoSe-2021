@@ -12,7 +12,7 @@ namespace Task3_4 {
   //let serverURL: string = "htpp://Localhost:8100";
   let serverURL: string = "https://ninakgissose2020.herokuapp.com/";
 
-  let baseUrl: string = "https://mongodbnetbrowser.herokuapp.com/ ";
+  //let baseUrl: string = "https://mongodbnetbrowser.herokuapp.com/ ";
 
 
   document.getElementById("resetButton")?.addEventListener("click", insert);
@@ -78,7 +78,7 @@ namespace Task3_4 {
     return feedbackDiv;
   }
 
-  async function HTMLapplication(): Promise<void> {
+  /**async function HTMLapplication(): Promise<void> {
     let response: Response = await sendRequest(baseUrl + "html");
     let htmlResponse: string = await response.text();
     (<HTMLElement>document.getElementById("Response")).innerHTML = htmlResponse;
@@ -88,7 +88,7 @@ namespace Task3_4 {
     let response: Response = await sendRequest(baseUrl + "json");
     let jsonResponse: any = await response.json();
     console.log(jsonResponse);
-  }
+  }*/
 
   async function HTMLapplication1(): Promise<void> {
     let response: Response = await sendRequest(serverURL + "html");

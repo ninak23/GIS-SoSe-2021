@@ -3,7 +3,7 @@ var Task3_4;
 (function (Task3_4) {
     //let serverURL: string = "htpp://Localhost:8100";
     let serverURL = "https://ninakgissose2020.herokuapp.com/";
-    let baseUrl = "https://mongodbnetbrowser.herokuapp.com/ ";
+    //let baseUrl: string = "https://mongodbnetbrowser.herokuapp.com/ ";
     document.getElementById("resetButton")?.addEventListener("click", insert);
     document.getElementById("responseButton")?.addEventListener("click", findAll);
     document.getElementsByTagName("button")[0].addEventListener("click", HTMLapplication1);
@@ -51,16 +51,17 @@ var Task3_4;
         feedbackDiv.appendChild(message);
         return feedbackDiv;
     }
-    async function HTMLapplication() {
-        let response = await sendRequest(baseUrl + "html");
-        let htmlResponse = await response.text();
-        document.getElementById("Response").innerHTML = htmlResponse;
+    /**async function HTMLapplication(): Promise<void> {
+      let response: Response = await sendRequest(baseUrl + "html");
+      let htmlResponse: string = await response.text();
+      (<HTMLElement>document.getElementById("Response")).innerHTML = htmlResponse;
     }
-    async function JSONapplication() {
-        let response = await sendRequest(baseUrl + "json");
-        let jsonResponse = await response.json();
-        console.log(jsonResponse);
-    }
+  
+    async function JSONapplication(): Promise<void> {
+      let response: Response = await sendRequest(baseUrl + "json");
+      let jsonResponse: any = await response.json();
+      console.log(jsonResponse);
+    }*/
     async function HTMLapplication1() {
         let response = await sendRequest(serverURL + "html");
         let htmlResponse = await response.text();
