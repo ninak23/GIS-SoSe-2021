@@ -11,7 +11,7 @@ import { Datastudent } from "./test";
 export namespace Task3_4 {
 
   export interface Antwort {
-    _id: string;
+    //_id: string;
     Vorname: string;
     Nachname: string;
     Email: string;
