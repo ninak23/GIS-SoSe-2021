@@ -15,8 +15,31 @@ namespace Task3_4 {
   //let baseUrl: string = "https://mongodbnetbrowser.herokuapp.com/ ";
 
 
-  document.getElementById("resetButton")?.addEventListener("click", insert);
-  document.getElementById("responseButton")?.addEventListener("click", findAll);
+  //document.getElementById("resetButton")?.addEventListener("click", insert);
+  //document.getElementById("responseButton")?.addEventListener("click", findAll);
+
+  document.getElementById("resetButton")?.addEventListener("click", shipInput);
+  document.getElementById("responseButton")?.addEventListener("click", getInput);
+
+
+
+  async function shipInput(): Promise<Response> {
+    
+    let formData: FormData = new FormData(document.forms[0]);
+    let query: URLSearchParams = new URLSearchParams(<any>formData);
+    serverURL = serverURL + "?" + query.toString();
+    let response: Response = await fetch(serverURL);
+    //wenn eine response vorliegt ausgabe tätigen
+    return response;
+  }
+
+  async function getInput(): Promise<void> {
+
+    let response: Response = await fetch(serverURL);
+    let responseString: string = await response.text();
+    let serverResponse: HTMLElement = document.getElementById("Response");
+    serverResponse.innerHTML = responseString;
+}
 
 
 
@@ -83,7 +106,7 @@ namespace Task3_4 {
     let htmlResponse: string = await response.text();
     (<HTMLElement>document.getElementById("Response")).innerHTML = htmlResponse;
   }
-
+  
   async function JSONapplication(): Promise<void> {
     let response: Response = await sendRequest(baseUrl + "json");
     let jsonResponse: any = await response.json();
