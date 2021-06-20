@@ -82,7 +82,7 @@ namespace Client3_4 {
     student.appendChild(mail);
 
     
-    let message: HTMLSpanElement = document.createElement("span");
+    let message: HTMLSpanElement = document.createElement("p");
     message.classList.add("Nachricht");
     message.innerText = _students.Nachricht;
     student.appendChild(message);

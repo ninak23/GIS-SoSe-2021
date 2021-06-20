@@ -58,7 +58,7 @@ var Client3_4;
         mail.classList.add("E-Mail");
         mail.innerText = _students.Email;
         student.appendChild(mail);
-        let message = document.createElement("span");
+        let message = document.createElement("p");
         message.classList.add("Nachricht");
         message.innerText = _students.Nachricht;
         student.appendChild(message);
