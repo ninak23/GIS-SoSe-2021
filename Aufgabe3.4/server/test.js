@@ -12,17 +12,15 @@ var Datastudent;
         console.log("Database connection", collection != undefined);
     }
     Datastudent.connectToDatabase = connectToDatabase;
-    async function findAll() {
-        console.log("findAll");
+    async function getstudents() {
         let cursor = await collection.find();
         return await cursor.toArray();
     }
-    Datastudent.findAll = findAll;
-    // tslint:disable-next-line: no-any
-    async function insert(_dataset) {
-        console.log(_dataset.Vorname);
-        return await collection.insertOne(_dataset);
+    Datastudent.getstudents = getstudents;
+    async function newstudent(_info) {
+        console.log(_info.Vorname);
+        return await collection.insertOne(_info);
     }
-    Datastudent.insert = insert;
+    Datastudent.newstudent = newstudent;
 })(Datastudent = exports.Datastudent || (exports.Datastudent = {}));
 //# sourceMappingURL=test.js.map

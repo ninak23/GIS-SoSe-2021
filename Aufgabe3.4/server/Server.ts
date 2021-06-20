@@ -19,8 +19,6 @@ export namespace Task3_4 {
 
   }
 
-
-
   //let databaseUrl: string = "mongodb://localhost:27017";
   let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Test?retryWrites=true&w=majority";
 
@@ -50,6 +48,8 @@ export namespace Task3_4 {
     console.log("I hear voices");
     let urlWithQuery: Url.UrlWithParsedQuery = Url.parse(_request.url!, true);
     _response.setHeader("Access-Control-Allow-Origin", "*");
+    _response.setHeader("content-type", "text/html; charset=utf-8");
+  
 
     if (urlWithQuery.pathname == "/html") {
       HtmlAnswer(_response, urlWithQuery.query);
@@ -58,10 +58,10 @@ export namespace Task3_4 {
       JsonAnswer(_response, urlWithQuery.query);
     }
     if (urlWithQuery.pathname == "/insert") {
-      DbJsonAnswer(_response, await Datastudent.insert(urlWithQuery.query));
+      DbJsonAnswer(_response, await Datastudent.newstudent(urlWithQuery.query));
     }
     if (urlWithQuery.pathname == "/read") {
-      DbJsonAnswer(_response, await Datastudent.findAll() );
+      DbJsonAnswer(_response, await Datastudent.getstudents() );
     }
     _response.end();
   }

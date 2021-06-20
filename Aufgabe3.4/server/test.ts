@@ -14,17 +14,13 @@ export namespace Datastudent {
     console.log("Database connection", collection != undefined);
   }
 
-  export async function findAll(): Promise<Task3_4.Antwort[]> {
-    console.log("findAll");
+  export async function getstudents(): Promise<Task3_4.Antwort[]> {
     let cursor: Mongo.Cursor<Task3_4.Antwort> = await collection.find();
     return await cursor.toArray();
   }
 
-  // tslint:disable-next-line: no-any
-  export async function insert(_dataset: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
-    console.log( _dataset.Vorname );
-    return await collection.insertOne(_dataset);
+  export async function newstudent(_info: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
+    console.log(_info.Vorname );
+    return await collection.insertOne(_info);
   }
-
-
 }

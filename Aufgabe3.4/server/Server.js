@@ -29,6 +29,7 @@ var Task3_4;
         console.log("I hear voices");
         let urlWithQuery = Url.parse(_request.url, true);
         _response.setHeader("Access-Control-Allow-Origin", "*");
+        _response.setHeader("content-type", "text/html; charset=utf-8");
         if (urlWithQuery.pathname == "/html") {
             HtmlAnswer(_response, urlWithQuery.query);
         }
@@ -36,10 +37,10 @@ var Task3_4;
             JsonAnswer(_response, urlWithQuery.query);
         }
         if (urlWithQuery.pathname == "/insert") {
-            DbJsonAnswer(_response, await test_1.Datastudent.insert(urlWithQuery.query));
+            DbJsonAnswer(_response, await test_1.Datastudent.newstudent(urlWithQuery.query));
         }
         if (urlWithQuery.pathname == "/read") {
-            DbJsonAnswer(_response, await test_1.Datastudent.findAll());
+            DbJsonAnswer(_response, await test_1.Datastudent.getstudents());
         }
         _response.end();
     }
