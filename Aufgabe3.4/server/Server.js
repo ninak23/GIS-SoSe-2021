@@ -9,7 +9,7 @@ const test_1 = require("./test");
 var Task3_4;
 (function (Task3_4) {
     //let databaseUrl: string = "mongodb://localhost:27017";
-    let databaseUrl = "mongodb+srv://6k5m43C21:<6k5m43C21>@ninagis.mlujl.mongodb.net/Test?retryWrites=true&w=majority";
+    let databaseUrl = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Test?retryWrites=true&w=majority";
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;

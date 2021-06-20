@@ -22,7 +22,7 @@ export namespace Task3_4 {
 
 
   //let databaseUrl: string = "mongodb://localhost:27017";
-  let databaseUrl: string = "mongodb+srv://6k5m43C21:<6k5m43C21>@ninagis.mlujl.mongodb.net/Test?retryWrites=true&w=majority";
+  let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Test?retryWrites=true&w=majority";
 
   let port: number = Number(process.env.PORT);
   if (!port)
