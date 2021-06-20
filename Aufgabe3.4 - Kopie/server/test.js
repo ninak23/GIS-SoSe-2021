@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Servver = void 0;
 const Http = require("http");
 const Url = require("url");
-const database_1 = require("./database");
+const server_1 = require("./server");
 var Servver;
 (function (Servver) {
     startServer();
@@ -11,7 +11,7 @@ var Servver;
         console.log("Starting server");
         //DB Connection
         console.log("Connecting to DB...");
-        await database_1.A11Database.connectToDB("mongodb+srv://user:fBag3TZ4wiw6yRiq@cluster0-omyol.mongodb.net/dbname?retryWrites=true&w=majority");
+        await server_1.A11Database.connectToDB("mongodb+srv://user:fBag3TZ4wiw6yRiq@cluster0-omyol.mongodb.net/dbname?retryWrites=true&w=majority");
         let port = Number(process.env.PORT);
         if (!port)
             port = 8100;
@@ -34,13 +34,13 @@ var Servver;
                 createJSONResponse(_response, urlWithQuery.query);
                 break;
             case "/insert":
-                DbJsonResponse(_response, await database_1.A11Database.insert(urlWithQuery.query));
+                DbJsonResponse(_response, await server_1.A11Database.insert(urlWithQuery.query));
                 break;
             case "/removeOne":
-                DbJsonResponse(_response, await database_1.A11Database.removeOne(urlWithQuery.query));
+                DbJsonResponse(_response, await server_1.A11Database.removeOne(urlWithQuery.query));
                 break;
             case "/read":
-                DbJsonResponse(_response, await database_1.A11Database.findAll());
+                DbJsonResponse(_response, await server_1.A11Database.findAll());
                 break;
             default:
                 _response.setHeader("content-type", "text/html; charset=utf-8");

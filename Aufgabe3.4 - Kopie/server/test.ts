@@ -1,7 +1,7 @@
 import * as Http from "http";
 import * as Url from "url";
 import { ParsedUrlQuery } from "querystring";
-import { A11Database } from "./database";
+import { A11Database } from "./server";
 
 export namespace Servver {
 
