@@ -9,7 +9,8 @@ namespace Client {
     }
 
 
-    let serverURL: string = "https://mongodbnetbrowser.herokuapp.com/" ; 
+    //let serverURL: string = "https://mongodbnetbrowser.herokuapp.com/" ; 
+    let serverURL: string = "https://ninakgissose2020.herokuapp.com/";
 
     document.getElementById("insertButton")?.addEventListener("click", input);
     //document.getElementById("responseButton")?.addEventListener("click", getData);
