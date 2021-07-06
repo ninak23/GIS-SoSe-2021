@@ -47,8 +47,6 @@ export namespace server {
         let urlWithQuery: Url.UrlWithParsedQuery = Url.parse(_request.url!, true);
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
-
-
         if (urlWithQuery.pathname == "/insert") {
             DbJsonAnswer(_response, await Memory.newPlayer(urlWithQuery.query));
         }
