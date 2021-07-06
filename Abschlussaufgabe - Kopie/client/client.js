@@ -1,7 +1,7 @@
 "use strict";
 var Client;
 (function (Client) {
-    let serverURL = "htpp://Localhost:8100";
+    let serverURL = "https://mongodbnetbrowser.herokuapp.com/";
     document.getElementById("insertButton")?.addEventListener("click", input);
     //document.getElementById("responseButton")?.addEventListener("click", getData);
     async function input(_e) {

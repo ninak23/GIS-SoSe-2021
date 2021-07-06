@@ -9,7 +9,7 @@ namespace Client {
     }
 
 
-    let serverURL: string = "htpp://Localhost:8100"; 
+    let serverURL: string = "https://mongodbnetbrowser.herokuapp.com/" ; 
 
     document.getElementById("insertButton")?.addEventListener("click", input);
     //document.getElementById("responseButton")?.addEventListener("click", getData);
