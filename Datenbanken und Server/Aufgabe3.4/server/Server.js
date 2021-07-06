@@ -29,7 +29,6 @@ var Task3_4;
         console.log("I hear voices");
         let urlWithQuery = Url.parse(_request.url, true);
         _response.setHeader("Access-Control-Allow-Origin", "*");
-        _response.setHeader("content-type", "text/html; charset=utf-8");
         if (urlWithQuery.pathname == "/html") {
             HtmlAnswer(_response, urlWithQuery.query);
         }
