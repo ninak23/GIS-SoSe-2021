@@ -1,6 +1,6 @@
 import * as Http from "http";
 import * as Url from "url";
-//import { ParsedUrlQuery } from "querystring";
+import { ParsedUrlQuery } from "querystring";
 import { Memory } from "./test";
 
 
@@ -26,12 +26,15 @@ export namespace server {
     if (!port)
         port = 8100;
 
+    //Memory.connectToDatabase(databaseUrl);
     startServer(port);
-    Memory.connectToDatabase(databaseUrl);
+    
 
     async function startServer(_port: number | string): Promise<void> {
 
         console.log("Starting server");
+
+        await Memory.connectToDatabase(databaseUrl);
 
         let server: Http.Server = Http.createServer();
         server.addListener("request", handleRequest);

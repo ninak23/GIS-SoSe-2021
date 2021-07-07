@@ -9,13 +9,27 @@ var Client;
         //document.getElementById("responseButton")?.addEventListener("click", getData);
         console.log("inserted");
     }
-    async function input(_e) {
-        let formmdata = new FormData(document.forms[0]);
+    /**async function input(_e: Event): Promise<void> {
+        console.log("Button betätigt")
+  
+        let formmdata: FormData = new FormData(document.forms[0]);
+        console.log(formmdata);
         // tslint:disable-next-line: no-any
-        let querry = new URLSearchParams(formmdata);
-        let answer = await fetch(serverURL + "/insert?" + querry);
+        let querry: URLSearchParams = new URLSearchParams(<any>formmdata);
+        console.log(querry);
+        let answer: Response = await fetch(serverURL + "/insert?" + querry);
         console.log(await answer.json());
-        return;
+    }*/
+    async function input(_e) {
+        let formData = new FormData(document.forms[0]);
+        console.log(formData);
+        let url = "https://ninakgissose2020.herokuapp.com/";
+        let query = new URLSearchParams(formData);
+        console.log(query);
+        url = url + "/insert?" + query.toString();
+        let response = await fetch(url);
+        let answer = await response.text();
+        console.log(answer);
     }
     // tslint:disable-next-line: no-any
     const cards = document.querySelectorAll(".memory-card");

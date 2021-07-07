@@ -14,20 +14,38 @@ namespace Client {
 
     function init(): void {
 
-    document.getElementById("insertButton")?.addEventListener("click", input);
-    //document.getElementById("responseButton")?.addEventListener("click", getData);
-    console.log("inserted");
+        document.getElementById("insertButton")?.addEventListener("click", input);
+        //document.getElementById("responseButton")?.addEventListener("click", getData);
+        console.log("inserted");
     }
 
-    async function input(_e: Event): Promise<void> {
+    /**async function input(_e: Event): Promise<void> {
+        console.log("Button betätigt")
   
         let formmdata: FormData = new FormData(document.forms[0]);
+        console.log(formmdata);
         // tslint:disable-next-line: no-any
         let querry: URLSearchParams = new URLSearchParams(<any>formmdata);
+        console.log(querry);
         let answer: Response = await fetch(serverURL + "/insert?" + querry);
         console.log(await answer.json());
-        return;
-      }
+    }*/
+
+
+
+
+    async function input(_e: Event): Promise<void> {
+        let formData: FormData = new FormData(document.forms[0]);
+        console.log(formData);
+        let url: string = "https://ninakgissose2020.herokuapp.com/";
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        console.log(query);
+        url = url + "/insert?" + query.toString();
+        let response: Response = await fetch(url);
+        let answer: string = await response.text();
+        console.log(answer);
+    }
+
 
 
 
@@ -126,7 +144,7 @@ namespace Client {
             secondCard.classList.remove("flip");
 
             resetBoard();
-        },         1000);
+        }, 1000);
     }
 
     function resetBoard(): void {
