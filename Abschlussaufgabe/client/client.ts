@@ -1,4 +1,3 @@
-
 namespace Client {
 
     export interface Player {
@@ -11,17 +10,23 @@ namespace Client {
 
     //let serverURL: string = "https://mongodbnetbrowser.herokuapp.com/" ; 
     let serverURL: string = "https://ninakgissose2020.herokuapp.com/";
+    init();
+
+    function init(): void {
 
     document.getElementById("insertButton")?.addEventListener("click", input);
     //document.getElementById("responseButton")?.addEventListener("click", getData);
+    console.log("inserted");
+    }
 
-    export async function input(_e: Event): Promise<void> {
+    async function input(_e: Event): Promise<void> {
   
         let formmdata: FormData = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
         let querry: URLSearchParams = new URLSearchParams(<any>formmdata);
         let answer: Response = await fetch(serverURL + "/insert?" + querry);
         console.log(await answer.json());
+        return;
       }
 
 

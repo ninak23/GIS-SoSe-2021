@@ -9,7 +9,8 @@ export namespace Memory {
   export async function connectToDatabase(_url: string): Promise<void> {
     let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
     await mongoClient.connect();
-    collection = mongoClient.db("Memory").collection("ScoreList");
+    //collection = mongoClient.db("Memory").collection("ScoreList");
+    collection = mongoClient.db("Memory2").collection("Score");
     console.log("Database connection", collection != undefined);
   }
 

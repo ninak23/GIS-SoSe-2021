@@ -8,7 +8,8 @@ var Memory;
     async function connectToDatabase(_url) {
         let mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
         await mongoClient.connect();
-        collection = mongoClient.db("Memory").collection("ScoreList");
+        //collection = mongoClient.db("Memory").collection("ScoreList");
+        collection = mongoClient.db("Memory2").collection("Score");
         console.log("Database connection", collection != undefined);
     }
     Memory.connectToDatabase = connectToDatabase;

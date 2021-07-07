@@ -3,16 +3,20 @@ var Client;
 (function (Client) {
     //let serverURL: string = "https://mongodbnetbrowser.herokuapp.com/" ; 
     let serverURL = "https://ninakgissose2020.herokuapp.com/";
-    document.getElementById("insertButton")?.addEventListener("click", input);
-    //document.getElementById("responseButton")?.addEventListener("click", getData);
+    init();
+    function init() {
+        document.getElementById("insertButton")?.addEventListener("click", input);
+        //document.getElementById("responseButton")?.addEventListener("click", getData);
+        console.log("inserted");
+    }
     async function input(_e) {
         let formmdata = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
         let querry = new URLSearchParams(formmdata);
         let answer = await fetch(serverURL + "/insert?" + querry);
         console.log(await answer.json());
+        return;
     }
-    Client.input = input;
     // tslint:disable-next-line: no-any
     const cards = document.querySelectorAll(".memory-card");
     let aktuelleSeite = window.location.href;
