@@ -2,10 +2,10 @@
 var Client;
 (function (Client) {
     //let serverURL: string = "https://mongodbnetbrowser.herokuapp.com/" ; 
-    let serverURL = "https://ninakgissose2020.herokuapp.com/";
+    //let serverURL: string = "https://ninakgissose2020.herokuapp.com/";
     init();
     function init() {
-        document.getElementById("insertButton")?.addEventListener("click", input);
+        document.getElementById("insertButton")?.addEventListener("submit", input);
         //document.getElementById("responseButton")?.addEventListener("click", getData);
         console.log("inserted");
     }
@@ -23,10 +23,11 @@ var Client;
     async function input(_e) {
         let formData = new FormData(document.forms[0]);
         console.log(formData);
-        let url = "https://ninakgissose2020.herokuapp.com/";
+        //let url: string = "https://localhost:8100";
+        let url = "https://ninakgissose2020.herokuapp.com";
         let query = new URLSearchParams(formData);
         console.log(query);
-        url = url + "/insert?" + query.toString();
+        url = url + "?" + query.toString();
         let response = await fetch(url);
         let answer = await response.text();
         console.log(answer);

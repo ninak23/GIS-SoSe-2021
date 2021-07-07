@@ -9,12 +9,12 @@ namespace Client {
 
 
     //let serverURL: string = "https://mongodbnetbrowser.herokuapp.com/" ; 
-    let serverURL: string = "https://ninakgissose2020.herokuapp.com/";
+    //let serverURL: string = "https://ninakgissose2020.herokuapp.com/";
     init();
 
     function init(): void {
 
-        document.getElementById("insertButton")?.addEventListener("click", input);
+        document.getElementById("insertButton")?.addEventListener("submit", input);
         //document.getElementById("responseButton")?.addEventListener("click", getData);
         console.log("inserted");
     }
@@ -37,10 +37,11 @@ namespace Client {
     async function input(_e: Event): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         console.log(formData);
-        let url: string = "https://ninakgissose2020.herokuapp.com/";
+        //let url: string = "https://localhost:8100";
+        let url: string = "https://ninakgissose2020.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         console.log(query);
-        url = url + "/insert?" + query.toString();
+        url = url + "?" + query.toString();
         let response: Response = await fetch(url);
         let answer: string = await response.text();
         console.log(answer);
