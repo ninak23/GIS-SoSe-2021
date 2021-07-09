@@ -17,10 +17,16 @@ export namespace server {
         Playtime: string;
     }
 
+    export interface Cards {
+        url: string;
+        name: string;
+    }
+
     //let databaseUrl: string = "mongodb://localhost:27017";
     //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
     //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/MemoryretryWrites=true&w=majority" ;
     let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory2?retryWrites=true&w=majority";
+    let databaseCardsUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
 
     let port: number = Number(process.env.PORT);
     if (!port)
@@ -28,13 +34,14 @@ export namespace server {
 
     //Memory.connectToDatabase(databaseUrl);
     startServer(port);
-    
+
 
     async function startServer(_port: number | string): Promise<void> {
 
         console.log("Starting server");
 
         await Memory.connectToDatabase(databaseUrl);
+        await Memory.connectTodb(databaseCardsUrl);  //neu 
 
         let server: Http.Server = Http.createServer();
         server.addListener("request", handleRequest);
@@ -58,10 +65,28 @@ export namespace server {
         if (urlWithQuery.pathname == "/read") {
             DbJsonAnswer(_response, await Memory.getplayer());
         }
+
+        if (urlWithQuery.pathname == "/Insert") {
+            DbJsonAnswer(_response, await Memory.newCards(urlWithQuery.query));
+        }
+        if (urlWithQuery.pathname == "/Read") {
+            DbJsonAnswer(_response, await Memory.getCards());
+        }
+
+        if (urlWithQuery.pathname == "/remove") {
+            DbJsonAnswer(_response, await Memory.removeCards(urlWithQuery.query));
+        }
+
+
         _response.end();
     }
 
+
+
+
 }
+
+
 // tslint:disable-next-line: no-any
 function DbJsonAnswer(_response: Http.ServerResponse, _result: any): void {
     _response.setHeader("content-type", "application/json");

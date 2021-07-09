@@ -1,3 +1,4 @@
+
 namespace Client {
 
     export interface Player {
@@ -5,6 +6,12 @@ namespace Client {
         firstname: string;
         secondname: string;
         Playtime: string;
+    }
+
+    export interface Cards {
+        _id: string;
+        url: string;
+        name: string;
     }
 
     //let url: string = "https://localhost:8100";
@@ -17,8 +24,19 @@ namespace Client {
 
         document.getElementById("insertButton")?.addEventListener("click", input);
         document.getElementById("responseButton")?.addEventListener("click", getData);
+
+        document.getElementById("insertcard")?.addEventListener("click", insert);
+        document.getElementById("removecard")?.addEventListener("click", removee);
+      
+        
+        let elem: HTMLElement = document.getElementById("responseButton");
+        document.getElementById("responseButton")?.addEventListener("click", remove); //new
+        function remove(): void {
+        elem.parentNode.removeChild(elem);
+        }
         console.log("inserted");
     }
+
 
     /**async function input(_e: Event): Promise<void> {
         console.log("Button betätigt")
@@ -72,6 +90,71 @@ namespace Client {
         
     }
 
+    async function insert(_e: Event): Promise<void> {
+        let formData: FormData = new FormData(document.forms[0]);
+        console.log(formData);
+        // tslint:disable-next-line: no-any
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        console.log(query);
+        url = url + "/Insert?" + query.toString();
+        let response: Response = await fetch(url);
+        let answer: string = await response.text();
+        console.log(answer);
+    }
+
+    async function removee(_e: Event): Promise<void> {
+        let formData: FormData = new FormData(document.forms[0]);
+        console.log(formData);
+        // tslint:disable-next-line: no-any
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        console.log(query);
+        url = url + "/remove?" + query.toString();
+        let response: Response = await fetch(url);
+        let answer: string = await response.text();
+        console.log(answer);
+    }
+
+
+     
+    if (aktuelleSeite == "Admin.html") {
+        window.addEventListener("load", getCards);
+    }
+   
+
+    export async function getCards (_e: Event): Promise<void> {
+        console.log("cards");
+        let response: Response = await fetch(url + "/Read");
+        let cardsData: Cards[] = await response.json();
+        let out: HTMLDivElement = <HTMLDivElement>document.getElementById("showCards");
+        out.innerHTML = "";
+
+        for ( let cards of cardsData) {
+            out.appendChild(showCards(cards));
+        }
+
+    }
+
+   
+    export function showCards(_cards: Cards): HTMLElement {
+
+        console.log("zeig");
+        
+        let card: HTMLDivElement = document.createElement("div");
+        card.classList.add("Card");
+        card.setAttribute("_id", _cards._id);
+        
+        /**let cardname: HTMLElement = document.createElement("p");
+        cardname.classList.add("name");
+        cardname.innerText = _cards.name;
+        cardname.appendChild(cardname);*/
+
+        let img: HTMLImageElement = document.createElement("img");
+        img.src = _cards.url;
+        card.appendChild(img);
+
+        return card;   
+    }
+
     export async function getData(_e: Event): Promise<void> {
         console.log("Daten holen");
         let response: Response = await fetch(url + "/read");
@@ -80,15 +163,10 @@ namespace Client {
         out.innerHTML = "";
 
         let show: Player[] = [];
-        let maxRanking: number = 10;
-        let idx: number = 0;
 
-        // create array with max. 10 players
+        // copy array from database
         for (let players of playerData) {
-            if (idx < maxRanking) {
                 show.push(players);
-                idx++;
-            }
         }
 
         //sort players by time
@@ -96,7 +174,9 @@ namespace Client {
         if (show.length > 1) {
             for (let j: number = 0; j < show.length; j++) {
                 for (let i: number = 1; i < show.length; i++) {
-                    if (show[i - 1].Playtime > show[i].Playtime) {
+                    let time1: number = parseFloat(show[i - 1].Playtime);
+                    let time2: number = parseFloat(show[i].Playtime);
+                    if ( time1 > time2) {
                         tmpPlayer = show[i - 1];
                         show[i - 1] = show[i];
                         show[i] = tmpPlayer;
@@ -105,8 +185,13 @@ namespace Client {
             }
         }
 
+        let maxRanking: number = 10;
+        let idx: number = 0;
         for (let players of show) {
-            out.appendChild(showPlayers(players));
+            if (idx < maxRanking) {
+                out.appendChild(showPlayers(players));
+            }
+            idx++;
         }
     }
 
