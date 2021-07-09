@@ -17,6 +17,7 @@ var Datastudent;
         return await cursor.toArray();
     }
     Datastudent.getstudents = getstudents;
+    // tslint:disable-next-line: no-any
     async function newstudent(_info) {
         console.log(_info.Vorname);
         return await collection.insertOne(_info);

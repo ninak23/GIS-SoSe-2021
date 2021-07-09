@@ -1,6 +1,6 @@
 import * as Http from "http";
 import * as Url from "url";
-import { ParsedUrlQuery } from "querystring";
+//import { ParsedUrlQuery } from "querystring";
 import { Memory } from "./test";
 
 
@@ -17,10 +17,16 @@ export namespace server {
         Playtime: string;
     }
 
+    export interface Cards {
+        url: string;
+        name: string;
+    }
+
     //let databaseUrl: string = "mongodb://localhost:27017";
     //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
     //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/MemoryretryWrites=true&w=majority" ;
     let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory2?retryWrites=true&w=majority";
+    let databaseCardsUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
 
     let port: number = Number(process.env.PORT);
     if (!port)
@@ -35,6 +41,7 @@ export namespace server {
         console.log("Starting server");
 
         await Memory.connectToDatabase(databaseUrl);
+        await Memory.connectTodb(databaseCardsUrl);  //neu 
 
         let server: Http.Server = Http.createServer();
         server.addListener("request", handleRequest);
@@ -58,6 +65,14 @@ export namespace server {
         if (urlWithQuery.pathname == "/read") {
             DbJsonAnswer(_response, await Memory.getplayer());
         }
+
+        if (urlWithQuery.pathname == "/insert") {
+            DbJsonAnswer(_response, await Memory.newCards(urlWithQuery.query));
+        }
+        if (urlWithQuery.pathname == "/read") {
+            DbJsonAnswer(_response, await Memory.getCards());
+        }
+
         _response.end();
     }
 

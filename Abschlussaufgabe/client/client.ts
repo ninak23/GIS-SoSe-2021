@@ -1,3 +1,4 @@
+
 namespace Client {
 
     export interface Player {
@@ -7,17 +8,32 @@ namespace Client {
         Playtime: string;
     }
 
+    export interface Cards {
+        _id: string;
+        url: string;
+        name: string;
+    }
 
+    //let url: string = "https://localhost:8100";
+    let url: string = "https://ninakgissose2020.herokuapp.com";
     //let serverURL: string = "https://mongodbnetbrowser.herokuapp.com/" ; 
     //let serverURL: string = "https://ninakgissose2020.herokuapp.com/";
     init();
 
     function init(): void {
 
-        document.getElementById("insertButton")?.addEventListener("submit", input);
-        //document.getElementById("responseButton")?.addEventListener("click", getData);
+        document.getElementById("insertButton")?.addEventListener("click", input);
+        document.getElementById("responseButton")?.addEventListener("click", getData);
+      
+        
+        let elem: HTMLElement = document.getElementById("responseButton");
+        document.getElementById("responseButton")?.addEventListener("click", remove); //new
+        function remove(): void {
+        elem.parentNode.removeChild(elem);
+        }
         console.log("inserted");
     }
+
 
     /**async function input(_e: Event): Promise<void> {
         console.log("Button betätigt")
@@ -30,23 +46,6 @@ namespace Client {
         let answer: Response = await fetch(serverURL + "/insert?" + querry);
         console.log(await answer.json());
     }*/
-
-
-
-
-    async function input(_e: Event): Promise<void> {
-        let formData: FormData = new FormData(document.forms[0]);
-        console.log(formData);
-        //let url: string = "https://localhost:8100";
-        let url: string = "https://ninakgissose2020.herokuapp.com";
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        console.log(query);
-        url = url + "?" + query.toString();
-        let response: Response = await fetch(url);
-        let answer: string = await response.text();
-        console.log(answer);
-    }
-
 
 
 
@@ -71,6 +70,124 @@ namespace Client {
     if (aktuelleSeite == "Score.html") {
         scoreTime = sessionStorage.getItem(keyTime);
         document.getElementById("Scoretime").innerHTML = "Gametime: " + scoreTime + " s";
+    }
+
+    async function input(_e: Event): Promise<void> {
+        let formData: FormData = new FormData(document.forms[0]);
+        console.log(formData);
+        formData.append("Playtime", scoreTime);
+        // tslint:disable-next-line: no-any
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        console.log(query);
+        url = url + "/insert?" + query.toString();
+        let response: Response = await fetch(url);
+        let answer: string = await response.text();
+        console.log(answer);
+        window.location.href = "Ranking.html";
+        
+    }
+
+     
+    if (aktuelleSeite == "Admin.html") {
+        window.addEventListener("load", getCards);
+    }
+   
+
+    export async function getCards (_e: Event): Promise<void> {
+        let response: Response = await fetch(url + "/read");
+        let cardsData: Cards[] = await response.json();
+        let out: HTMLDivElement = <HTMLDivElement>document.getElementById("showCards");
+        out.innerHTML = "";
+
+        for ( let cards of cardsData) {
+            out.appendChild(showCards(cards));
+        }
+
+    }
+
+   
+    export function showCards(_cards: Cards): HTMLElement {
+        
+        let card: HTMLDivElement = document.createElement("div");
+        card.classList.add("Card");
+        card.setAttribute("_id", _cards._id);
+        
+        let name: HTMLElement = document.createElement("p");
+        name.classList.add("name");
+        name.innerText = _cards.name;
+        name.appendChild(name);
+
+        let img: HTMLImageElement = document.createElement("img");
+        img.src = _cards.url;
+        card.appendChild(img);
+
+        return card;   
+    }
+
+    export async function getData(_e: Event): Promise<void> {
+        console.log("Daten holen");
+        let response: Response = await fetch(url + "/read");
+        let playerData: Player[] = await response.json();
+        let out: HTMLDivElement = <HTMLDivElement>document.getElementById("Response")!;
+        out.innerHTML = "";
+
+        let show: Player[] = [];
+
+        // copy array from database
+        for (let players of playerData) {
+                show.push(players);
+        }
+
+        //sort players by time
+        let tmpPlayer: Player;
+        if (show.length > 1) {
+            for (let j: number = 0; j < show.length; j++) {
+                for (let i: number = 1; i < show.length; i++) {
+                    let time1: number = parseFloat(show[i - 1].Playtime);
+                    let time2: number = parseFloat(show[i].Playtime);
+                    if ( time1 > time2) {
+                        tmpPlayer = show[i - 1];
+                        show[i - 1] = show[i];
+                        show[i] = tmpPlayer;
+                    }
+                }
+            }
+        }
+
+        let maxRanking: number = 10;
+        let idx: number = 0;
+        for (let players of show) {
+            if (idx < maxRanking) {
+                out.appendChild(showPlayers(players));
+            }
+            idx++;
+        }
+    }
+
+    export function showPlayers(_players: Player): HTMLElement {
+
+        let player: HTMLDivElement = document.createElement("div");
+        player.classList.add("Player");
+        player.setAttribute("_id", _players._id);
+
+
+        let firstname: HTMLElement = document.createElement("p");
+        firstname.classList.add("firstname");
+        firstname.innerText = _players.firstname;
+        player.appendChild(firstname);
+
+        let secondname: HTMLElement = document.createElement("p");
+        secondname.classList.add("secondname");
+        secondname.innerText = _players.secondname;
+        player.appendChild(secondname);
+
+        let playtime: HTMLElement = document.createElement("p");
+        playtime.classList.add("Playtime");
+        playtime.innerText = _players.Playtime;
+        player.appendChild(playtime);
+
+
+        return player;
     }
 
     function checkEnd(): void {

@@ -79,6 +79,7 @@ export namespace Task3_4 {
     _response.write(jsonString);
 
   }
+  // tslint:disable-next-line: no-any
   function DbJsonAnswer(_response: Http.ServerResponse, _result: any): void {
     _response.setHeader("content-type", "application/json");
     _response.write(JSON.stringify(_result));

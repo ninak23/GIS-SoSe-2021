@@ -20,6 +20,7 @@ var Client3_4;
      }*/
     async function input(_e) {
         let formmdata = new FormData(document.forms[0]);
+        // tslint:disable-next-line: no-any
         let querry = new URLSearchParams(formmdata);
         let answer = await fetch(serverURL + "/insert?" + querry);
         console.log(await answer.json());

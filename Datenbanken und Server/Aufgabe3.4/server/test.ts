@@ -19,6 +19,7 @@ export namespace Datastudent {
     return await cursor.toArray();
   }
 
+  // tslint:disable-next-line: no-any
   export async function newstudent(_info: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
     console.log(_info.Vorname );
     return await collection.insertOne(_info);

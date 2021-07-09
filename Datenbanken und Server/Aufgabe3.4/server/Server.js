@@ -54,6 +54,7 @@ var Task3_4;
         let jsonString = JSON.stringify(_query);
         _response.write(jsonString);
     }
+    // tslint:disable-next-line: no-any
     function DbJsonAnswer(_response, _result) {
         _response.setHeader("content-type", "application/json");
         _response.write(JSON.stringify(_result));

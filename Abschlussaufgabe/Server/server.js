@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.server = void 0;
 const Http = require("http");
 const Url = require("url");
+//import { ParsedUrlQuery } from "querystring";
 const test_1 = require("./test");
 //connecttoDB("mongodb://localhost:27017");
 //# sourceMappingURL=test.js.map */
@@ -12,6 +13,7 @@ var server;
     //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
     //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/MemoryretryWrites=true&w=majority" ;
     let databaseUrl = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory2?retryWrites=true&w=majority";
+    let databaseCardsUrl = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
@@ -20,6 +22,7 @@ var server;
     async function startServer(_port) {
         console.log("Starting server");
         await test_1.Memory.connectToDatabase(databaseUrl);
+        await test_1.Memory.connectTodb(databaseCardsUrl); //neu 
         let server = Http.createServer();
         server.addListener("request", handleRequest);
         server.addListener("listening", handleListen);
@@ -37,6 +40,12 @@ var server;
         }
         if (urlWithQuery.pathname == "/read") {
             DbJsonAnswer(_response, await test_1.Memory.getplayer());
+        }
+        if (urlWithQuery.pathname == "/insert") {
+            DbJsonAnswer(_response, await test_1.Memory.newCards(urlWithQuery.query));
+        }
+        if (urlWithQuery.pathname == "/read") {
+            DbJsonAnswer(_response, await test_1.Memory.getCards());
         }
         _response.end();
     }

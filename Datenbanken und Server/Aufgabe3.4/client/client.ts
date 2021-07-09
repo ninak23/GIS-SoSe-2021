@@ -35,6 +35,7 @@ namespace Client3_4 {
   export async function input(_e: Event): Promise<void> {
   
     let formmdata: FormData = new FormData(document.forms[0]);
+    // tslint:disable-next-line: no-any
     let querry: URLSearchParams = new URLSearchParams(<any>formmdata);
     let answer: Response = await fetch(serverURL + "/insert?" + querry);
     console.log(await answer.json());
