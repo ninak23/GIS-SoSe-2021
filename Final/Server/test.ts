@@ -9,17 +9,18 @@ export namespace Memory {
   export async function connectToDatabase(_url: string): Promise<void> {
     let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
     await mongoClient.connect();
-    //collection = mongoClient.db("Memory").collection("ScoreList");
-    collection = mongoClient.db("Memory2").collection("Score");
+    collection = mongoClient.db("Memory").collection("ScoreList");
+    collection = mongoClient.db("Memory").collection("MemoryCards");
+    //collection = mongoClient.db("Memory2").collection("Score");
     console.log("Database connection", collection != undefined);
   }
 
-  export async function connectTodb(_url: string): Promise<void> {    //new 
+  /**export async function connectTodb(_url: string): Promise<void> {    //new 
     let mongoClient2: Mongo.MongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
     await mongoClient2.connect();
     collection = mongoClient2.db("Memory").collection("MemoryCards");
     console.log("Database connection", collection != undefined);
-  }
+  }*/
 
   export async function getCards(): Promise<server.Cards[]> {
     let cursor: Mongo.Cursor<server.Cards> = await collection.find();

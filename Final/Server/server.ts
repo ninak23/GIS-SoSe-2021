@@ -25,8 +25,9 @@ export namespace server {
     //let databaseUrl: string = "mongodb://localhost:27017";
     //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
     //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/MemoryretryWrites=true&w=majority" ;
-    let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory2?retryWrites=true&w=majority";
-    let databaseCardsUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
+    //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory2?retryWrites=true&w=majority"; //änderung
+    //let databaseCardsUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
+    let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
 
     let port: number = Number(process.env.PORT);
     if (!port)
@@ -41,11 +42,10 @@ export namespace server {
         console.log("Starting server");
 
         await Memory.connectToDatabase(databaseUrl);
-        await Memory.connectTodb(databaseCardsUrl);  //neu 
+        //await Memory.connectTodb(databaseCardsUrl);  //neu 
 
         let server: Http.Server = Http.createServer();
         server.addListener("request", handleRequest);
-        server.addListener("request", handleRequest2);
         server.addListener("listening", handleListen);
         server.listen(_port);
     }
@@ -67,15 +67,6 @@ export namespace server {
             DbJsonAnswer(_response, await Memory.getplayer());
         }
 
-
-        _response.end();
-    }
-
-    async function handleRequest2(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
-        console.log("I hear voices");
-        let urlWithQuery: Url.UrlWithParsedQuery = Url.parse(_request.url!, true);
-        _response.setHeader("Access-Control-Allow-Origin", "*");
-
         if (urlWithQuery.pathname == "/Insert") {
             DbJsonAnswer(_response, await Memory.newCards(urlWithQuery.query));
         }
@@ -86,11 +77,10 @@ export namespace server {
         if (urlWithQuery.pathname == "/remove") {
             DbJsonAnswer(_response, await Memory.removeCards(urlWithQuery.query));
         }
+
+
         _response.end();
-
     }
-
-
 
 }
 

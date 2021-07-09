@@ -8,18 +8,18 @@ var Memory;
     async function connectToDatabase(_url) {
         let mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
         await mongoClient.connect();
-        //collection = mongoClient.db("Memory").collection("ScoreList");
-        collection = mongoClient.db("Memory2").collection("Score");
+        collection = mongoClient.db("Memory").collection("ScoreList");
+        collection = mongoClient.db("Memory").collection("MemoryCards");
+        //collection = mongoClient.db("Memory2").collection("Score");
         console.log("Database connection", collection != undefined);
     }
     Memory.connectToDatabase = connectToDatabase;
-    async function connectTodb(_url) {
-        let mongoClient2 = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
-        await mongoClient2.connect();
-        collection = mongoClient2.db("Memory").collection("MemoryCards");
-        console.log("Database connection", collection != undefined);
-    }
-    Memory.connectTodb = connectTodb;
+    /**export async function connectTodb(_url: string): Promise<void> {    //new
+      let mongoClient2: Mongo.MongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
+      await mongoClient2.connect();
+      collection = mongoClient2.db("Memory").collection("MemoryCards");
+      console.log("Database connection", collection != undefined);
+    }*/
     async function getCards() {
         let cursor = await collection.find();
         return await cursor.toArray();
