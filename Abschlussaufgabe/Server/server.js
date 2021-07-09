@@ -25,7 +25,7 @@ var server;
         await test_1.Memory.connectTodb(databaseCardsUrl); //neu 
         let server = Http.createServer();
         server.addListener("request", handleRequest);
-        server.addListener("request", cardshandlerequest);
+        server.addListener("requestCards", cardshandlerequest);
         server.addListener("listening", handleListen);
         server.listen(_port);
     }
@@ -59,10 +59,10 @@ var server;
         }
         _response.end();
     }
+    // tslint:disable-next-line: no-any
+    function DbJsonAnswer(_response, _result) {
+        _response.setHeader("content-type", "application/json");
+        _response.write(JSON.stringify(_result));
+    }
 })(server = exports.server || (exports.server = {}));
-// tslint:disable-next-line: no-any
-function DbJsonAnswer(_response, _result) {
-    _response.setHeader("content-type", "application/json");
-    _response.write(JSON.stringify(_result));
-}
 //# sourceMappingURL=server.js.map

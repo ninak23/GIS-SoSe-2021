@@ -45,7 +45,7 @@ export namespace server {
 
         let server: Http.Server = Http.createServer();
         server.addListener("request", handleRequest);
-        server.addListener("request", cardshandlerequest);
+        server.addListener("requestCards", cardshandlerequest);
         server.addListener("listening", handleListen);
         server.listen(_port);
     }
@@ -93,20 +93,13 @@ export namespace server {
 
     }
 
+    // tslint:disable-next-line: no-any
+    function DbJsonAnswer(_response: Http.ServerResponse, _result: any): void {
+        _response.setHeader("content-type", "application/json");
+        _response.write(JSON.stringify(_result));
+    }
 
 
-
-
-
-
-
-
-
-}
-// tslint:disable-next-line: no-any
-function DbJsonAnswer(_response: Http.ServerResponse, _result: any): void {
-    _response.setHeader("content-type", "application/json");
-    _response.write(JSON.stringify(_result));
 }
 
 
