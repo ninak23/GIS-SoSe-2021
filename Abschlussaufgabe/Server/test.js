@@ -32,7 +32,8 @@ var Memory;
     Memory.newCards = newCards;
     async function removeCards(_info) {
         console.log(_info.name);
-        return await collection.deleteOne(_info);
+        //return await collection.deleteOne(_info);
+        return await collection.deleteOne({ name: "bunt" });
     }
     Memory.removeCards = removeCards;
     async function getplayer() {
