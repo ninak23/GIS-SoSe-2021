@@ -26,7 +26,7 @@ namespace Client {
         document.getElementById("responseButton")?.addEventListener("click", getData);
 
         document.getElementById("insertcard")?.addEventListener("click", insert);
-        document.getElementById("removecard")?.addEventListener("click", remove);
+        document.getElementById("removecard")?.addEventListener("click", removee);
       
         
         let elem: HTMLElement = document.getElementById("responseButton");
@@ -102,7 +102,7 @@ namespace Client {
         console.log(answer);
     }
 
-    async function remove(_e: Event): Promise<void> {
+    async function removee(_e: Event): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         console.log(formData);
         // tslint:disable-next-line: no-any

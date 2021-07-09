@@ -40,8 +40,6 @@ export namespace Memory {
     
   }
 
-  
-
 
   export async function getplayer(): Promise<server.Player[]> {
     let cursor: Mongo.Cursor<server.Player> = await collection.find();

@@ -10,7 +10,7 @@ var Client;
         document.getElementById("insertButton")?.addEventListener("click", input);
         document.getElementById("responseButton")?.addEventListener("click", getData);
         document.getElementById("insertcard")?.addEventListener("click", insert);
-        document.getElementById("removecard")?.addEventListener("click", remove);
+        document.getElementById("removecard")?.addEventListener("click", removee);
         let elem = document.getElementById("responseButton");
         document.getElementById("responseButton")?.addEventListener("click", remove); //new
         function remove() {
@@ -72,7 +72,7 @@ var Client;
         let answer = await response.text();
         console.log(answer);
     }
-    async function remove(_e) {
+    async function removee(_e) {
         let formData = new FormData(document.forms[0]);
         console.log(formData);
         // tslint:disable-next-line: no-any
