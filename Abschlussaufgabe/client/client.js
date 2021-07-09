@@ -9,13 +9,6 @@ var Client;
     function init() {
         document.getElementById("insertButton")?.addEventListener("click", input);
         document.getElementById("responseButton")?.addEventListener("click", getData);
-        document.getElementById("insertcard")?.addEventListener("click", insert);
-        document.getElementById("removecard")?.addEventListener("click", removee);
-        let elem = document.getElementById("responseButton");
-        document.getElementById("responseButton")?.addEventListener("click", remove); //new
-        function remove() {
-            elem.parentNode.removeChild(elem);
-        }
         console.log("inserted");
     }
     /**async function input(_e: Event): Promise<void> {
@@ -55,82 +48,34 @@ var Client;
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         console.log(query);
-        url = url + "/insertPlayer?" + query.toString();
+        url = url + "/insert?" + query.toString();
         let response = await fetch(url);
         let answer = await response.text();
         console.log(answer);
         window.location.href = "Ranking.html";
     }
-    async function insert(_e) {
-        let formData = new FormData(document.forms[0]);
-        console.log(formData);
-        // tslint:disable-next-line: no-any
-        let query = new URLSearchParams(formData);
-        console.log(query);
-        url = url + "/insertCards?" + query.toString();
-        let response = await fetch(url);
-        let answer = await response.text();
-        console.log(answer);
-    }
-    async function removee(_e) {
-        let formData = new FormData(document.forms[0]);
-        console.log(formData);
-        // tslint:disable-next-line: no-any
-        let query = new URLSearchParams(formData);
-        console.log(query);
-        url = url + "/removeCard?" + query.toString();
-        let response = await fetch(url);
-        let answer = await response.text();
-        console.log(answer);
-    }
-    if (aktuelleSeite == "Admin.html") {
-        window.addEventListener("load", getCards);
-    }
-    async function getCards(_e) {
-        console.log("cards");
-        let response = await fetch(url + "/readCards");
-        let cardsData = await response.json();
-        let out = document.getElementById("showCards");
-        out.innerHTML = "";
-        for (let cards of cardsData) {
-            out.appendChild(showCards(cards));
-        }
-    }
-    Client.getCards = getCards;
-    function showCards(_cards) {
-        console.log("zeig");
-        let card = document.createElement("div");
-        card.classList.add("Card");
-        card.setAttribute("_id", _cards._id);
-        /**let cardname: HTMLElement = document.createElement("p");
-        cardname.classList.add("name");
-        cardname.innerText = _cards.name;
-        cardname.appendChild(cardname);*/
-        let img = document.createElement("img");
-        img.src = _cards.url;
-        card.appendChild(img);
-        return card;
-    }
-    Client.showCards = showCards;
     async function getData(_e) {
         console.log("Daten holen");
-        let response = await fetch(url + "/readPlayer");
+        let response = await fetch(url + "/read");
         let playerData = await response.json();
         let out = document.getElementById("Response");
         out.innerHTML = "";
         let show = [];
-        // copy array from database
+        let maxRanking = 10;
+        let idx = 0;
+        // create array with max. 10 players
         for (let players of playerData) {
-            show.push(players);
+            if (idx < maxRanking) {
+                show.push(players);
+                idx++;
+            }
         }
         //sort players by time
         let tmpPlayer;
         if (show.length > 1) {
             for (let j = 0; j < show.length; j++) {
                 for (let i = 1; i < show.length; i++) {
-                    let time1 = parseFloat(show[i - 1].Playtime);
-                    let time2 = parseFloat(show[i].Playtime);
-                    if (time1 > time2) {
+                    if (show[i - 1].Playtime > show[i].Playtime) {
                         tmpPlayer = show[i - 1];
                         show[i - 1] = show[i];
                         show[i] = tmpPlayer;
@@ -138,13 +83,8 @@ var Client;
                 }
             }
         }
-        let maxRanking = 10;
-        let idx = 0;
         for (let players of show) {
-            if (idx < maxRanking) {
-                out.appendChild(showPlayers(players));
-            }
-            idx++;
+            out.appendChild(showPlayers(players));
         }
     }
     Client.getData = getData;

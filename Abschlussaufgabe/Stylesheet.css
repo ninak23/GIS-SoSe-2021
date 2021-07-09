@@ -3,13 +3,11 @@
     margin: 0;
     box-sizing: border-box;
   }
-
- 
   
   body main {
     height: 50em;
     display: flex;
-    
+    background: rgba(214, 207, 204, 0.884);
     margin-bottom: 15em;
   }
  
@@ -82,16 +80,12 @@ h2{
 }
 
  
-
+body {
+  background:rgba(214, 207, 204, 0.884);
+}
 
 #Playtime {
   text-align: center;
   margin-top: 2em;
   font-size: 1.5em;
-}
-
-
-
-body  {
-  background-image: url("Medien/birmingham-museums-trust-HslbEeUauYA-unsplash.jpg");
 }
