@@ -47,6 +47,9 @@ var server;
         if (urlWithQuery.pathname == "/readCards") {
             DbJsonAnswer(_response, await test_1.Memory.getCards());
         }
+        if (urlWithQuery.pathname == "/removeCard") {
+            DbJsonAnswer(_response, await test_1.Memory.removeCards(urlWithQuery.query));
+        }
         _response.end();
     }
 })(server = exports.server || (exports.server = {}));

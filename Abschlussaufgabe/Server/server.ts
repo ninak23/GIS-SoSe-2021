@@ -34,7 +34,7 @@ export namespace server {
 
     //Memory.connectToDatabase(databaseUrl);
     startServer(port);
-    
+
 
     async function startServer(_port: number | string): Promise<void> {
 
@@ -71,6 +71,10 @@ export namespace server {
         }
         if (urlWithQuery.pathname == "/readCards") {
             DbJsonAnswer(_response, await Memory.getCards());
+        }
+
+        if (urlWithQuery.pathname == "/removeCard") {
+            DbJsonAnswer(_response, await Memory.removeCards(urlWithQuery.query));
         }
 
         _response.end();

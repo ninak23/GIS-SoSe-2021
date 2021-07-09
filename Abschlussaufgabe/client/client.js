@@ -10,6 +10,7 @@ var Client;
         document.getElementById("insertButton")?.addEventListener("click", input);
         document.getElementById("responseButton")?.addEventListener("click", getData);
         document.getElementById("insertcard")?.addEventListener("click", insert);
+        document.getElementById("removecard")?.addEventListener("click", remove);
         let elem = document.getElementById("responseButton");
         document.getElementById("responseButton")?.addEventListener("click", remove); //new
         function remove() {
@@ -67,6 +68,17 @@ var Client;
         let query = new URLSearchParams(formData);
         console.log(query);
         url = url + "/insertCards?" + query.toString();
+        let response = await fetch(url);
+        let answer = await response.text();
+        console.log(answer);
+    }
+    async function remove(_e) {
+        let formData = new FormData(document.forms[0]);
+        console.log(formData);
+        // tslint:disable-next-line: no-any
+        let query = new URLSearchParams(formData);
+        console.log(query);
+        url = url + "/removeCard?" + query.toString();
         let response = await fetch(url);
         let answer = await response.text();
         console.log(answer);

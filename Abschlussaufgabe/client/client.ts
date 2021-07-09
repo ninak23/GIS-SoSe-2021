@@ -26,6 +26,7 @@ namespace Client {
         document.getElementById("responseButton")?.addEventListener("click", getData);
 
         document.getElementById("insertcard")?.addEventListener("click", insert);
+        document.getElementById("removecard")?.addEventListener("click", remove);
       
         
         let elem: HTMLElement = document.getElementById("responseButton");
@@ -100,6 +101,19 @@ namespace Client {
         let answer: string = await response.text();
         console.log(answer);
     }
+
+    async function remove(_e: Event): Promise<void> {
+        let formData: FormData = new FormData(document.forms[0]);
+        console.log(formData);
+        // tslint:disable-next-line: no-any
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        console.log(query);
+        url = url + "/removeCard?" + query.toString();
+        let response: Response = await fetch(url);
+        let answer: string = await response.text();
+        console.log(answer);
+    }
+
 
      
     if (aktuelleSeite == "Admin.html") {
