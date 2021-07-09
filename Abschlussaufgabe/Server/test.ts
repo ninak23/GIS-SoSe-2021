@@ -33,6 +33,16 @@ export namespace Memory {
     
   }
 
+  
+  export async function removeCards(_info: ParsedUrlQuery): Promise<Mongo.DeleteWriteOpResultObject> {
+    console.log(_info.name);
+    return await collection.deleteOne(_info);
+    
+  }
+
+  
+
+
   export async function getplayer(): Promise<server.Player[]> {
     let cursor: Mongo.Cursor<server.Player> = await collection.find();
     return await cursor.toArray();

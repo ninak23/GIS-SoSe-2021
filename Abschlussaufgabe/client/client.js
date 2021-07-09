@@ -9,6 +9,7 @@ var Client;
     function init() {
         document.getElementById("insertButton")?.addEventListener("click", input);
         document.getElementById("responseButton")?.addEventListener("click", getData);
+        document.getElementById("insertcard")?.addEventListener("click", insert);
         let elem = document.getElementById("responseButton");
         document.getElementById("responseButton")?.addEventListener("click", remove); //new
         function remove() {
@@ -59,6 +60,17 @@ var Client;
         console.log(answer);
         window.location.href = "Ranking.html";
     }
+    async function insert(_e) {
+        let formData = new FormData(document.forms[0]);
+        console.log(formData);
+        // tslint:disable-next-line: no-any
+        let query = new URLSearchParams(formData);
+        console.log(query);
+        url = url + "/insertCards?" + query.toString();
+        let response = await fetch(url);
+        let answer = await response.text();
+        console.log(answer);
+    }
     if (aktuelleSeite == "Admin.html") {
         window.addEventListener("load", getCards);
     }
@@ -78,10 +90,10 @@ var Client;
         let card = document.createElement("div");
         card.classList.add("Card");
         card.setAttribute("_id", _cards._id);
-        let name = document.createElement("p");
-        name.classList.add("name");
-        name.innerText = _cards.name;
-        name.appendChild(name);
+        /**let cardname: HTMLElement = document.createElement("p");
+        cardname.classList.add("name");
+        cardname.innerText = _cards.name;
+        cardname.appendChild(cardname);*/
         let img = document.createElement("img");
         img.src = _cards.url;
         card.appendChild(img);

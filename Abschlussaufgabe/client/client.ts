@@ -24,6 +24,8 @@ namespace Client {
 
         document.getElementById("insertButton")?.addEventListener("click", input);
         document.getElementById("responseButton")?.addEventListener("click", getData);
+
+        document.getElementById("insertcard")?.addEventListener("click", insert);
       
         
         let elem: HTMLElement = document.getElementById("responseButton");
@@ -87,6 +89,18 @@ namespace Client {
         
     }
 
+    async function insert(_e: Event): Promise<void> {
+        let formData: FormData = new FormData(document.forms[0]);
+        console.log(formData);
+        // tslint:disable-next-line: no-any
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        console.log(query);
+        url = url + "/insertCards?" + query.toString();
+        let response: Response = await fetch(url);
+        let answer: string = await response.text();
+        console.log(answer);
+    }
+
      
     if (aktuelleSeite == "Admin.html") {
         window.addEventListener("load", getCards);
@@ -115,10 +129,10 @@ namespace Client {
         card.classList.add("Card");
         card.setAttribute("_id", _cards._id);
         
-        let name: HTMLElement = document.createElement("p");
-        name.classList.add("name");
-        name.innerText = _cards.name;
-        name.appendChild(name);
+        /**let cardname: HTMLElement = document.createElement("p");
+        cardname.classList.add("name");
+        cardname.innerText = _cards.name;
+        cardname.appendChild(cardname);*/
 
         let img: HTMLImageElement = document.createElement("img");
         img.src = _cards.url;

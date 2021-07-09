@@ -30,6 +30,11 @@ var Memory;
         return await collection.insertOne(_info);
     }
     Memory.newCards = newCards;
+    async function removeCards(_info) {
+        console.log(_info.name);
+        return await collection.deleteOne(_info);
+    }
+    Memory.removeCards = removeCards;
     async function getplayer() {
         let cursor = await collection.find();
         return await cursor.toArray();
