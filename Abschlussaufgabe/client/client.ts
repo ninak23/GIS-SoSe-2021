@@ -82,7 +82,7 @@ namespace Client {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         console.log(query);
-        url = url + "/insert?" + query.toString();
+        url = url + "/insertPlayer?" + query.toString();
         let response: Response = await fetch(url);
         let answer: string = await response.text();
         console.log(answer);
@@ -157,7 +157,7 @@ namespace Client {
 
     export async function getData(_e: Event): Promise<void> {
         console.log("Daten holen");
-        let response: Response = await fetch(url + "/read");
+        let response: Response = await fetch(url + "/readPlayer");
         let playerData: Player[] = await response.json();
         let out: HTMLDivElement = <HTMLDivElement>document.getElementById("Response")!;
         out.innerHTML = "";

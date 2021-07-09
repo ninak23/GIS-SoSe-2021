@@ -33,7 +33,7 @@ var Memory;
     async function removeCards(_info) {
         console.log(_info.name);
         //return await collection.deleteOne(_info);
-        return await collection.deleteOne({ name: "bunt" });
+        return await collection.deleteOne({ name: _info.name });
     }
     Memory.removeCards = removeCards;
     async function getplayer() {

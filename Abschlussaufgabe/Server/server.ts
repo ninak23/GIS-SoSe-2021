@@ -60,10 +60,10 @@ export namespace server {
         let urlWithQuery: Url.UrlWithParsedQuery = Url.parse(_request.url!, true);
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
-        if (urlWithQuery.pathname == "/insert") {
+        if (urlWithQuery.pathname == "/insertPlayer") {
             DbJsonAnswer(_response, await Memory.newPlayer(urlWithQuery.query));
         }
-        if (urlWithQuery.pathname == "/read") {
+        if (urlWithQuery.pathname == "/readPlayer") {
             DbJsonAnswer(_response, await Memory.getplayer());
         }
 

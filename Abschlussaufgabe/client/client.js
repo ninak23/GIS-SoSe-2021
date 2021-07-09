@@ -55,7 +55,7 @@ var Client;
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         console.log(query);
-        url = url + "/insert?" + query.toString();
+        url = url + "/insertPlayer?" + query.toString();
         let response = await fetch(url);
         let answer = await response.text();
         console.log(answer);
@@ -114,7 +114,7 @@ var Client;
     Client.showCards = showCards;
     async function getData(_e) {
         console.log("Daten holen");
-        let response = await fetch(url + "/read");
+        let response = await fetch(url + "/readPlayer");
         let playerData = await response.json();
         let out = document.getElementById("Response");
         out.innerHTML = "";
