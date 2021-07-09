@@ -82,7 +82,7 @@ namespace Client {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         console.log(query);
-        url = url + "/insertPlayer?" + query.toString();
+        url = url + "/insert?" + query.toString();
         let response: Response = await fetch(url);
         let answer: string = await response.text();
         console.log(answer);
@@ -96,7 +96,7 @@ namespace Client {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         console.log(query);
-        url = url + "/insertCards?" + query.toString();
+        url = url + "/Insert?" + query.toString();
         let response: Response = await fetch(url);
         let answer: string = await response.text();
         console.log(answer);
@@ -108,7 +108,7 @@ namespace Client {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         console.log(query);
-        url = url + "/removeCard?" + query.toString();
+        url = url + "/remove?" + query.toString();
         let response: Response = await fetch(url);
         let answer: string = await response.text();
         console.log(answer);
@@ -123,7 +123,7 @@ namespace Client {
 
     export async function getCards (_e: Event): Promise<void> {
         console.log("cards");
-        let response: Response = await fetch(url + "/readCards");
+        let response: Response = await fetch(url + "/Read");
         let cardsData: Cards[] = await response.json();
         let out: HTMLDivElement = <HTMLDivElement>document.getElementById("showCards");
         out.innerHTML = "";
@@ -157,7 +157,7 @@ namespace Client {
 
     export async function getData(_e: Event): Promise<void> {
         console.log("Daten holen");
-        let response: Response = await fetch(url + "/readPlayer");
+        let response: Response = await fetch(url + "/read");
         let playerData: Player[] = await response.json();
         let out: HTMLDivElement = <HTMLDivElement>document.getElementById("Response")!;
         out.innerHTML = "";

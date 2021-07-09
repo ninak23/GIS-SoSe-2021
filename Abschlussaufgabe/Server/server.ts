@@ -45,7 +45,6 @@ export namespace server {
 
         let server: Http.Server = Http.createServer();
         server.addListener("request", handleRequest);
-        server.addListener("requestCards", cardshandlerequest);
         server.addListener("listening", handleListen);
         server.listen(_port);
     }
@@ -60,39 +59,29 @@ export namespace server {
         let urlWithQuery: Url.UrlWithParsedQuery = Url.parse(_request.url!, true);
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
-        if (urlWithQuery.pathname == "/insertPlayer") {
+        if (urlWithQuery.pathname == "/insert") {
             DbJsonAnswer(_response, await Memory.newPlayer(urlWithQuery.query));
         }
-        if (urlWithQuery.pathname == "/readPlayer") {
+        if (urlWithQuery.pathname == "/read") {
             DbJsonAnswer(_response, await Memory.getplayer());
         }
 
-        _response.end();
-    }
-
-    async function cardshandlerequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
-
-        console.log("I see Cards");
-        let urlWithQuery: Url.UrlWithParsedQuery = Url.parse(_request.url!, true);
-        _response.setHeader("Access-Control-Allow-Origin", "*");
-
-
-        if (urlWithQuery.pathname == "/insertCards") {
+        if (urlWithQuery.pathname == "/Insert") {
             DbJsonAnswer(_response, await Memory.newCards(urlWithQuery.query));
         }
-        if (urlWithQuery.pathname == "/readCards") {
+        if (urlWithQuery.pathname == "/Read") {
             DbJsonAnswer(_response, await Memory.getCards());
         }
 
-        if (urlWithQuery.pathname == "/removeCard") {
+        if (urlWithQuery.pathname == "/remove") {
             DbJsonAnswer(_response, await Memory.removeCards(urlWithQuery.query));
         }
 
 
         _response.end();
-
     }
 
+  
     // tslint:disable-next-line: no-any
     function DbJsonAnswer(_response: Http.ServerResponse, _result: any): void {
         _response.setHeader("content-type", "application/json");
