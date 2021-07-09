@@ -25,6 +25,7 @@ var server;
         await test_1.Memory.connectTodb(databaseCardsUrl); //neu 
         let server = Http.createServer();
         server.addListener("request", handleRequest);
+        server.addListener("request", cardshandlerequest);
         server.addListener("listening", handleListen);
         server.listen(_port);
     }
@@ -41,6 +42,12 @@ var server;
         if (urlWithQuery.pathname == "/read") {
             DbJsonAnswer(_response, await test_1.Memory.getplayer());
         }
+        _response.end();
+    }
+    async function cardshandlerequest(_request, _response) {
+        console.log("I see Cards");
+        let urlWithQuery = Url.parse(_request.url, true);
+        _response.setHeader("Access-Control-Allow-Origin", "*");
         if (urlWithQuery.pathname == "/insertCards") {
             DbJsonAnswer(_response, await test_1.Memory.newCards(urlWithQuery.query));
         }

@@ -45,6 +45,7 @@ export namespace server {
 
         let server: Http.Server = Http.createServer();
         server.addListener("request", handleRequest);
+        server.addListener("request", cardshandlerequest);
         server.addListener("listening", handleListen);
         server.listen(_port);
     }
@@ -66,6 +67,16 @@ export namespace server {
             DbJsonAnswer(_response, await Memory.getplayer());
         }
 
+        _response.end();
+    }
+
+    async function cardshandlerequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
+
+        console.log("I see Cards");
+        let urlWithQuery: Url.UrlWithParsedQuery = Url.parse(_request.url!, true);
+        _response.setHeader("Access-Control-Allow-Origin", "*");
+
+
         if (urlWithQuery.pathname == "/insertCards") {
             DbJsonAnswer(_response, await Memory.newCards(urlWithQuery.query));
         }
@@ -77,8 +88,19 @@ export namespace server {
             DbJsonAnswer(_response, await Memory.removeCards(urlWithQuery.query));
         }
 
+
         _response.end();
+
     }
+
+
+
+
+
+
+
+
+
 
 }
 // tslint:disable-next-line: no-any
