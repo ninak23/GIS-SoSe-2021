@@ -66,10 +66,10 @@ export namespace server {
             DbJsonAnswer(_response, await Memory.getplayer());
         }
 
-        if (urlWithQuery.pathname == "/insert") {
+        if (urlWithQuery.pathname == "/insertCards") {
             DbJsonAnswer(_response, await Memory.newCards(urlWithQuery.query));
         }
-        if (urlWithQuery.pathname == "/read") {
+        if (urlWithQuery.pathname == "/readCards") {
             DbJsonAnswer(_response, await Memory.getCards());
         }
 

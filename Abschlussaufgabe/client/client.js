@@ -63,7 +63,8 @@ var Client;
         window.addEventListener("load", getCards);
     }
     async function getCards(_e) {
-        let response = await fetch(url + "/read");
+        console.log("cards");
+        let response = await fetch(url + "/readCards");
         let cardsData = await response.json();
         let out = document.getElementById("showCards");
         out.innerHTML = "";
@@ -73,6 +74,7 @@ var Client;
     }
     Client.getCards = getCards;
     function showCards(_cards) {
+        console.log("zeig");
         let card = document.createElement("div");
         card.classList.add("Card");
         card.setAttribute("_id", _cards._id);

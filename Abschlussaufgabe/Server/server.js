@@ -41,10 +41,10 @@ var server;
         if (urlWithQuery.pathname == "/read") {
             DbJsonAnswer(_response, await test_1.Memory.getplayer());
         }
-        if (urlWithQuery.pathname == "/insert") {
+        if (urlWithQuery.pathname == "/insertCards") {
             DbJsonAnswer(_response, await test_1.Memory.newCards(urlWithQuery.query));
         }
-        if (urlWithQuery.pathname == "/read") {
+        if (urlWithQuery.pathname == "/readCards") {
             DbJsonAnswer(_response, await test_1.Memory.getCards());
         }
         _response.end();

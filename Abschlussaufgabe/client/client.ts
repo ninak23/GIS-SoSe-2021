@@ -94,7 +94,8 @@ namespace Client {
    
 
     export async function getCards (_e: Event): Promise<void> {
-        let response: Response = await fetch(url + "/read");
+        console.log("cards");
+        let response: Response = await fetch(url + "/readCards");
         let cardsData: Cards[] = await response.json();
         let out: HTMLDivElement = <HTMLDivElement>document.getElementById("showCards");
         out.innerHTML = "";
@@ -107,6 +108,8 @@ namespace Client {
 
    
     export function showCards(_cards: Cards): HTMLElement {
+
+        console.log("zeig");
         
         let card: HTMLDivElement = document.createElement("div");
         card.classList.add("Card");
