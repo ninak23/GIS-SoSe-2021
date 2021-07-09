@@ -81,14 +81,16 @@ export namespace server {
         _response.end();
     }
 
-  
-    // tslint:disable-next-line: no-any
-    function DbJsonAnswer(_response: Http.ServerResponse, _result: any): void {
-        _response.setHeader("content-type", "application/json");
-        _response.write(JSON.stringify(_result));
-    }
 
 
+
+}
+
+
+// tslint:disable-next-line: no-any
+function DbJsonAnswer(_response: Http.ServerResponse, _result: any): void {
+    _response.setHeader("content-type", "application/json");
+    _response.write(JSON.stringify(_result));
 }
 
 
