@@ -1,0 +1,87 @@
+body {
+    background-color: silver;
+
+}
+
+h1 {
+    margin-top: 1em;
+    font-size: 300%;
+    text-transform: uppercase;
+    font-family: Georgia, serif;
+    text-align: center;
+    transform: scale(1,2);
+    margin-bottom: 1em;
+  }
+
+h2 {
+
+    text-transform: uppercase;
+    font-family: Georgia, serif;
+    text-align: center;
+    transform: scale(1,2);
+    margin-bottom: 3em;
+
+}
+
+
+p a {
+    font-size: 2em;
+    margin-left: 12.2em;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
+
+img {
+    width: 300px;
+    height: 20rem;
+    object-fit: fill;
+    float: left;
+}
+
+#h {
+    margin-top: 70em;
+
+}
+
+#w {
+    margin-bottom: 10em;
+}
+
+form p {
+
+    font-size: 2em;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    width: 800px;
+    margin-left: 33em;
+
+}
+
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical; 
+    width: 30em;
+}
+
+
+a {
+    color: black;
+    font-size: 1.5em;
+    margin-left: 0.6em;
+    text-decoration: none;
+}

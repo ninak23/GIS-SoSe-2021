@@ -11,7 +11,7 @@
     "@types/node": "^15.6.1"
   },
   "scripts": {
-    "start": " node Abschlussaufgabe/Server/server.js "
+    "start": " node Final/Server/server.js "
   },
   "repository": {
     "type": "git",
