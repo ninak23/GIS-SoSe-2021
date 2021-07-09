@@ -5,13 +5,15 @@ const Mongo = require("mongodb");
 var Memory;
 (function (Memory) {
     let collection;
+    let collection2;
     async function connectToDatabase(_url) {
         let mongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
         await mongoClient.connect();
         collection = mongoClient.db("Memory").collection("ScoreList");
-        collection = mongoClient.db("Memory").collection("MemoryCards");
+        collection2 = mongoClient.db("Memory").collection("MemoryCards");
         //collection = mongoClient.db("Memory2").collection("Score");
         console.log("Database connection", collection != undefined);
+        console.log("Database connection", collection2 != undefined);
     }
     Memory.connectToDatabase = connectToDatabase;
     /**export async function connectTodb(_url: string): Promise<void> {    //new
@@ -21,19 +23,19 @@ var Memory;
       console.log("Database connection", collection != undefined);
     }*/
     async function getCards() {
-        let cursor = await collection.find();
+        let cursor = await collection2.find();
         return await cursor.toArray();
     }
     Memory.getCards = getCards;
     async function newCards(_info) {
         console.log(_info.name);
-        return await collection.insertOne(_info);
+        return await collection2.insertOne(_info);
     }
     Memory.newCards = newCards;
     async function removeCards(_info) {
         console.log(_info.name);
         //return await collection.deleteOne(_info);
-        return await collection.deleteOne({ name: _info.name });
+        return await collection2.deleteOne({ name: _info.name });
     }
     Memory.removeCards = removeCards;
     async function getplayer() {

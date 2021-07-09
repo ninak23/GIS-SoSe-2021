@@ -5,14 +5,16 @@ import { ParsedUrlQuery } from "querystring";
 export namespace Memory {
   
   let collection: Mongo.Collection;
+  let collection2: Mongo.Collection;
 
   export async function connectToDatabase(_url: string): Promise<void> {
     let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
     await mongoClient.connect();
     collection = mongoClient.db("Memory").collection("ScoreList");
-    collection = mongoClient.db("Memory").collection("MemoryCards");
+    collection2 = mongoClient.db("Memory").collection("MemoryCards");
     //collection = mongoClient.db("Memory2").collection("Score");
     console.log("Database connection", collection != undefined);
+    console.log("Database connection", collection2 != undefined);
   }
 
   /**export async function connectTodb(_url: string): Promise<void> {    //new 
@@ -23,14 +25,14 @@ export namespace Memory {
   }*/
 
   export async function getCards(): Promise<server.Cards[]> {
-    let cursor: Mongo.Cursor<server.Cards> = await collection.find();
+    let cursor: Mongo.Cursor<server.Cards> = await collection2.find();
     return await cursor.toArray();
 
   }
 
   export async function newCards(_info: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
     console.log(_info.name);
-    return await collection.insertOne(_info);
+    return await collection2.insertOne(_info);
     
   }
 
@@ -38,7 +40,7 @@ export namespace Memory {
   export async function removeCards(_info: ParsedUrlQuery): Promise<Mongo.DeleteWriteOpResultObject> {
     console.log(_info.name);
     //return await collection.deleteOne(_info);
-    return await collection.deleteOne({ name: _info.name});
+    return await collection2.deleteOne({ name: _info.name});
     
   }
 
