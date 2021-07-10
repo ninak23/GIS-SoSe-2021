@@ -40,10 +40,23 @@ img {
     height: 20rem;
     object-fit: fill;
     float: left;
+    margin-bottom: 4em;
+    margin-left: 7em;
+    margin-right: 7em;
+  
+}
+
+div p { 
+    float: left;
+    text-transform: uppercase;
+    font-family: Georgia, serif;
+    font-size: 1.5em;
+   
+  
 }
 
 #h {
-    margin-top: 70em;
+    margin-top: 10em;
 
 }
 
@@ -62,7 +75,8 @@ form p {
     padding: 20px;
     text-align: center;
     width: 800px;
-    margin-left: 33em;
+    margin-left: 55em;
+
 
 }
 
@@ -84,4 +98,9 @@ a {
     font-size: 1.5em;
     margin-left: 0.6em;
     text-decoration: none;
+}
+
+
+#showCards {
+    float:left;
 }

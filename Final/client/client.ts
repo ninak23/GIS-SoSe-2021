@@ -38,6 +38,10 @@ namespace Client {
     }
 
 
+
+
+
+
     /**async function input(_e: Event): Promise<void> {
         console.log("Button betätigt")
   
@@ -70,10 +74,25 @@ namespace Client {
     let keyTime: string = "playtime";
     let scoreTime: string = "";
 
+    /**if (aktuelleSeite == "Spiel.html") {
+        window.addEventListener("load", zeigCardan);
+    }*/
+
+
+    //document.getElementById("front")?.addEventListener("click", zeigCardan);
+
+
+    /**function zeigCardan(_e: Event): void {
+
+        let urlBild: string = "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=683&q=80";
+        document.getElementById("front");
+        document.write(urlBild);
+    }
+
     if (aktuelleSeite == "Score.html") {
         scoreTime = sessionStorage.getItem(keyTime);
         document.getElementById("Scoretime").innerHTML = "Gametime: " + scoreTime + " s";
-    }
+    }*/
 
     async function input2(_e: Event): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
@@ -103,7 +122,7 @@ namespace Client {
     }
 
     async function removeCard(_e: Event): Promise<void> {
-        let formData: FormData = new FormData(document.forms[0]);
+        let formData: FormData = new FormData(document.forms[1]);
         console.log(formData);
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
