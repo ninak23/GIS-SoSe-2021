@@ -56,27 +56,31 @@ var Client;
         scoreTime = sessionStorage.getItem(keyTime);
         document.getElementById("Scoretime").innerHTML = "Gametime: " + scoreTime + " s";
     }*/
-    if (aktuelleSeite == "Spiel.html") {
+    /**if (aktuelleSeite == "Spiel.html") {
         window.addEventListener("load", getCardData);
     }
-    async function getCardData(_e) {
+
+    
+
+    export async function getCardData (_e: Event): Promise<void> {
         //let response: Response = await fetch(url + "/readCards");
         //let cardsData: Cards[] = await response.json();
-        let out = document.getElementById("memory-card");
+        let out: HTMLDivElement = <HTMLDivElement>document.getElementById("Pair1");
         //out.innerHTML = "";
+
         out = document.createElement("div");
-        let cardsData = { _id: "Pair1", name: "", url: "" };
+        let cardsData: Cards = {_id: "Pair1", name: "", url: ""};
         cardsData._id = "Pair1";
         cardsData.name = "Aurelia";
         cardsData.url = "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
-        let img = document.createElement("img");
+
+        let img: HTMLImageElement = document.createElement("img");
         //img = document.getElementById("Pair1");
         img.id = cardsData._id;
         img.src = cardsData.url;
         out.appendChild(img);
         //out.appendChild(createCardImages(cardsData));
-    }
-    Client.getCardData = getCardData;
+    }*/
     async function input2(_e) {
         let formData = new FormData(document.forms[0]);
         console.log(formData);
@@ -127,6 +131,31 @@ var Client;
         }
     }
     Client.getCards2 = getCards2;
+    if (aktuelleSeite == "Spiel.html") {
+        window.addEventListener("load", getCardstoPlay);
+    }
+    async function getCardstoPlay(_e) {
+        console.log("cards");
+        let response = await fetch(url + "/Read");
+        let cardsData = await response.json();
+        let out = document.getElementById("Pair1");
+        out.innerHTML = "";
+        for (let cards of cardsData) {
+            out.appendChild(showCards3(cards));
+        }
+    }
+    Client.getCardstoPlay = getCardstoPlay;
+    function showCards3(_cards) {
+        console.log("zeig");
+        let card = document.createElement("div");
+        card.classList.add("Card");
+        card.setAttribute("_id", _cards._id);
+        let img = document.createElement("img");
+        img.src = "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
+        card.appendChild(img);
+        return card;
+    }
+    Client.showCards3 = showCards3;
     function showCards2(_cards) {
         console.log("zeig");
         let card = document.createElement("div");

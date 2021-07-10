@@ -92,14 +92,16 @@ namespace Client {
         document.getElementById("Scoretime").innerHTML = "Gametime: " + scoreTime + " s";
     }*/
 
-    if (aktuelleSeite == "Spiel.html") {
+    /**if (aktuelleSeite == "Spiel.html") {
         window.addEventListener("load", getCardData);
     }
+
+    
 
     export async function getCardData (_e: Event): Promise<void> {
         //let response: Response = await fetch(url + "/readCards");
         //let cardsData: Cards[] = await response.json();
-        let out: HTMLDivElement = <HTMLDivElement>document.getElementById("memory-card");
+        let out: HTMLDivElement = <HTMLDivElement>document.getElementById("Pair1");
         //out.innerHTML = "";
 
         out = document.createElement("div");
@@ -114,7 +116,7 @@ namespace Client {
         img.src = cardsData.url;
         out.appendChild(img);
         //out.appendChild(createCardImages(cardsData));
-    }
+    }*/
 
 
     async function input2(_e: Event): Promise<void> {
@@ -175,6 +177,38 @@ namespace Client {
             out.appendChild(showCards2(cards));
         }
 
+    }
+
+    
+    if (aktuelleSeite == "Spiel.html") {
+        window.addEventListener("load", getCardstoPlay);
+    }
+
+    export async function getCardstoPlay(_e: Event): Promise<void> {
+        console.log("cards");
+        let response: Response = await fetch(url + "/Read");
+        let cardsData: Cards[] = await response.json();
+        let out: HTMLDivElement = <HTMLDivElement>document.getElementById("Pair1");
+        out.innerHTML = "";
+
+        for (let cards of cardsData) {
+            out.appendChild(showCards3(cards));
+        }
+
+    } 
+    export function showCards3(_cards: Cards): HTMLElement {
+
+        console.log("zeig");
+
+        let card: HTMLDivElement = document.createElement("div");
+        card.classList.add("Card");
+        card.setAttribute("_id", _cards._id);
+
+        let img: HTMLImageElement = document.createElement("img");
+        img.src = "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
+        card.appendChild(img);
+
+        return card;
     }
 
 
