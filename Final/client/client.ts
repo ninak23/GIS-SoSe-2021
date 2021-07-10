@@ -27,12 +27,12 @@ namespace Client {
 
         document.getElementById("insertcard")?.addEventListener("click", insert);
         document.getElementById("removecard")?.addEventListener("click", removee);
-      
-        
+
+
         let elem: HTMLElement = document.getElementById("responseButton");
         document.getElementById("responseButton")?.addEventListener("click", remove); //new
         function remove(): void {
-        elem.parentNode.removeChild(elem);
+            elem.parentNode.removeChild(elem);
         }
         console.log("inserted");
     }
@@ -87,7 +87,7 @@ namespace Client {
         let answer: string = await response.text();
         console.log(answer);
         window.location.href = "Ranking.html";
-        
+
     }
 
     async function insert(_e: Event): Promise<void> {
@@ -108,51 +108,56 @@ namespace Client {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         console.log(query);
-        url = url + "/remove?" + query.toString();
-        let response: Response = await fetch(url);
-        let answer: string = await response.text();
+        //url = url + "/remove?" + query.toString();
+        let rresponse: Response = await fetch(url + "/remove" + query.toString());
+        //let response: Response = await fetch(url);
+        let answer: string = await rresponse.text();
         console.log(answer);
     }
 
 
-     
+
     if (aktuelleSeite == "Admin.html") {
         window.addEventListener("load", getCards2);
     }
-   
 
-    export async function getCards2 (_e: Event): Promise<void> {
+
+    export async function getCards2(_e: Event): Promise<void> {
         console.log("cards");
         let response: Response = await fetch(url + "/Read");
         let cardsData: Cards[] = await response.json();
         let out: HTMLDivElement = <HTMLDivElement>document.getElementById("showCards");
         out.innerHTML = "";
 
-        for ( let cards of cardsData) {
+        for (let cards of cardsData) {
             out.appendChild(showCards2(cards));
         }
 
     }
 
-   
+
     export function showCards2(_cards: Cards): HTMLElement {
 
         console.log("zeig");
-        
+
         let card: HTMLDivElement = document.createElement("div");
         card.classList.add("Card");
         card.setAttribute("_id", _cards._id);
-        
-        /**let cardname: HTMLElement = document.createElement("p");
-        cardname.classList.add("name");
-        cardname.innerText = _cards.name;
-        cardname.appendChild(cardname);*/
 
         let img: HTMLImageElement = document.createElement("img");
         img.src = _cards.url;
         card.appendChild(img);
 
-        return card;   
+        let cardname: HTMLElement = document.createElement("p");
+        cardname.classList.add("name");
+        cardname.innerText = _cards.name;
+        card.appendChild(cardname);
+
+        /**let span: HTMLSpanElement = document.createElement("span");
+        span.innerText = _cards.name;
+        card.appendChild(span);*/
+
+        return card;
     }
 
     export async function getData2(_e: Event): Promise<void> {
@@ -166,7 +171,7 @@ namespace Client {
 
         // copy array from database
         for (let players of playerData) {
-                show.push(players);
+            show.push(players);
         }
 
         //sort players by time
@@ -176,7 +181,7 @@ namespace Client {
                 for (let i: number = 1; i < show.length; i++) {
                     let time1: number = parseFloat(show[i - 1].Playtime);
                     let time2: number = parseFloat(show[i].Playtime);
-                    if ( time1 > time2) {
+                    if (time1 > time2) {
                         tmpPlayer = show[i - 1];
                         show[i - 1] = show[i];
                         show[i] = tmpPlayer;

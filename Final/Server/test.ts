@@ -37,8 +37,11 @@ export namespace Memory {
   }
 
   
+  
   export async function removeCards(_info: ParsedUrlQuery): Promise<Mongo.DeleteWriteOpResultObject> {
+    _info.name = "sdg";
     console.log(_info.name);
+    console.log("hallo");
     //return await collection.deleteOne(_info);
     return await collection2.deleteOne({ name: _info.name});
     

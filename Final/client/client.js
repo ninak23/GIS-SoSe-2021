@@ -78,9 +78,10 @@ var Client;
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         console.log(query);
-        url = url + "/remove?" + query.toString();
-        let response = await fetch(url);
-        let answer = await response.text();
+        //url = url + "/remove?" + query.toString();
+        let rresponse = await fetch(url + "/remove" + query.toString());
+        //let response: Response = await fetch(url);
+        let answer = await rresponse.text();
         console.log(answer);
     }
     if (aktuelleSeite == "Admin.html") {
@@ -102,13 +103,16 @@ var Client;
         let card = document.createElement("div");
         card.classList.add("Card");
         card.setAttribute("_id", _cards._id);
-        /**let cardname: HTMLElement = document.createElement("p");
-        cardname.classList.add("name");
-        cardname.innerText = _cards.name;
-        cardname.appendChild(cardname);*/
         let img = document.createElement("img");
         img.src = _cards.url;
         card.appendChild(img);
+        let cardname = document.createElement("p");
+        cardname.classList.add("name");
+        cardname.innerText = _cards.name;
+        card.appendChild(cardname);
+        /**let span: HTMLSpanElement = document.createElement("span");
+        span.innerText = _cards.name;
+        card.appendChild(span);*/
         return card;
     }
     Client.showCards2 = showCards2;

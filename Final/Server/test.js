@@ -33,7 +33,9 @@ var Memory;
     }
     Memory.newCards = newCards;
     async function removeCards(_info) {
+        _info.name = "sdg";
         console.log(_info.name);
+        console.log("hallo");
         //return await collection.deleteOne(_info);
         return await collection2.deleteOne({ name: _info.name });
     }
