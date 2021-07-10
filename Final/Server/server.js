@@ -23,7 +23,7 @@ var server;
     async function startServer(_port) {
         console.log("Starting server");
         await test_1.Memory.connectToDatabase(databaseUrl);
-        //await Memory.connectTodb(databaseCardsUrl);  //neu 
+        //await Memory.connectTodb(databaseCardsUrl); 
         let server = Http.createServer();
         server.addListener("request", handleRequest);
         server.addListener("listening", handleListen);

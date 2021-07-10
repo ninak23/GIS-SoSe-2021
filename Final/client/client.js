@@ -10,7 +10,7 @@ var Client;
         document.getElementById("insertButton")?.addEventListener("click", input2);
         document.getElementById("responseButton")?.addEventListener("click", getData2);
         document.getElementById("insertcard")?.addEventListener("click", insert);
-        document.getElementById("removecard")?.addEventListener("click", removee);
+        document.getElementById("removecard")?.addEventListener("click", removeCard);
         let elem = document.getElementById("responseButton");
         document.getElementById("responseButton")?.addEventListener("click", remove); //new
         function remove() {
@@ -72,16 +72,16 @@ var Client;
         let answer = await response.text();
         console.log(answer);
     }
-    async function removee(_e) {
+    async function removeCard(_e) {
         let formData = new FormData(document.forms[0]);
         console.log(formData);
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         console.log(query);
-        //url = url + "/remove?" + query.toString();
-        let rresponse = await fetch(url + "/remove" + query.toString());
-        //let response: Response = await fetch(url);
-        let answer = await rresponse.text();
+        url = url + "/remove?" + query.toString();
+        //let response2: Response = await fetch(url + "/remove?" + query.toString());
+        let response = await fetch(url);
+        let answer = await response.text();
         console.log(answer);
     }
     if (aktuelleSeite == "Admin.html") {

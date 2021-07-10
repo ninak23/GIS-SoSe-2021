@@ -42,7 +42,7 @@ export namespace server {
         console.log("Starting server");
 
         await Memory.connectToDatabase(databaseUrl);
-        //await Memory.connectTodb(databaseCardsUrl);  //neu 
+        //await Memory.connectTodb(databaseCardsUrl); 
 
         let server: Http.Server = Http.createServer();
         server.addListener("request", handleRequest);

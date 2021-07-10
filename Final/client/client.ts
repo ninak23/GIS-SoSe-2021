@@ -26,7 +26,7 @@ namespace Client {
         document.getElementById("responseButton")?.addEventListener("click", getData2);
 
         document.getElementById("insertcard")?.addEventListener("click", insert);
-        document.getElementById("removecard")?.addEventListener("click", removee);
+        document.getElementById("removecard")?.addEventListener("click", removeCard);
 
 
         let elem: HTMLElement = document.getElementById("responseButton");
@@ -102,16 +102,16 @@ namespace Client {
         console.log(answer);
     }
 
-    async function removee(_e: Event): Promise<void> {
+    async function removeCard(_e: Event): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         console.log(formData);
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         console.log(query);
-        //url = url + "/remove?" + query.toString();
-        let rresponse: Response = await fetch(url + "/remove" + query.toString());
-        //let response: Response = await fetch(url);
-        let answer: string = await rresponse.text();
+        url = url + "/remove?" + query.toString();
+        //let response2: Response = await fetch(url + "/remove?" + query.toString());
+        let response: Response = await fetch(url);
+        let answer: string = await response.text();
         console.log(answer);
     }
 
