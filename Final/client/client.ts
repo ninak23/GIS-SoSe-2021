@@ -74,9 +74,7 @@ namespace Client {
     let keyTime: string = "playtime";
     let scoreTime: string = "";
 
-    /**if (aktuelleSeite == "Spiel.html") {
-        window.addEventListener("load", zeigCardan);
-    }*/
+  
 
 
     //document.getElementById("front")?.addEventListener("click", zeigCardan);
@@ -93,6 +91,31 @@ namespace Client {
         scoreTime = sessionStorage.getItem(keyTime);
         document.getElementById("Scoretime").innerHTML = "Gametime: " + scoreTime + " s";
     }*/
+
+    if (aktuelleSeite == "Spiel.html") {
+        window.addEventListener("load", getCardData);
+    }
+
+    export async function getCardData (_e: Event): Promise<void> {
+        //let response: Response = await fetch(url + "/readCards");
+        //let cardsData: Cards[] = await response.json();
+        let out: HTMLDivElement = <HTMLDivElement>document.getElementById("memory-card");
+        //out.innerHTML = "";
+
+        out = document.createElement("div");
+        let cardsData: Cards = {_id: "Pair1", name: "", url: ""};
+        cardsData._id = "Pair1";
+        cardsData.name = "Aurelia";
+        cardsData.url = "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
+
+        let img: HTMLImageElement = document.createElement("img");
+        //img = document.getElementById("Pair1");
+        img.id = cardsData._id;
+        img.src = cardsData.url;
+        out.appendChild(img);
+        //out.appendChild(createCardImages(cardsData));
+    }
+
 
     async function input2(_e: Event): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
