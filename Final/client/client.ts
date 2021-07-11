@@ -360,7 +360,7 @@ namespace Client {
             secondCard.classList.remove("flip");
 
             resetBoard();
-        }, 1000); //wird automatisch immer falsch eingerückt 
+        },         1000); //wird automatisch immer falsch eingerückt 
     }
 
     function resetBoard(): void {
