@@ -12,35 +12,25 @@ export namespace Memory {
     await mongoClient.connect();
     collection = mongoClient.db("Memory").collection("ScoreList");
     collection2 = mongoClient.db("Memory").collection("MemoryCards");
-    //collection = mongoClient.db("Memory2").collection("Score");
     console.log("Database connection", collection != undefined);
     console.log("Database connection", collection2 != undefined);
   }
 
-  /**export async function connectTodb(_url: string): Promise<void> {    //new 
-    let mongoClient2: Mongo.MongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
-    await mongoClient2.connect();
-    collection = mongoClient2.db("Memory").collection("MemoryCards");
-    console.log("Database connection", collection != undefined);
-  }*/
-
   export async function getCards(): Promise<server.Cards[]> {
     let cursor: Mongo.Cursor<server.Cards> = await collection2.find();
     return await cursor.toArray();
-
   }
 
+  // tslint:disable-next-line: no-any
   export async function newCards(_info: ParsedUrlQuery): Promise<Mongo.InsertOneWriteOpResult<any>> {
     console.log(_info.name);
     return await collection2.insertOne(_info);
-    
   }
 
   export async function removeCards(_info: ParsedUrlQuery): Promise<Mongo.DeleteWriteOpResultObject> {
     console.log(_info.name);
     console.log("hallo");
     return await collection2.deleteOne({ name: _info.name});
-    
   }
 
   export async function getplayer(): Promise<server.Player[]> {

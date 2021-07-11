@@ -1,10 +1,7 @@
 "use strict";
 var Client;
 (function (Client) {
-    //let url: string = "https://localhost:8100";
     let url = "https://ninakgissose2020.herokuapp.com";
-    //let serverURL: string = "https://mongodbnetbrowser.herokuapp.com/" ; 
-    //let serverURL: string = "https://ninakgissose2020.herokuapp.com/";
     init();
     function init() {
         document.getElementById("insertButton")?.addEventListener("click", input2);
@@ -12,23 +9,12 @@ var Client;
         document.getElementById("insertcard")?.addEventListener("click", insert);
         document.getElementById("removecard")?.addEventListener("click", removeCard);
         let elem = document.getElementById("responseButton");
-        document.getElementById("responseButton")?.addEventListener("click", remove); //new
+        document.getElementById("responseButton")?.addEventListener("click", remove);
         function remove() {
             elem.parentNode.removeChild(elem);
         }
         console.log("inserted");
     }
-    /**async function input(_e: Event): Promise<void> {
-        console.log("Button betätigt")
-  
-        let formmdata: FormData = new FormData(document.forms[0]);
-        console.log(formmdata);
-        // tslint:disable-next-line: no-any
-        let querry: URLSearchParams = new URLSearchParams(<any>formmdata);
-        console.log(querry);
-        let answer: Response = await fetch(serverURL + "/insert?" + querry);
-        console.log(await answer.json());
-    }*/
     // tslint:disable-next-line: no-any
     const cards = document.querySelectorAll(".memory-card");
     let aktuelleSeite = window.location.href;
@@ -44,43 +30,7 @@ var Client;
     let playTime = 0;
     let keyTime = "playtime";
     let scoreTime = "";
-    //document.getElementById("front")?.addEventListener("click", zeigCardan);
-    /**function zeigCardan(_e: Event): void {
-
-        let urlBild: string = "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=683&q=80";
-        document.getElementById("front");
-        document.write(urlBild);
-    }
-
-    if (aktuelleSeite == "Score.html") {
-        scoreTime = sessionStorage.getItem(keyTime);
-        document.getElementById("Scoretime").innerHTML = "Gametime: " + scoreTime + " s";
-    }*/
-    /**if (aktuelleSeite == "Spiel.html") {
-        window.addEventListener("load", getCardData);
-    }
-
-    
-
-    export async function getCardData (_e: Event): Promise<void> {
-        //let response: Response = await fetch(url + "/readCards");
-        //let cardsData: Cards[] = await response.json();
-        let out: HTMLDivElement = <HTMLDivElement>document.getElementById("Pair1");
-        //out.innerHTML = "";
-
-        out = document.createElement("div");
-        let cardsData: Cards = {_id: "Pair1", name: "", url: ""};
-        cardsData._id = "Pair1";
-        cardsData.name = "Aurelia";
-        cardsData.url = "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
-
-        let img: HTMLImageElement = document.createElement("img");
-        //img = document.getElementById("Pair1");
-        img.id = cardsData._id;
-        img.src = cardsData.url;
-        out.appendChild(img);
-        //out.appendChild(createCardImages(cardsData));
-    }*/
+    //writes the player name and time into the database collection ??
     async function input2(_e) {
         let formData = new FormData(document.forms[0]);
         console.log(formData);
@@ -94,6 +44,12 @@ var Client;
         console.log(answer);
         window.location.href = "Ranking.html";
     }
+    // fetch the playtime from the gaming site
+    if (aktuelleSeite == "Score.html") {
+        scoreTime = sessionStorage.getItem(keyTime);
+        document.getElementById("Scoretime").innerHTML = "Gametime: " + scoreTime + " s";
+    }
+    // writes the url and name of a new image into the database collection ??
     async function insert(_e) {
         let formData = new FormData(document.forms[0]);
         console.log(formData);
@@ -104,7 +60,9 @@ var Client;
         let response = await fetch(url);
         let answer = await response.text();
         console.log(answer);
+        window.location.href = "Admin.html";
     }
+    // removes an image int the database collection ?? about the image name
     async function removeCard(_e) {
         let formData = new FormData(document.forms[1]);
         console.log(formData);
@@ -116,10 +74,13 @@ var Client;
         let response = await fetch(url);
         let answer = await response.text();
         console.log(answer);
+        window.location.href = "Admin.html";
     }
+    // start the function getCards2 when the admin site is called
     if (aktuelleSeite == "Admin.html") {
         window.addEventListener("load", getCards2);
     }
+    // loads the images from the database for the admin site
     async function getCards2(_e) {
         console.log("cards");
         let response = await fetch(url + "/Read");
@@ -131,31 +92,7 @@ var Client;
         }
     }
     Client.getCards2 = getCards2;
-    if (aktuelleSeite == "Spiel.html") {
-        window.addEventListener("load", getCardstoPlay);
-    }
-    async function getCardstoPlay(_e) {
-        console.log("cards");
-        let response = await fetch(url + "/Read");
-        let cardsData = await response.json();
-        let out = document.getElementById("Pair1");
-        out.innerHTML = "";
-        for (let cards of cardsData) {
-            out.appendChild(showCards3(cards));
-        }
-    }
-    Client.getCardstoPlay = getCardstoPlay;
-    function showCards3(_cards) {
-        console.log("zeig");
-        let card = document.createElement("div");
-        card.classList.add("Card");
-        card.setAttribute("_id", _cards._id);
-        let img = document.createElement("img");
-        img.src = "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
-        card.appendChild(img);
-        return card;
-    }
-    Client.showCards3 = showCards3;
+    // shows the images on the admin site
     function showCards2(_cards) {
         console.log("zeig");
         let card = document.createElement("div");
@@ -168,12 +105,75 @@ var Client;
         cardname.classList.add("name");
         cardname.innerText = _cards.name;
         card.appendChild(cardname);
-        /**let span: HTMLSpanElement = document.createElement("span");
-        span.innerText = _cards.name;
-        card.appendChild(span);*/
         return card;
     }
     Client.showCards2 = showCards2;
+    // start the function getCardstoPlay which loads the images for the cards and places them into the cards
+    if (aktuelleSeite == "Spiel.html") {
+        window.addEventListener("load", getCardstoPlay);
+    }
+    // loads the images for the cards from the database and calls the function to assign image to cards
+    async function getCardstoPlay(_e) {
+        console.log("cards");
+        let response = await fetch(url + "/Read");
+        let cardsData = await response.json();
+        let maxCards = 8;
+        let idx = 1;
+        let cardIdc = [maxCards];
+        let noDuplicate = true;
+        let cardsUsed = [];
+        while (noDuplicate == true) {
+            for (let i = 0; i < maxCards; i++) {
+                cardIdc[i] = Math.floor(Math.random() * cardsData.length);
+            }
+            for (let i = 0; i < maxCards; i++) {
+                noDuplicate = false;
+                for (let j = i + 1; j < maxCards; j++) {
+                    if (cardIdc[i] == cardIdc[j]) {
+                        noDuplicate = true;
+                        break;
+                    }
+                }
+                if (noDuplicate == true) {
+                    break;
+                }
+            }
+        }
+        for (let i = 0; i < maxCards; i++) {
+            cardsUsed.push(cardsData[cardIdc[i]]);
+        }
+        for (let cards of cardsUsed) {
+            if (idx <= maxCards) {
+                let idNumber = (idx * 2) - 1;
+                let cardId = "Pair";
+                cardId = cardId.concat(idNumber.toString());
+                let out = document.getElementById(cardId);
+                out.innerHTML = "";
+                out.appendChild(showCards3(cards));
+                idNumber = idx * 2;
+                cardId = "Pair";
+                cardId = cardId.concat(idNumber.toString());
+                out = document.getElementById(cardId);
+                out.innerHTML = "";
+                out.appendChild(showCards3(cards));
+            }
+            idx++;
+        }
+    }
+    Client.getCardstoPlay = getCardstoPlay;
+    // makes the assignment of the image to the corresponding card
+    function showCards3(_cards) {
+        console.log("zeig");
+        let card = document.createElement("div");
+        card.classList.add("Card");
+        card.setAttribute("_id", _cards._id);
+        let img = document.createElement("img");
+        img.src = _cards.url;
+        card.appendChild(img);
+        return card;
+    }
+    Client.showCards3 = showCards3;
+    // gets the player data from the database collection ??, sorts them by time and calls the showing function
     async function getData2(_e) {
         console.log("Daten holen");
         let response = await fetch(url + "/read");
@@ -210,6 +210,7 @@ var Client;
         }
     }
     Client.getData2 = getData2;
+    // shows a player on the ranking site
     function showPlayers2(_players) {
         let player = document.createElement("div");
         player.classList.add("Player");
@@ -229,6 +230,7 @@ var Client;
         return player;
     }
     Client.showPlayers2 = showPlayers2;
+    // check if all pairs have been found, calculate playtime and change to ranking site
     function checkEnd() {
         actTime = new Date;
         playTime = actTime.getTime();
@@ -240,13 +242,12 @@ var Client;
             sessionStorage.setItem(keyTime, playTime.toString());
             console.log(playTime);
             document.getElementById("Playtime").innerHTML = "Gametime: " + playTime.toString() + " s";
-            // nächste Seite
             window.location.href = "Score.html";
         }
     }
     function flipCard() {
-        if (startTime == 0) {
-            actTime = new Date;
+        if (startTime == 0) { // Kopie geht von Z. 308 bis Z.380
+            actTime = new Date; // Allgemeiner Link zur komplette Repo des übernommenen Codes https://github.com/code-sketch/memory-game/ 
             startTime = actTime.getTime();
             playTime = actTime.getTime();
             playTime = playTime - startTime;
@@ -290,7 +291,7 @@ var Client;
             firstCard.classList.remove("flip");
             secondCard.classList.remove("flip");
             resetBoard();
-        }, 1000);
+        }, 1000); //wird automatisch immer falsch eingerückt 
     }
     function resetBoard() {
         hasFlippedCard = false;

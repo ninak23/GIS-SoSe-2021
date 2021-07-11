@@ -11,22 +11,16 @@ var Memory;
         await mongoClient.connect();
         collection = mongoClient.db("Memory").collection("ScoreList");
         collection2 = mongoClient.db("Memory").collection("MemoryCards");
-        //collection = mongoClient.db("Memory2").collection("Score");
         console.log("Database connection", collection != undefined);
         console.log("Database connection", collection2 != undefined);
     }
     Memory.connectToDatabase = connectToDatabase;
-    /**export async function connectTodb(_url: string): Promise<void> {    //new
-      let mongoClient2: Mongo.MongoClient = new Mongo.MongoClient(_url, { useNewUrlParser: true, useUnifiedTopology: true });
-      await mongoClient2.connect();
-      collection = mongoClient2.db("Memory").collection("MemoryCards");
-      console.log("Database connection", collection != undefined);
-    }*/
     async function getCards() {
         let cursor = await collection2.find();
         return await cursor.toArray();
     }
     Memory.getCards = getCards;
+    // tslint:disable-next-line: no-any
     async function newCards(_info) {
         console.log(_info.name);
         return await collection2.insertOne(_info);

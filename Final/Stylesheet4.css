@@ -1,7 +1,6 @@
-body  {
+body {
     background-image: url("Medien/birmingham-museums-trust-HslbEeUauYA-unsplash.jpg");
 }
-
 
 h1 {
     margin-top: 1em;
@@ -11,18 +10,15 @@ h1 {
     text-align: center;
     transform: scale(1,2);
     margin-bottom: 1em;
-  }
+}
 
 h2 {
-
     text-transform: uppercase;
     font-family: Georgia, serif;
     text-align: center;
     transform: scale(1,2);
     margin-bottom: 3em;
-
 }
-
 
 p a {
     font-size: 2em;
@@ -34,11 +30,8 @@ p a {
     float:left;
     margin-top: 8em;  
     margin-bottom: 2em; 
-    text-align: center;
-    
-  
+    text-align: center; 
 }
-
 
 div {
     font-size: 1.5em;
@@ -48,12 +41,10 @@ a:hover {
     color: white;
 }
 
-
 div, .player {
     float: left;
     margin-right: 1em;
     margin-left: 1.2em;
-   
 }
 
 #responseButton {
@@ -63,22 +54,88 @@ div, .player {
     font-size: 2em;
     font-family: Georgia, serif;
     text-align: center;
-
 }
 
 main {
-    text-align: center;
-   
+    text-align: center;  
 }
 
 footer {
     position: sticky;
-  
 }
 
 #Spiel {
     position: fixed;
 }
+
+@media only screen and (max-width: 1679px){
+    p a {
+        margin-top: 17em;
+        margin-left: 23.5em;
+    } 
+}
+
+@media only screen and (max-width: 1175px){
+    p a {
+        margin-left: 15em;
+    }
+    body {
+        background-image: url("Medien/land3.jpg");
+    } 
+}
+
+@media only screen and (max-width: 790px){
+    #Spiel {
+        margin-top: 0;
+        position: relative;
+    }
+    p a {
+        margin-top: 0em;
+        margin-left: 9em;
+        margin-bottom: 1em;
+    }  
+}
+
+@media only screen and (max-width: 620px){
+    p a {
+        margin-top: 0em;
+        margin-left: 6em;
+        margin-bottom: 1em;
+    }  
+}
+
+@media only screen and (max-width: 505px){
+    body {
+        background-color: rgb(206, 206, 195);
+        background-image: none;
+    }
+    p a {
+        margin-left: 4.5em;
+    }
+}
+
+
+@media only screen and (max-width: 420px){
+    h1 {
+        font-size: 2em;
+    }
+    div, .player {
+        font-size: 1em;
+    }
+    p a {
+        margin-left: 4.5em;
+        font-size: 1.5em;
+    }   
+}
+
+@media only screen and (max-width: 372px){
+
+  
+
+
+}
+
+
 
 
 

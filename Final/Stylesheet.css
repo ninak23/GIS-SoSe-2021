@@ -1,20 +1,31 @@
 * {
-    padding: 0;
+    padding: 0;  /* css von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css*/
     margin: 0;
     box-sizing: border-box;
   }
 
+  #Pair1, #Pair2, #Pair3, #Pair4, #Pair5, #Pair6, #Pair7, #Pair8, #Pair9, #Pair10, #Pair11, #Pair12, #Pair13, #Pair14, #Pair15, #Pair16 {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: white;
+  }
+
+  img {
+    width: 110px;
+    height: 10rem;
+    object-fit: fill;
+  }
  
-  
   body main {
     height: 50em;
     display: flex;
-    
     margin-bottom: 15em;
   }
- 
   
-  .memory-game {
+  .memory-game {  /* css von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css*/
     width: 640px;
     height: 640px;
     margin: auto;
@@ -23,7 +34,7 @@
     perspective: 1000px;
   }
   
-  .memory-card {
+  .memory-card {  /* css von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css*/
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
     margin: 5px;
@@ -34,16 +45,16 @@
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   }
   
-  .memory-card:active {
+  .memory-card:active { /* css von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css*/
     transform: scale(0.97);
     transition: transform .2s;
   }
   
-  .memory-card.flip {
+  .memory-card.flip { /* css von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css*/
     transform: rotateY(180deg);
   }
   
-  .front-face,
+  .front-face, /* css von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css*/
   .back-face {
     width: 100%;
     height: 100%;
@@ -53,45 +64,97 @@
     background: white;
     backface-visibility: hidden;
   }
-  
-  .front-face {
+
+  .front-face {    /* css von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css*/
     transform: rotateY(180deg);
   }
 
+  h1 {
+    margin-top: 0.5em;
+    font-size: 350%;
+    text-transform: uppercase;
+    font-family: Georgia, serif;
+    text-align: center;
+    transform: scale(1,2);
+  }
+
+  h2 {
+    margin-top: 1.5em;
+    font-size: 250%;
+    text-transform: uppercase;
+    font-family: Georgia, serif;
+    text-align: center;
+    transform: scale(1,2);
+    color: rgb(122, 153, 163);
+  }
+
+  #Playtime {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 1.5em;
+  }
+
+  body {
+    background-image: url("Medien/birmingham-museums-trust-HslbEeUauYA-unsplash.jpg");
+  }
+
+  a {
+    color: black;
+    font-size: 1.5em;
+    margin-left: 0.6em;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+  }
+
+  @media only screen and (max-width: 610px){
+    h1 {
+      font-size: 2.5em;
+    }
+    h2{
+      font-size: 1.5em;
+    } 
+    img {
+      width: 96px;
+    }
+  }
+
+  @media only screen and (max-width: 610px){
+    h1 {
+      font-size: 2.5em;
+    }
+    h2{
+      font-size: 1.5em;
+    } 
+    img {
+      width: 83px;
+    }
+  }
+
+  @media only screen and (max-width: 325px){ 
+
+    .memory-card {
+      width: 8em;
+      height: calc(33.333% - 10px);
+      margin: 5px;
+      position: relative;
+      transform: scale(1);
+      transform-style: preserve-3d;
+      transition: transform .5s;
+      box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+      margin-left: 0.8em;
+      margin-bottom: 1em;
+    }
+    h1 {
+      margin-bottom: 1.5em;
+    }
+    h2 {
+      margin-bottom: 1.5em;
+    }   
+  }
+
+
+
   
-h1 {
-  margin-top: 0.5em;
-  font-size: 350%;
-  text-transform: uppercase;
-  font-family: Georgia, serif;
-  text-align: center;
-  transform: scale(1,2);
-}
-
-
-
-h2{
-
-  margin-top: 1.5em;
-  font-size: 250%;
-  text-transform: uppercase;
-  font-family: Georgia, serif;
-  text-align: center;
-  transform: scale(1,2);
-  color: rgb(122, 153, 163);
-}
-
- 
-
-
-#Playtime {
-  text-align: center;
-  margin-top: 2em;
-  font-size: 1.5em;
-}
-
-
-
-body  {
-  background-image: url("Medien/birmingham-museums-trust-HslbEeUauYA-unsplash.jpg");
-}

@@ -1,17 +1,10 @@
 import * as Http from "http";
 import * as Url from "url";
-//import { ParsedUrlQuery } from "querystring";
 import { Memory } from "./test";
-
-
-
-//connecttoDB("mongodb://localhost:27017");
-//# sourceMappingURL=test.js.map */
 
 export namespace server {
 
     export interface Player {
-        //_id: string;
         firstname: string;
         secondname: string;
         Playtime: string;
@@ -22,18 +15,12 @@ export namespace server {
         name: string;
     }
 
-    //let databaseUrl: string = "mongodb://localhost:27017";
-    //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
-    //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/MemoryretryWrites=true&w=majority" ;
-    //let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory2?retryWrites=true&w=majority"; //änderung
-    //let databaseCardsUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
     let databaseUrl: string = "mongodb+srv://6k5m43C21:6k5m43C21@ninagis.mlujl.mongodb.net/Memory?retryWrites=true&w=majority";
 
     let port: number = Number(process.env.PORT);
     if (!port)
         port = 8100;
 
-    //Memory.connectToDatabase(databaseUrl);
     startServer(port);
 
 
@@ -42,7 +29,6 @@ export namespace server {
         console.log("Starting server");
 
         await Memory.connectToDatabase(databaseUrl);
-        //await Memory.connectTodb(databaseCardsUrl); 
 
         let server: Http.Server = Http.createServer();
         server.addListener("request", handleRequest);
@@ -77,13 +63,10 @@ export namespace server {
         if (urlWithQuery.pathname == "/remove") {
             DbJsonAnswer(_response, await Memory.removeCards(urlWithQuery.query));
         }
-
-
         _response.end();
     }
 
 }
-
 
 // tslint:disable-next-line: no-any
 function DbJsonAnswer(_response: Http.ServerResponse, _result: any): void {
