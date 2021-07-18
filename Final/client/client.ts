@@ -37,17 +37,17 @@ namespace Client {
 
 
     // tslint:disable-next-line: no-any
-    const cards: NodeListOf<any> = document.querySelectorAll(".memory-card");
+    const cards: NodeListOf<any> = document.querySelectorAll(".memory-card"); // Code von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/scripts.js 
 
     let aktuelleSeite: string = window.location.href;
     let pos: number = aktuelleSeite.lastIndexOf("/");
     aktuelleSeite = aktuelleSeite.substring(pos + 1);
 
-    let cardCounter: number = 0;
-    let hasFlippedCard: boolean = false;
-    let lockBoard: boolean = false;
-    let firstCard: HTMLElement;
-    let secondCard: HTMLElement;
+    let cardCounter: number = 0;   //Code von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/scripts.js 
+    let hasFlippedCard: boolean = false; //Code von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/scripts.js 
+    let lockBoard: boolean = false; // Code von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/scripts.js 
+    let firstCard: HTMLElement; // Code von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/scripts.js 
+    let secondCard: HTMLElement; // Code von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/scripts.js 
     let actTime: Date = new Date;
     let startTime: number = 0;
     let playTime: number = 0;
