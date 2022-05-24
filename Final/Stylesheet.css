@@ -40,7 +40,7 @@
     margin: 5px;
     position: relative;
     transform: scale(1);
-    transform-style: preserve-3d;
+    transform-style: preserve-3d;  /* 3D Effekt beim umdrehen der Karte*/
     transition: transform .5s;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   }
@@ -51,7 +51,7 @@
   }
   
   .memory-card.flip { /* css von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css*/
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* wird beim auf decken um 180 grad gedreht*/
   }
   
   .front-face, /* css von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css*/
@@ -66,7 +66,7 @@
   }
 
   .front-face {    /* css von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/styles.css*/
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Karte wird um 180 gedreht das wr die Vorder Seite sehen können*/
   }
 
   h1 {

@@ -20,15 +20,15 @@ namespace Client {
 
     function init(): void {
 
-        document.getElementById("insertButton")?.addEventListener("click", input2);
-        document.getElementById("responseButton")?.addEventListener("click", getData2);
+        document.getElementById("insertButton")?.addEventListener("click", input2); // input 2 = fügt Spieler in der Datenbank hinzu 
+        document.getElementById("responseButton")?.addEventListener("click", getData2); // getData2 = holt die 10 besten Spieler geordnet nach der Zeit aus der Datenbank
 
-        document.getElementById("insertcard")?.addEventListener("click", insert);
-        document.getElementById("removecard")?.addEventListener("click", removeCard);
+        document.getElementById("insertcard")?.addEventListener("click", insert); // insert = fügt neue Url + name in der Datenbank hinzu
+        document.getElementById("removecard")?.addEventListener("click", removeCard); // löscht über den Name ein Bild 
 
 
         let elem: HTMLElement = document.getElementById("responseButton");
-        document.getElementById("responseButton")?.addEventListener("click", remove); 
+        document.getElementById("responseButton")?.addEventListener("click", remove); // Wenn see Ranking button gedrückt wird, wird er automatische entfernt 
         function remove(): void {
             elem.parentNode.removeChild(elem);
         }
@@ -38,10 +38,10 @@ namespace Client {
 
     // tslint:disable-next-line: no-any
     const cards: NodeListOf<any> = document.querySelectorAll(".memory-card"); // Code von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/scripts.js 
-
+    //Liste mit allen Memorykarten
     let aktuelleSeite: string = window.location.href;
-    let pos: number = aktuelleSeite.lastIndexOf("/");
-    aktuelleSeite = aktuelleSeite.substring(pos + 1);
+    let pos: number = aktuelleSeite.lastIndexOf("/"); //position der aktuellen Seite im String -> Suche nach dem letzten Slash
+    aktuelleSeite = aktuelleSeite.substring(pos + 1); // 
 
     let cardCounter: number = 0;   //Code von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/scripts.js 
     let hasFlippedCard: boolean = false; //Code von hier übernommen https://github.com/code-sketch/memory-game/blob/master/video-11/scripts.js 
@@ -54,7 +54,7 @@ namespace Client {
     let keyTime: string = "playtime";
     let scoreTime: string = "";
 
-    //writes the player name and time into the database collection ??
+    //writes the player name and time into the database collection ScoreList
     async function input2(_e: Event): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         console.log(formData);
@@ -64,21 +64,20 @@ namespace Client {
         console.log(query);
         url = url + "/insert?" + query.toString();
         let response: Response = await fetch(url);
-        let answer: string = await response.text();
+        let answer: string = await response.text();  
         console.log(answer);
-        window.location.href = "Ranking.html";
-
+        window.location.href = "Ranking.html"; //wechsel auf ranking
     }
 
     // fetch the playtime from the gaming site
     if (aktuelleSeite == "Score.html") {
-        scoreTime = sessionStorage.getItem(keyTime);
+        scoreTime = sessionStorage.getItem(keyTime); //durch Seitenwechsel geht information der Playtime verloren, deswegen Sessionstorage, holt information und zeigt an 
         document.getElementById("Scoretime").innerHTML = "Gametime: " + scoreTime + " s";
     }
 
-    // writes the url and name of a new image into the database collection ??
+    // writes the url and name of a new image into the database collection MemoryCards
     async function insert(_e: Event): Promise<void> {
-        let formData: FormData = new FormData(document.forms[0]);
+        let formData: FormData = new FormData(document.forms[0]); // eingabe erste element des Formulars
         console.log(formData);
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
@@ -87,12 +86,12 @@ namespace Client {
         let response: Response = await fetch(url);
         let answer: string = await response.text();
         console.log(answer);
-        window.location.href = "Admin.html";
+        window.location.href = "Admin.html"; //neu geladen 
     }
 
-    // removes an image int the database collection ?? about the image name
+    // removes an image int the database collection MemoryCards about the image name
     async function removeCard(_e: Event): Promise<void> {
-        let formData: FormData = new FormData(document.forms[1]);
+        let formData: FormData = new FormData(document.forms[1]); // remove 2te Element des formulars
         console.log(formData);
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
@@ -132,11 +131,11 @@ namespace Client {
 
         let card: HTMLDivElement = document.createElement("div");
         card.classList.add("Card");
-        card.setAttribute("_id", _cards._id);
+        card.setAttribute("_id", _cards._id); // name und Wert
 
         let img: HTMLImageElement = document.createElement("img");
         img.src = _cards.url;
-        card.appendChild(img);
+        card.appendChild(img); //fügt Elemente am ende unseres DivElements ein, EventListener bleiben in Takt
 
         let cardname: HTMLElement = document.createElement("p");
         cardname.classList.add("name");
@@ -155,23 +154,23 @@ namespace Client {
     export async function getCardstoPlay(_e: Event): Promise<void> {
         console.log("cards");
         let response: Response = await fetch(url + "/Read");
-        let cardsData: Cards[] = await response.json();
+        let cardsData: Cards[] = await response.json(); //enthält alle Bilder
 
         let maxCards: number = 8;
         let idx: number = 1;
-        let cardIdc: number[] = [maxCards];
-        let noDuplicate: Boolean = true;
-        let cardsUsed: Cards[] = [];
+        let cardIdc: number[] = [maxCards]; //Zufalsszahlen die ich prüf //Array 
+        let noDuplicate: Boolean = true; //überprüft ob zahl doppelt vorkommt im Array CARDIdc
+        let cardsUsed: Cards[] = [];  //die 8 zufällig ausgewählten bilder mit ihren Daten 
 
-        while (noDuplicate == true) {
-            for (let i: number = 0; i < maxCards; i++) {
-                cardIdc[i] = Math.floor(Math.random() * cardsData.length);
+        while (noDuplicate == true) { //Duplicate == true
+            for (let i: number = 0; i < maxCards; i++) {   // zufällige auswahl der Karten, generierung der zufalsszahlen 
+                cardIdc[i] = Math.floor(Math.random() * cardsData.length); // 8 zufalsszahlen werden erstellt und ins Array geschrieben 
             }
-            for (let i: number = 0; i < maxCards; i++) {
+            for (let i: number = 0; i < maxCards; i++) { //anzahl an karten wird durchgegangen 
                 noDuplicate = false;
                 for (let j: number = i + 1; j < maxCards; j++) {
-                    if (cardIdc[i] == cardIdc[j]) {
-                        noDuplicate = true;
+                    if (cardIdc[i] == cardIdc[j]) {   //überprüfung der duplikate 
+                        noDuplicate = true; //                                                           Solange ein duplicate vorhanden ist wird der Block durchlaufen 
                         break;
                     }
                 }
@@ -182,22 +181,22 @@ namespace Client {
         }
 
         for (let i: number = 0; i < maxCards; i++) {
-            cardsUsed.push(cardsData[cardIdc[i]]);
+            cardsUsed.push(cardsData[cardIdc[i]]);  //Array wird mit 8 zufälliigen gefüllt
         }
 
-        for (let cards of cardsUsed) {
+        for (let cards of cardsUsed) {  //Zufällig ausgewählten Bilder werden den 16 Karten zugewiesen, immer ein Bild wird 2 Karten zugewiesen
             if (idx <= maxCards) {
-                let idNumber: number = (idx * 2) - 1;
+                let idNumber: number = (idx * 2) - 1;  //ungerade Zahl der ID 
                 let cardId: string = "Pair";
-                cardId = cardId.concat(idNumber.toString());
+                cardId = cardId.concat(idNumber.toString()); // zum Beinspiel die Zahl 1 wird zum String umgewandelt und an Pair angehängt 
                 let out: HTMLDivElement = <HTMLDivElement>document.getElementById(cardId);
                 out.innerHTML = "";
                 out.appendChild(showCards3(cards));
-                idNumber = idx * 2;
+                idNumber = idx * 2; //Gerade Zahl der Pair ID -> 2 Karten mit gleichem Bild 
                 cardId = "Pair";
                 cardId = cardId.concat(idNumber.toString());
                 out = <HTMLDivElement>document.getElementById(cardId);
-                out.innerHTML = "";
+                out.innerHTML = "";                       //erzeugt
                 out.appendChild(showCards3(cards));
             }
             idx++;
@@ -220,7 +219,7 @@ namespace Client {
         return card;
     }
 
-    // gets the player data from the database collection ??, sorts them by time and calls the showing function
+    // gets the player data from the database collection ScoreList, sorts them by time and calls the showing function
     export async function getData2(_e: Event): Promise<void> {
         console.log("Daten holen");
         let response: Response = await fetch(url + "/read");
@@ -232,19 +231,19 @@ namespace Client {
 
         // copy array from database
         for (let players of playerData) {
-            show.push(players);
+            show.push(players); //Daten werden ins Array show reingeschrieben 
         }
 
         //sort players by time
         let tmpPlayer: Player;
         if (show.length > 1) {
-            for (let j: number = 0; j < show.length; j++) {
-                for (let i: number = 1; i < show.length; i++) {
+            for (let j: number = 0; j < show.length; j++) { // oft genug durchgehen, dass alle Daten sortiert werden, mit einer for schleife werden nur benachbarte getauscht 
+                for (let i: number = 1; i < show.length; i++) { 
                     let time1: number = parseFloat(show[i - 1].Playtime);
-                    let time2: number = parseFloat(show[i].Playtime);
+                    let time2: number = parseFloat(show[i].Playtime); 
                     if (time1 > time2) {
-                        tmpPlayer = show[i - 1];
-                        show[i - 1] = show[i];
+                        tmpPlayer = show[i - 1]; 
+                        show[i - 1] = show[i]; //0 und 1, 1 und 2 ... werden verglichen 
                         show[i] = tmpPlayer;
                     }
                 }
@@ -253,7 +252,7 @@ namespace Client {
 
         let maxRanking: number = 10;
         let idx: number = 0;
-        for (let players of show) {
+        for (let players of show) {  //show array wo alle spielzeiten drin sind //players 10 beste spieler
             if (idx < maxRanking) {
                 out.appendChild(showPlayers2(players));
             }
@@ -296,7 +295,7 @@ namespace Client {
         console.log(playTime);
         playTime = playTime - startTime;
         if (cardCounter == cards.length) {
-            playTime = playTime / 1000;
+            playTime = playTime / 1000;  // damit die Zeit in sek angezeigt/bzw. umgerechnet wird
             sessionStorage.setItem(keyTime, playTime.toString());
             console.log(playTime);
             document.getElementById("Playtime").innerHTML = "Gametime: " + playTime.toString() + " s";
@@ -313,69 +312,69 @@ namespace Client {
             console.log(startTime);
             console.log(playTime);
         }
-        if (lockBoard) return;
-        if (this == firstCard) {
-            return;
+        if (lockBoard) return;  // Solange 2 Karten aufgedeckt sind wird die Ausführung der <funktion gestoppt
+        if (this == firstCard) { //verhindert das wenn 2 mal auf die erste Karte klickt  ein Match entsteht
+            return; 
         }
 
-        this.classList.add("flip");
+        this.classList.add("flip"); // wird zur Liste hinzugefügt 
 
-        if (!hasFlippedCard) {
-            hasFlippedCard = true;
-            firstCard = this;
+        if (!hasFlippedCard) {  // das erste mal das ein Spieler eine Karte angeklickt hat
+            hasFlippedCard = true; // Flipcard gleich true gesetzt, da die erste Karte umgedreht wird
+            firstCard = this; // Element, dass das Event auslöst ist in diesem Fall dann die Karte
 
-            return;
+            return; // Wenn hasFlippedCard ist true wird die ausführung der Funktion beendet
         }
 
         secondCard = this;
         checkForMatch();
     }
-
+//mann kann dem Element etwas hinzufägen -> dataframework -> Karte werden namen hinzugefügt 
     function checkForMatch(): void {
-        let isMatch: boolean = firstCard.dataset.framework == secondCard.dataset.framework;
+        let isMatch: boolean = firstCard.dataset.framework == secondCard.dataset.framework; // Es wird überprüft ob die erste geklickte Karte mit der zweiten geclickten Karte übereinstimmt mithilfe des namens
 
         if (isMatch) {
             cardCounter = cardCounter + 2;
             console.log(cardCounter);
-            disableCards();
+            disableCards(); // Funktion die Eventlistener entfernt wird aufgerufen
             checkEnd();
         }
-        else {
-            unflipCards();
+        else { // wenn kein Match ist 
+            unflipCards(); //Funktion die dafür sorgt das die Karten sich wieder umdrehen
         }
     }
 
     function disableCards(): void {
-        firstCard.removeEventListener("click", flipCard);
+        firstCard.removeEventListener("click", flipCard); // wenn die Karten ein Match sind wird der EventListener entfernt, so dass die Karten aufgedeckt bleiben
         secondCard.removeEventListener("click", flipCard);
 
         resetBoard();
     }
 
-    function unflipCards(): void {
-        lockBoard = true;
+    function unflipCards(): void { //sorgt dafür das nach 1000s die Karten wieder umgedreht werden und wird dann ausgeführt wenn die Karten kein Match sind
+        lockBoard = true;   // Board wird gelockt und erst wenn die Karten die Kein Match sind wieder zurückgeflippt sind wird lockboard gleicht false gesetzt also entlockt -> verhindert das ein zweites Paar aufgedeckt wird bevor das erste sich wieder zurückgedreht hat
 
         setTimeout(() => {
-            firstCard.classList.remove("flip");
+            firstCard.classList.remove("flip"); 
             secondCard.classList.remove("flip");
 
-            resetBoard();
+            resetBoard(); 
         },         1000); //wird automatisch immer falsch eingerückt 
     }
 
-    function resetBoard(): void {
+    function resetBoard(): void { //setzt  Memory wieder zurück
         hasFlippedCard = false;
         lockBoard = false;
         firstCard = null;
         secondCard = null;
     }
 
-    (function shuffle(): void {
+    (function shuffle(): void { //Durch die extra Klammern wird die Funktion direkt nach ihrer Definition ausgeführt 
         cards.forEach(card => {
-            let randomPos: number = Math.floor(Math.random() * cards.length);
-            card.style.order = randomPos;
+            let randomPos: number = Math.floor(Math.random() * cards.length); // wird mit der Anzahl der Karten multipliziert, so dass jede Karte eine Zahl zugewiesen bekommt //Math.floor -> Integer
+            card.style.order = randomPos; // zufällige Anordnung der Karten 
         });
     })();
 
-    cards.forEach(card => card.addEventListener("click", flipCard));
+    cards.forEach(card => card.addEventListener("click", flipCard)); // Die Liste wird durchgegangen und jede Karte bekommt einen EventListener zugewiesen -> Bei Click ausführung der Funktion Flip card
 }
