@@ -507,3 +507,44 @@ span a img {
    
 }
 
+.plant1{
+    height: 25%;
+    position: fixed;
+    top:2%;
+    left: 54.5%; 
+    z-index: 3000;
+}
+
+.plant2{
+    height: 45%;
+    position: fixed;
+    top:13%;
+    left: 81%; 
+    z-index: 3000;
+}
+
+.plant3{
+    height: 45%;
+    position: fixed;
+    top:59.6%;
+    left: -4%; 
+    z-index: 3000;
+}
+
+.plant4{
+    height: 35%;
+    position: fixed;
+    top:4.4%;
+    left: 26%; 
+    z-index: 3000;
+}
+
+#löffel {
+
+    height: 35%;
+    position: fixed;
+    top: 53%;
+    left: 83%; 
+    z-index: 3000;
+
+}
