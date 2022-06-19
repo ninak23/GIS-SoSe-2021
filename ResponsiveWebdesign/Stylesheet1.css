@@ -1388,6 +1388,11 @@ label a {
         visibility: hidden;
     }
 
+    #plant2 {
+
+        visibility: hidden;
+    }
+
     #cubesmotion {
         visibility: hidden;
     }
