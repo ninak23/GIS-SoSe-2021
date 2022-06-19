@@ -222,6 +222,204 @@
     height: 9%;
 }
 
+@media only screen and (max-width: 600px){ 
 
- 
- 
+    .Green {
+        visibility: hidden;
+    }
+
+    .Produktbeschreibung {
+        object-fit: fill;
+        height: 40%;
+        width: 84%;
+    }
+
+    .frame {
+        top:23%;
+        left:35%;
+    }
+
+    .description7 {
+        font-size: 12px;
+        left:39.5%;
+        top:8%;
+        font-weight: 600;
+    }
+
+    .description8 {
+        font-size: 30px;
+        left:21%;
+        top:9%;
+        font-weight: 600;
+    }
+
+    .description9{
+        font-size: 12px;
+        left:46.7%;
+        top:17.5%;
+        font-weight: 600;
+    }
+
+    .description10 {
+        font-size: 30px;
+        left:29.3%;
+        top:9%;
+        font-weight: 600;
+
+    }
+    .leave {
+        position: absolute;
+        top: 53%;
+        left: 43%;;
+        height: 6%;   
+    }
+
+    .citron {
+        position: absolute;
+        top: 53%;
+        left: 39%;;
+        height: 6%;   
+    }
+
+    .descriptionGreenCube1 {
+        position: absolute;
+        color: rgb(19, 80, 44);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        z-index: 2000;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 15px;
+        left:22%;
+        top:44%;
+        text-align: center;
+    }
+
+    .descriptionGreenCube2 {
+        position: absolute;
+        color: rgb(19, 80, 44);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        z-index: 2000;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 13px;
+        left:36%;
+        top:58%;
+        text-align: center;
+    }
+
+    .descriptionGreenCube3 {
+        position: absolute;
+        color: rgb(19, 80, 44);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        z-index: 2000;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 12px;
+        left:7%;
+        top:64%;
+        text-align: center;
+        margin-left: 3em;
+        margin-right: 4em;
+    }
+}
+
+@media only screen and (max-width: 400px){ 
+
+    .Green {
+        visibility: hidden;
+    }
+
+    .Produktbeschreibung {
+        object-fit: fill;
+        height: 40%;
+        width: 84%;
+    }
+
+    .frame {
+        top:23%;
+        left:35%;
+    }
+
+    .description7 {
+        font-size: 12px;
+        left:39.5%;
+        top:8%;
+        font-weight: 600;
+    }
+
+    .description8 {
+        font-size: 30px;
+        left:21%;
+        top:9%;
+        font-weight: 600;
+    }
+
+    .description9{
+        font-size: 12px;
+        left:46.7%;
+        top:17.5%;
+        font-weight: 600;
+    }
+
+    .description10 {
+        font-size: 30px;
+        left:29.3%;
+        top:9%;
+        font-weight: 600;
+
+    }
+    .leave {
+        position: absolute;
+        top: 53%;
+        left: 43%;;
+        height: 6%;   
+    }
+
+    .citron {
+        position: absolute;
+        top: 53%;
+        left: 39%;;
+        height: 6%;   
+    }
+
+    .descriptionGreenCube1 {
+        position: absolute;
+        color: rgb(19, 80, 44);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        z-index: 2000;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 15px;
+        left:22%;
+        top:44%;
+        text-align: center;
+    }
+
+    .descriptionGreenCube2 {
+        position: absolute;
+        color: rgb(19, 80, 44);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        z-index: 2000;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 13px;
+        left:36%;
+        top:58%;
+        text-align: center;
+    }
+
+    .descriptionGreenCube3 {
+        position: absolute;
+        color: rgb(19, 80, 44);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        z-index: 2000;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 12px;
+        left:7%;
+        top:64%;
+        text-align: center;
+        margin-left: 3em;
+        margin-right: 4em;
+    }
+}
