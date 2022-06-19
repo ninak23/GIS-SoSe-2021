@@ -1037,6 +1037,11 @@ label a {
 
 @media only screen and (max-width: 400px){
 
+    .Back {
+        visibility: hidden;
+    }
+
+
     #video_background {
      visibility: hidden;
     
