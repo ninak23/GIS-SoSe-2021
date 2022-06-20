@@ -451,7 +451,7 @@ body {
 label .menu {
     position: absolute;
     right: 0px;
-    top: 400px;
+    top: 44.5%;
     z-index: 1000;
     width: 140px;
     height: 90px;
@@ -553,6 +553,58 @@ label a {
     font-size: 40px;
     text-align: center;
 
+}
+
+@media only screen and (max-width: 1670px) {
+
+    .description50 h1 {
+        position: absolute;
+        font-size: 230px;
+        left: 51%;
+        top: 2%;
+    }
+
+    .description7 {
+        left: 17.5%;  
+    }
+
+    
+    .description8 {
+        left: 11.5%;  
+        top: 11%;
+    }
+
+    .description10 {
+        left: 17.5%;  
+    }
+
+    
+    .description11 {
+        left: 11%;  
+        top: 11%;
+    }
+
+    .description13 {
+        left: 17.5%;  
+    }
+
+    
+    .description14 {
+        left: 14%;  
+        top: 10%;
+    }
+
+}
+
+@media only screen and (max-width: 1536px) {
+
+ 
+    .description50 h1 {
+        position: absolute;
+        font-size: 230px;
+        left: 51%;
+        top: 2%;
+    }
 }
 
 @media only screen and (max-width: 1490px) {
@@ -1050,7 +1102,7 @@ label a {
         top: 12%;
         color: rgb(19, 80, 44);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .description4 {
@@ -1062,7 +1114,7 @@ label a {
         top: 8%;
         color: rgb(19, 80, 44);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .description5 p {
@@ -1075,7 +1127,7 @@ label a {
         top: 20%;
         color: rgb(19, 80, 44);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 600;
+        font-weight: 400;
         z-index: 2000;
     }
 
@@ -1084,13 +1136,14 @@ label a {
         line-height: 120%;
         left: 62%;
         top: 13%;
+        font-weight: 400;
     }
 
     .description7 {
         font-size: 12px;
         left: 65%;
         top: 8%;
-        font-weight: 600;
+        font-weight: 400;
     }
 
 
@@ -1098,14 +1151,14 @@ label a {
         font-size: 30px;
         left: 54%;
         top: 9%;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .description9 {
         font-size: 12px;
         left: 69%;
         top: 17.5%;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .button2 {
@@ -1122,42 +1175,42 @@ label a {
         font-size: 12px;
         left: 65%;
         top: 8%;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .description11 {
         font-size: 30px;
         left: 53%;
         top: 9%;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .description12 {
         font-size: 12px;
         left: 69%;
         top: 17.5%;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .description13 {
         font-size: 12px;
         left: 65%;
         top: 8%;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .description14 {
         font-size: 30px;
-        left: 58.5%;
-        top: 9%;
-        font-weight: 600;
+        left: 58.9%;
+        top: 8.5%;
+        font-weight: 400;
     }
 
     .description15 {
         font-size: 12px;
         left: 69%;
         top: 17.5%;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     .Back {
@@ -1168,7 +1221,7 @@ label a {
     .description51 {
         position: absolute;
         font-size: 14px;
-        left: 51.5%;
+        left: 50%;
         top: 58%;
         transform: translate(-50%, -62%);
         color: rgb(19, 80, 44);
@@ -1182,13 +1235,17 @@ label a {
         position: absolute;
         font-size: 70px;
         left: 51.5%;
-        top: 37.5%;
+        top: 35.5%;
 
+    }
+
+    .description2 {
+        left: 48.5%;
     }
 
     span a img {
         /**button*/
-        left: 37.7%;
+        left: 40%;
         top: 64%;
     }
 

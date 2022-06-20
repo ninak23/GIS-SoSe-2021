@@ -225,6 +225,13 @@ a {
         left: 90%;
     }
 
+    .Produktbeschreibung {
+        object-fit: fill;
+        width: 35%;
+        left: 6.5%;
+    }
+
+
 }
 
 @media only screen and (max-width: 1320px) {
