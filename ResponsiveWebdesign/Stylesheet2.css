@@ -6,7 +6,7 @@
 
 span a img {
     position: absolute;
-    top: 65%;
+    top: 70%;
     left: 47.3%;
 }
 
@@ -20,79 +20,6 @@ span a img {
     position: absolute;
     height: 100%;
     left: 35%;
-}
-
-.cube {
-    height: 55%;
-    position: absolute;
-    top: 63%;
-    left: 50%;
-    transform: translate(-50%, -70%);
-}
-
-.cube:hover {
-    top: 66%;
-    height: 66%;
-    z-index: 2;
-}
-
-.cube1 {
-    z-index: 1000;
-    height: 80%;
-    position: fixed;
-    top: -25%;
-    left: 70%;
-}
-
-.cube1:hover {
-    z-index: 2;
-    position: fixed;
-    height: 88%;
-    left: 65%;
-}
-
-.cube2 {
-    height: 90%;
-    position: fixed;
-    top: 44%;
-    left: -10%;
-}
-
-.cube2:hover {
-    z-index: 2;
-    position: fixed;
-    height: 100%;
-    top: 40%;
-}
-
-.cube3 {
-    height: 80%;
-    position: fixed;
-    top: 55%;
-    left: 65%;
-    transform: rotate(190deg);
-}
-
-.cube3:hover {
-    z-index: 2;
-    position: fixed;
-    height: 90%;
-    top: 50%;
-}
-
-.cube4 {
-    z-index: 1000;
-    height: 70%;
-    position: fixed;
-    top: -15%;
-    left: -5%;
-    transform: rotate(140deg);
-}
-
-.cube4:hover {
-    z-index: 2;
-    position: fixed;
-    height: 75%;
 }
 
 .logo {
@@ -479,7 +406,7 @@ a {
     position: absolute;
     font-size: 230px;
     left: 51%;
-    top: 10%;
+    top: 7%;
     transform: translate(-50%, -20%);
     color: rgb(19, 80, 44);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -493,7 +420,7 @@ a {
     position: absolute;
     font-size: 16px;
     left: 50%;
-    top: 64%;
+    top: 67%;
     transform: translate(-50%, -62%);
     color: rgb(19, 80, 44);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -524,7 +451,7 @@ body {
 label .menu {
     position: absolute;
     right: 0px;
-    top: 440px;
+    top: 400px;
     z-index: 1000;
     width: 140px;
     height: 90px;

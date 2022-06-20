@@ -283,7 +283,6 @@
 
 
 #list {
-
     width: 100%;
     height: 2em;
     z-index: 1000;
@@ -411,7 +410,7 @@ a {
     position: absolute;
     font-size: 230px;
     left: 51%;
-    top: 10%;
+    top: 7%;
     transform: translate(-50%, -20%);
     color: rgb(19, 80, 44);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -434,7 +433,7 @@ span a img {
     position: absolute;
     font-size: 16px;
     left: 50%;
-    top: 64%;
+    top: 67%;
     transform: translate(-50%, -62%);
     color: rgb(19, 80, 44);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -513,7 +512,6 @@ span a img {
 }
 
 #löffel {
-
     height: 35%;
     position: fixed;
     top: 53%;
@@ -533,7 +531,7 @@ span a img {
     transform: translate(-69.3%, -25%);
     color: rgb(19, 80, 44);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     z-index: 100;
     letter-spacing: 0.05em;
 }
@@ -598,6 +596,13 @@ span a img {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
     z-index: 2000;
+}
+
+@media only screen and (max-width: 1670px) {
+
+    .description5 p {
+        left: 61%;
+    }
 
 }
 
@@ -612,7 +617,6 @@ span a img {
 
 
     .s1 h1 {
-
         transform: translate(-0%, -0%);
         position: absolute;
         font-size: 80px;
@@ -620,9 +624,20 @@ span a img {
         top: 32%;
     }
 
+    .description5 p {
+        left: 61%;
+        font-size: 50px;
+    }
+
+
 }
 
 @media only screen and (max-width: 1240px) {
+
+    .description5 p {
+        left: 60%;
+        font-size: 40px;
+    }
 
     .s1 h1 {
         transform: translate(-0%, -0%);
@@ -635,6 +650,10 @@ span a img {
 }
 
 @media only screen and (max-width: 1170px) {
+
+    .description5 p {
+        left: 59%;
+    }
 
     .s1 h1 {
         transform: translate(-0%, -0%);
@@ -731,6 +750,20 @@ span a img {
 
 @media only screen and (max-width: 1040px) {
 
+    .description5 p {
+        left: 58%;
+        font-size: 35px;
+    }
+
+    .description4 {
+        left: 74%;
+    }
+
+    .rectangle {
+        top: 70%;
+        left: 73%;
+    }
+
     .s1 h1 {
         transform: translate(-0%, -0%);
         position: absolute;
@@ -750,7 +783,22 @@ span a img {
         left: 17%;
         top: 37%;
     }
+
+    .description5 p {
+        left: 58%;
+        font-size: 30px;
+    }
+
+    .description3 {
+        font-size: 55px;
+    }
+    .rectangle {
+        top: 70%;
+        left: 72%;
+    }
 }
+
+
 
 @media only screen and (max-width: 850px) {
 
@@ -761,7 +809,51 @@ span a img {
         left: 19%;
         top: 40%;
     }
+
+    .description5 p {
+        left: 55%;
+        font-size: 30px;
+    }
+
+    #plant {
+        height: 80%;
+    }
+
 }
+
+@media only screen and (max-width: 780px) {
+
+    .s1 h1 {
+        transform: translate(-0%, -0%);
+        position: absolute;
+        font-size: 40px;
+        left: 19%;
+        top: 40%;
+    }
+
+    #plant {
+        height: 70%;
+    }
+
+    .description5 p {
+        left: 55%;
+        font-size: 20px;
+    }
+
+    .description3 {
+        font-size: 50px;
+        left:73%;
+    }
+    .rectangle {
+        top: 65%;
+        left: 67%;
+    }
+
+    .description4 {
+        left: 69%;
+    }
+}
+
 
 @media only screen and (max-width: 400px) {
 
@@ -1142,7 +1234,7 @@ span a img {
     label .menu {
         position: absolute;
         right: 0px;
-        top: 440px;
+        top: 400px;
         z-index: 1000;
         width: 140px;
         height: 90px;
@@ -1600,14 +1692,14 @@ span a img {
 
 }
 
-@media only screen and (max-width: 500px) { 
+@media only screen and (max-width: 500px) {
 
     .s1 h1 {
         transform: translate(-0%, -0%);
         position: absolute;
         font-size: 40px;
         left: 13.8%;
-    
+
     }
 }
 
@@ -1634,7 +1726,7 @@ body {
 label .menu {
     position: absolute;
     right: 0px;
-    top: 440px;
+    top: 410px;
     z-index: 1000;
     width: 140px;
     height: 90px;
@@ -1873,6 +1965,52 @@ label a {
 
 @media only screen and (max-width: 620px) {
 
+    .description5 p {
+        left: 34.5%;
+        font-size: 20px;
+        top: 27%;
+    }
+
+    .description3 {
+        font-size: 50px;
+        left:54%;
+        top: 13%;
+    }
+    .rectangle {
+        top: 35%;
+        left: 47%;
+    }
+
+    .description4 {
+        left: 48.5%;
+    }
+
+    .description7 {
+       left:50%;
+    }
+
+    .description6 {
+        left:55%;  
+    }
+
+    .description10 {
+        left:50%;
+    }
+ 
+    .description11 p {
+        left:27%;  
+    }
+
+    .rectangle2 {
+        top: 27%;
+        left: 48.2%;
+    }
+
+    .rectangle3 {
+        top: 27%;
+        left: 48.2%;
+    }
+
 
 
     /**Bürger Menu */
@@ -1906,7 +2044,6 @@ label a {
         transition: .5s ease-in-out;
         box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
         cursor: pointer;
-
     }
 
     label .hamburger {
@@ -1998,12 +2135,31 @@ label a {
         font-weight: 600;
         font-size: 50px;
         text-align: center;
-
     }
 }
 
 
 @media only screen and (max-width: 400px) {
+
+    .description5 p {
+        left: 27%;
+        font-size: 20px;
+        top: 27%;
+    }
+
+    .description3 {
+        font-size: 50px;
+        left:60%;
+        top: 13%;
+    }
+    .rectangle {
+        top: 37%;
+        left: 48%;
+    }
+
+    .description4 {
+        left: 51%;
+    }
 
     .description2 {
         left: 54%;
@@ -2014,6 +2170,13 @@ label a {
         font-size: 40px;
         left: 11%;
         top: 41%;
-      
+    }
+
+    .logo {
+        position: absolute;
+        top: 0%;
+        left: 38%;
+        z-index: 1200;
+        height: 6%;
     }
 }
