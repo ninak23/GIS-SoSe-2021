@@ -565,32 +565,32 @@ label a {
     }
 
     .description7 {
-        left: 17.5%;  
+        left: 17.5%;
     }
 
-    
+
     .description8 {
-        left: 11.5%;  
+        left: 11.5%;
         top: 11%;
     }
 
     .description10 {
-        left: 17.5%;  
+        left: 17.5%;
     }
 
-    
+
     .description11 {
-        left: 11%;  
+        left: 11%;
         top: 11%;
     }
 
     .description13 {
-        left: 17.5%;  
+        left: 17.5%;
     }
 
-    
+
     .description14 {
-        left: 14%;  
+        left: 14%;
         top: 10%;
     }
 
@@ -598,7 +598,7 @@ label a {
 
 @media only screen and (max-width: 1536px) {
 
- 
+
     .description50 h1 {
         position: absolute;
         font-size: 230px;
@@ -646,6 +646,25 @@ label a {
     .description14 {
         left: 14%;
     }
+}
+
+@media only screen and (max-width: 1305px) {
+
+    .description50 h1 {
+
+        top: -4%;
+    }
+
+    span a img {
+        top: 70%;
+        left: 46.3%;
+        z-index: 3000;
+    }
+
+    .description51 {
+        left: 51%;
+    }
+
 }
 
 @media only screen and (max-width: 1035px) {
@@ -789,7 +808,7 @@ label a {
         font-size: 16px;
         left: 50%;
         top: 60%;
-        
+
     }
 
 }
@@ -797,7 +816,7 @@ label a {
 
 @media only screen and (max-width: 720px) {
 
-    
+
     .description50 h1 {
         position: absolute;
         font-size: 100px;
@@ -817,7 +836,7 @@ label a {
         position: absolute;
         font-size: 16px;
         left: 50%;
-        top: 60%;  
+        top: 60%;
     }
 
     #video_background {

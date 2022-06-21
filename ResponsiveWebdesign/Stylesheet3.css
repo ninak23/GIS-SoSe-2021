@@ -158,8 +158,19 @@ a {
     position: absolute;
     left: 94%;
     top: 3%;
-
 }
+
+.frame2 {
+    position: absolute;
+    left: 19.8%;
+    top: 90%;
+    height: 10%;
+}
+
+.frame2 img {
+    height: 80%;
+}
+
 
 .descriptionGreenCube1 {
     position: absolute;
@@ -230,6 +241,13 @@ a {
         width: 35%;
         left: 6.5%;
     }
+
+    .frame2 {
+        left: 19.8%;
+        top: 86%;
+    }
+    
+    
 
 
 }
@@ -395,6 +413,17 @@ a {
 
 
 @media only screen and (max-width: 620px) {
+
+    .frame2 {
+        position: absolute;
+        left: 43%;
+        top: 85%;
+        height: 10%;
+    }
+    
+    .frame2 img {
+        height: 80%;
+    }
 
     .Green {
         visibility: hidden;
