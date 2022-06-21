@@ -333,7 +333,7 @@ a {
 .description14 {
     position: absolute;
     font-size: 51px;
-    left: 15.3%;
+    left: 15.2%;
     top: 11%;
     color: rgb(19, 80, 44);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -406,7 +406,7 @@ a {
     position: absolute;
     font-size: 230px;
     left: 51%;
-    top: 7%;
+    top: 4%;
     transform: translate(-50%, -20%);
     color: rgb(19, 80, 44);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -428,11 +428,6 @@ a {
     letter-spacing: 0.1em;
     z-index: 100;
 }
-
-#list div {
-    visibility: hidden;
-}
-
 
 
 *,
@@ -739,13 +734,14 @@ label a {
     }
 }
 
+
 @media only screen and (max-width: 1035px) {
 
     .description50 h1 {
         position: absolute;
         font-size: 200px;
         left: 52%;
-        top: 8%;
+        top: 10%;
         transform: translate(-50%, -20%);
     }
 
@@ -763,7 +759,6 @@ label a {
         top: 72%;
         left: 46%;
     }
-
 
     .description7 {
         left: 15.5%;
@@ -812,12 +807,14 @@ label a {
         left: 51%;
     }
 
+
     span a img {
         /**button*/
         position: absolute;
         top: 70%;
         left: 45.5%;
     }
+
 
     .description8 {
         left: 7%;
@@ -997,10 +994,8 @@ label a {
 
     #list div {
         font-size: 13px;
-
     }
 }
-
 
 @media only screen and (max-width: 620px) {
 
@@ -1483,6 +1478,7 @@ label a {
 }
 
 
+
 @media only screen and (max-width: 455px) {
 
     span a img {
@@ -1505,6 +1501,7 @@ label a {
     .logo {
         left: 39.2%;
     }
+
 
     .description7 {
         font-size: 12px;
@@ -1580,8 +1577,6 @@ label a {
     }
 
 }
-
-
 
 @media only screen and (max-width: 400px) {
 
@@ -1803,15 +1798,19 @@ label a {
         position: absolute;
         font-size: 70px;
         left: 52.1%;
-        top: 35.5%;
+        top: 30.5%;
     }
 
     span a img {
         /**button*/
-        left: 37%;
+        left: 36%;
         top: 64%;
     }
 
+    .description2 {
+        top: 81%;
+    }
+  
 
     #plant {
 
@@ -1984,18 +1983,32 @@ label a {
     }
 }
 
+
+
+
 @media only screen and (max-width: 400px) {
     .logo {
         position: absolute;
         top: 0%;
-        left: 39%;
+        left: 42%;
         z-index: 1200;
         height: 6%;
     }
 
+    .description8 {
+        top: 7%;
+        font-weight: 400;
+    }
 
+    .description11 {
+        top: 7%;
+        font-weight: 400;
+    }
 
-
+    .description14 {
+        top: 7%;
+        font-weight: 400;
+    }
 
     /**Bürger Menu */
     *,
@@ -2018,8 +2031,8 @@ label a {
 
     label .menu {
         position: absolute;
-        left: 39.5.7%;
-        top: 94%;
+        left: 40%;
+        top: 92%;
         z-index: 1000;
         width: 90px;
         height: 60px;
@@ -2115,5 +2128,19 @@ label a {
         font-weight: 600;
         font-size: 30px;
         text-align: center;
+    }
+
+    .s5 {
+        background-size: 400px;
+     
+    }
+    .s6 {
+        background-size: 400px;
+     
+    }
+
+    .s7 {
+        background-size: 400px;
+     
     }
 }

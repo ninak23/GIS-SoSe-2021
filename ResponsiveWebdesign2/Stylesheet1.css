@@ -2277,3 +2277,125 @@ label a {
 
     }
 }
+
+@media only screen and (max-width: 480px) {
+
+    .s1 h1 {
+        transform: translate(-0%, -0%);
+        font-size: 25px;
+        left: 20%;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+
+    .s1 h1 {
+        transform: translate(-0%, -0%);
+        font-size: 25px;
+        left: 17.5%;
+    }
+
+    label .menu {
+        left: 40%;
+        top: 92%;
+    }
+
+    .logo {
+        left: 42%;
+    }
+
+    .description2 {
+        top:70%;
+        left: 53%;
+    }
+
+    .description5 p {
+        left: 29%;
+        font-size: 20px;
+        top: 27%;
+    }
+
+    .description3 {
+        font-size: 30px;
+        left:58%;
+        top: 15%;
+    }
+
+    .rectangle {
+        top: 37%;
+        left: 51%;
+    }
+
+    .description4 {
+        left: 53%;
+    }
+
+    
+    .description7 {
+        left: 53%;
+    }
+
+    .description6 {
+        top:15%;
+        left: 59%;
+        font-size: 30px;
+    }
+
+    .rectangle2 {
+        top: 30%;
+        left: 50%;
+    }
+
+    .description10 {
+        left: 53%;
+    }
+
+    .description11 p {
+        top:13%;
+        left: 23%;
+        font-size: 30px;
+    }
+
+    .rectangle3 {
+        top: 30%;
+        left: 50%;
+    }
+    
+    .s4 {
+      background-size: 400px ;
+
+    }
+
+    .s3 {
+        background-size: 440px ;
+  
+    }
+    .s2 {
+        background-size: 440px ;
+  
+    }
+
+    .s5 h1 { 
+        top: 30%;
+    }
+
+    label a {
+        margin-bottom: 0;
+        display: block;
+        color: rgb(19, 80, 44);
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    label ul {
+      
+        top: 37%;
+   
+    }
+
+
+
+}

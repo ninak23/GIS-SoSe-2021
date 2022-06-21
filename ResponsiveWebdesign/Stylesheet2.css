@@ -1798,15 +1798,19 @@ label a {
         position: absolute;
         font-size: 70px;
         left: 52.1%;
-        top: 35.5%;
+        top: 30.5%;
     }
 
     span a img {
         /**button*/
-        left: 37%;
+        left: 36%;
         top: 64%;
     }
 
+    .description2 {
+        top: 81%;
+    }
+  
 
     #plant {
 
@@ -1986,9 +1990,24 @@ label a {
     .logo {
         position: absolute;
         top: 0%;
-        left: 39%;
+        left: 42%;
         z-index: 1200;
         height: 6%;
+    }
+
+    .description8 {
+        top: 7%;
+        font-weight: 400;
+    }
+
+    .description11 {
+        top: 7%;
+        font-weight: 400;
+    }
+
+    .description14 {
+        top: 7%;
+        font-weight: 400;
     }
 
     /**Bürger Menu */
@@ -2012,8 +2031,8 @@ label a {
 
     label .menu {
         position: absolute;
-        left: 39.5.7%;
-        top: 94%;
+        left: 40%;
+        top: 92%;
         z-index: 1000;
         width: 90px;
         height: 60px;
@@ -2109,5 +2128,19 @@ label a {
         font-weight: 600;
         font-size: 30px;
         text-align: center;
+    }
+
+    .s5 {
+        background-size: 400px;
+     
+    }
+    .s6 {
+        background-size: 400px;
+     
+    }
+
+    .s7 {
+        background-size: 400px;
+     
     }
 }
