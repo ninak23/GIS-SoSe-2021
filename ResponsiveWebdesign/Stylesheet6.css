@@ -11,7 +11,26 @@
     z-index: 2000;
 }
 
+div p {
+    position: relative;
+    color: rgb(19, 80, 44);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-left: 0;
+    margin-left: 0;
+    left: 0%;
+    text-align: center;
+    top: 3%;
+}
+
 .s1 {
+    background-image: url("./Medien/background.jpg");
+    background-size: cover;
+    border: 90px solid;
+    border-color: white;
+}
+
+.s2 {
     background-image: url("./Medien/background.jpg");
     background-size: cover;
     border: 90px solid;
@@ -20,9 +39,9 @@
 
 .section h1 {
     position: absolute;
-    font-size: 80px;
+    font-size: 50px;
     left: 50%;
-    top: 35%;
+    top: 0%;
     transform: translate(-50%, -20%);
     color: rgb(19, 80, 44);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -128,19 +147,6 @@ span a img {
     top: 55%;
     left: 50%;
     z-index: 3000;
-}
-
-.Back {
-    position: absolute;
-    font-size: 70%;
-    top: 104%;
-    left: 92%;
-    z-index: 2200;
-    color: grey;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    margin-right: 0;
 }
 
 
@@ -269,56 +275,76 @@ label a {
 
 }
 
+@media only screen and (max-width: 1629px) {
+
+    .section h1 {
+        font-size: 40px;
+        top: -2%;
+    }
+
+
+
+}
+
 @media only screen and (max-width: 1290px) {
 
     .section h1 {
-        position: absolute;
-        font-size: 50px;
-        left: 51%;
-        top: 42%;
-        transform: translate(-50%, -20%);
-        color: rgb(19, 80, 44);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        z-index: 1000;
+        font-size: 40px;
+        top: -2%;
     }
 
+
+}
+
+@media only screen and (max-width: 1290px) {
+
+    .section h1 {
+        font-size: 40px;
+        top: 2%;
+    }
+
+    div p {
+        font-size: 14px;
+    }
 }
 
 @media only screen and (max-width: 940px) {
 
     .section h1 {
-        position: absolute;
+        font-size: 40px;
+        top: 5%;
+    }
+
+    div p {
+        font-size: 12px;
+    }
+
+
+}
+
+@media only screen and (max-width: 870px) {
+
+    .section h1 {
         font-size: 30px;
-        left: 51%;
-        top: 44%;
-        transform: translate(-50%, -20%);
-        color: rgb(19, 80, 44);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        z-index: 1000;
+        top: 12%;
+    }
+
+    div p {
+        font-size: 10px;
     }
 
 }
 
-@media only screen and (max-width: 730px) {
+
+@media only screen and (max-width: 870px) {
 
     .section h1 {
-        position: absolute;
-        font-size: 20px;
-        left: 51%;
-        top: 44%;
-        transform: translate(-50%, -20%);
-        color: rgb(19, 80, 44);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        z-index: 1000;
+        font-size: 30px;
+        top: 12%;
+    }
+
+    div p {
+        font-size: 6px;
     }
 
 }
@@ -339,7 +365,6 @@ label a {
         position: absolute;
         font-size: 20px;
         left: 51%;
-        top: 48%;
         transform: translate(-50%, -20%);
         color: rgb(19, 80, 44);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -347,6 +372,10 @@ label a {
         font-weight: 700;
         letter-spacing: 0.1em;
         z-index: 1000;
+    }
+
+    div p {
+        font-size: 10px;
     }
 
     .logo {
@@ -508,7 +537,7 @@ label a {
     label ul {
         z-index: 1200;
         position: absolute;
-        top: 43%;
+        top: 46%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
@@ -518,7 +547,7 @@ label a {
     }
 
     label a {
-        margin-bottom: 0.2em;
+        margin-bottom: 2em;
         display: block;
         color: rgb(19, 80, 44);
         text-decoration: none;
@@ -529,20 +558,12 @@ label a {
     }
 }
 
+
 @media only screen and (max-width: 400px) {
 
     .section h1 {
-        position: absolute;
-        font-size: 20px;
-        left: 51%;
-        top: 48%;
-        transform: translate(-50%, -20%);
-        color: rgb(19, 80, 44);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        z-index: 1000;
+        font-size: 15px;
+        top: 12%;
     }
 
     .s1 {
