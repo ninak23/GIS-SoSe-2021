@@ -246,10 +246,6 @@ a {
         left: 19.8%;
         top: 86%;
     }
-    
-    
-
-
 }
 
 @media only screen and (max-width: 1320px) {
@@ -420,7 +416,7 @@ a {
         top: 85%;
         height: 10%;
     }
-    
+
     .frame2 img {
         height: 80%;
     }

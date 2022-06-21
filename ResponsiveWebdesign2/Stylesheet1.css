@@ -578,7 +578,7 @@ span a img {
         left: 0%;
         z-index: 1200;
     }
-    
+
     .s1 h1 {
         transform: translate(-0%, -0%);
         position: absolute;
@@ -605,7 +605,7 @@ span a img {
     }
 }
 
-@media only screen and (max-width: 1305px) { 
+@media only screen and (max-width: 1305px) {
 
     .description5 p {
         left: 62%;
@@ -637,7 +637,7 @@ span a img {
     }
 
     .description4 {
-        left: 76%;   
+        left: 76%;
     }
 
     .description11 p {
@@ -777,6 +777,7 @@ span a img {
         height: 30%;
         left: 60%;
     }
+
     .description11 p {
         left: 56%;
         font-size: 48px;
@@ -826,6 +827,7 @@ span a img {
     .description3 {
         font-size: 55px;
     }
+
     .rectangle {
         top: 70%;
         left: 72%;
@@ -835,7 +837,7 @@ span a img {
         left: 72.1%;
     }
 
-    
+
     .description10 {
         left: 72.1%;
     }
@@ -918,8 +920,9 @@ span a img {
 
     .description3 {
         font-size: 50px;
-        left:73%;
+        left: 73%;
     }
+
     .rectangle {
         top: 65%;
         left: 67%;
@@ -1763,8 +1766,6 @@ span a img {
     }
 }
 
-
-
 *,
 *:before,
 *:after {
@@ -2028,17 +2029,18 @@ label a {
         top: 27%;
         font-weight: 400;
     }
-    
+
     .description6 {
-        left:30%;
+        left: 30%;
     }
 
     .description3 {
         font-size: 48px;
-        left:54%;
+        left: 54%;
         top: 13%;
         font-weight: 400;
     }
+
     .rectangle {
         top: 35%;
         left: 47%;
@@ -2049,22 +2051,22 @@ label a {
     }
 
     .description7 {
-       left:50%;
+        left: 50%;
     }
 
     .description6 {
-        left:58.5%;  
+        left: 58.5%;
         font-weight: 400;
     }
 
     .description10 {
-        left:50%;
+        left: 50%;
         font-weight: 400;
-        
+
     }
- 
+
     .description11 p {
-        left:27%;  
+        left: 27%;
         font-weight: 400;
     }
 
@@ -2215,7 +2217,7 @@ label a {
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
 
     .description5 p {
         left: 29%;
@@ -2225,7 +2227,7 @@ label a {
 
     .description3 {
         font-size: 50px;
-        left:60%;
+        left: 60%;
         top: 13%;
     }
 
@@ -2271,7 +2273,7 @@ label a {
     }
 
     .description11 p {
-        left:14%;  
-       
+        left: 14%;
+
     }
 }

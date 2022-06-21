@@ -246,10 +246,6 @@ a {
         left: 19.8%;
         top: 86%;
     }
-    
-    
-
-
 }
 
 @media only screen and (max-width: 1320px) {
@@ -263,7 +259,6 @@ a {
         position: absolute;
         left: 52%;
         height: 80%;
-
     }
 
     .Produktbeschreibung {
@@ -271,7 +266,6 @@ a {
         width: 35%;
         left: 6.5%;
     }
-
 
     .description8 {
         left: 11%;
@@ -420,7 +414,7 @@ a {
         top: 85%;
         height: 10%;
     }
-    
+
     .frame2 img {
         height: 80%;
     }

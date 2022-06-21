@@ -1756,8 +1756,9 @@ span a img {
         position: absolute;
         font-size: 40px;
         left: 13.8%;
-
     }
+
+    
 }
 
 
@@ -2212,7 +2213,7 @@ label a {
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
 
     .description5 p {
         left: 29%;
